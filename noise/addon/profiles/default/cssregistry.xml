@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<object name="portal_css">
+
+    <stylesheet
+            id="++resource++noise.addon/noise.css"
+            cacheable="True"
+            compression="safe"
+            cookable="True"
+            enabled="1"
+            expression=""
+            media=""
+            rel="stylesheet"
+            rendering="import"/>
+    <stylesheet
+            id="++resource++noise.addon/jsf.css"
+            cacheable="True"
+            compression="safe"
+            cookable="True"
+            enabled="1"
+            expression=""
+            media=""
+            rel="stylesheet"
+            rendering="import"/>
+
+    <stylesheet
+            id="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+            cacheable="True"
+            compression="safe"
+            cookable="True"
+            enabled="1"
+            expression=""
+            media=""
+            rel="stylesheet"
+            rendering="import"/>
+
+</object>

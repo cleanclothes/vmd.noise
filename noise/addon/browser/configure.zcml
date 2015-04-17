@@ -1,0 +1,17 @@
+<configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser">
+
+    <browser:page
+            for="noise.addon.models.noise.INoise"
+            class="noise.addon.browser.noise.Noise"
+            permission="zop2.View"
+            />
+
+    <browser:page
+            name="makesomenoise"
+            for="*"
+            class="noise.addon.browser.noisestorage.NoiseStorageView"
+            permission="zope2.View"
+            />
+</configure>

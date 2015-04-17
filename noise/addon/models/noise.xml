@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+       i18n:domain="noise.addon">
+
+    <schema>
+
+        <field name="text"
+               type="plone.app.textfield.RichText"
+               indexer:searchable="true"
+               form:after="*">
+            <description/>
+            <required>False</required>
+            <title i18n:translate="">Text</title>
+        </field>
+
+        <field name="body_text_prefix" type="zope.schema.TextLine">
+            <description>Prefix to the selected body text
+            </description>
+            <title i18n:translate="">Body text prefix</title>
+        </field>
+
+        <field name="body_texts" type="zope.schema.Text">
+            <description>User selectable predefined body texts (one per
+                line)
+            </description>
+            <title i18n:translate="">Body texts</title>
+        </field>
+
+        <field name="keep_posted_heading" type="zope.schema.Text">
+            <description>
+            </description>
+            <title i18n:translate="">Heading of keep posted part</title>
+        </field>
+
+        <field name="images" type="plone.app.relationfield.RelationList">
+            <title>Images</title>
+            <description>User selectable images
+            </description>
+            <value_type type="plone.app.relationfield.Relation">
+                <title>User selectable images</title>
+                <source>plone.formwidget.contenttree.obj_path_src_binder</source>
+            </value_type>
+        </field>
+
+        <fieldset name="facebook" label="Facebook"
+                  description="Make some noise on Facebook">
+            <field name="facebook_tab_heading" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Facebook tab heading</title>
+            </field>
+            <field name="facebook_rcpt" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Facebook recipient</title>
+            </field>
+            <field name="facebook_submit" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Submit to Facebook</title>
+                <required>False</required>
+            </field>
+        </fieldset>
+        <fieldset name="twitter" label="Twitter"
+                  description="Make some noise on Twitter">
+            <field name="twitter_tab_heading" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Twitter tab heading</title>
+            </field>
+            <field name="twitter_rcpt" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Twitter recipient</title>
+            </field>
+            <field name="twitter_submit" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Submit to Twitter</title>
+                <required>False</required>
+            </field>
+        </fieldset>
+        <fieldset name="email" label="Email"
+                  description="Make some noise by sending an email">
+            <field name="email_tab_heading" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Email tab heading</title>
+            </field>
+            <field name="email_heading" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Email heading</title>
+            </field>
+            <field name="email_rcpt" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Email recipient</title>
+            </field>
+            <field name="email_subject" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Email subject</title>
+            </field>
+            <field name="email_submit" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Send email</title>
+                <required>False</required>
+            </field>
+        </fieldset>
+        <fieldset name="post" label="Post"
+                  description="Make some noise on paper">
+            <field name="hardcopy_tab_heading" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Hardcopy tab heading</title>
+            </field>
+            <field name="hardcopy_rcpt" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Hardcopy recipient</title>
+            </field>
+            <field name="hardcopy_submit" type="zope.schema.TextLine">
+                <description>
+                </description>
+                <title i18n:translate="">Send hardcopy</title>
+                <required>False</required>
+            </field>
+        </fieldset>
+    </schema>
+</model>
+

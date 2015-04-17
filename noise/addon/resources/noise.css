@@ -1,0 +1,87 @@
+#noise-container .header {
+    background-color: #f7f7f7;
+    color: #505050;
+    padding: 5px;
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: larger;
+}
+
+#noise-container .image {
+    max-width: 25%;
+    padding: 0;
+    margin: 0;
+}
+
+/* noise menu tabs */
+
+#noise-container .noise-menu {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#noise-container .noise-menu li {
+    display: inline;
+    margin-right: 5px;
+}
+
+#noise-container .noise-menu li.current {
+    position: relative;
+    background-color: #fff;
+    z-index: 5;
+    display: none;
+}
+
+#noise-container .noise-menu li a {
+    text-decoration: none;
+}
+
+#noise-container .tab-content {
+    display: none;
+}
+
+#noise-container #twitter-tab {
+    display: block;
+}
+
+/* other */
+
+#noise-container #tweet-text-div.exceeds_limit {
+    color: red;
+}
+
+#noise-container span#tweet-counter {
+    float: right;
+    padding: 10px;
+}
+
+#content a.email_noise,
+#content a.tweet_noise,
+a.email_noise,
+a.tweet_noise {
+    padding: 10px;
+    background: #f7f7f7;
+    display: inline-block;
+    border-bottom: none;
+}
+
+#noise-container .hidden {
+    display:none;
+}
+
+#noise-container #email-text-div,
+#noise-container #tweet-text-div {
+    color: darkblue;
+    min-height: 50px;
+}
+
+#noise-container .noise-counter {
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.noise-menu,
+.tab h2 {
+    text-align: center;
+}

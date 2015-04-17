@@ -1,0 +1,267 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+        metal:use-macro="context/main_template/macros/master"
+        i18n:domain="noise.addon">
+<body>
+
+<tal:comment tal:condition="nothing">
+    The default view for a Noise CT
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+        <div id="noise-container" class="noise">
+
+            <div class="noise-body" tal:condition="context/text"
+                    tal:content="structure context/text/output"/>
+
+            <div class="noise-counter">12345 oproepen verstuurd</div>
+
+            <div class="hidden">
+                <span id="twitter_rcpt" tal:content="context/twitter_rcpt"/>
+                <span id="email_rcpt" tal:content="context/email_rcpt"/>
+                <span id="email_heading" tal:content="context/email_heading"/>
+                <span id="email_subject" tal:content="context/email_subject"/>
+                <span id="absolute_url" tal:content="context/absolute_url"/>
+            </div>
+
+            <ul class="noise-menu">
+                <span i18n:translate="">Je kunt je oproep ook doen via </span>
+                <li class="current">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#twitter-tab" i18n:translate="">Twitter</a>
+                </li>
+                <li>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#facebook-tab" i18n:translate="">Facebook</a>
+                </li>
+                <li>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-stack-1x fa-inverse">@</i>
+                    </span>
+                    <a href="#email-tab" i18n:translate="">Email</a>
+                </li>
+                <li>
+
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#hardcopy-tab" i18n:translate="">Hardcopy</a>
+                </li>
+            </ul>
+
+            <div class="tab">
+                <section id="twitter-tab" class="tab-content">
+
+                    <h2 tal:content="context/twitter_tab_heading"/>
+
+                    <form id="twitter_noise_form" class="noise-form"
+                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+
+                        <div class="header" i18n:translate="">Kies je tekst:</div>
+
+                        <input type="hidden" id="noisetype" name="noisetype"
+                               value="twitter"/>
+
+                        <label for="twitter-texts" i18n:translate="">
+                            <tal:rcpt tal:content="context/body_text_prefix">
+                                TIMMERFRANS, TERWIJL JE
+                            </tal:rcpt>
+                        </label>
+                        <select name="twitter-text" id="twitter-texts">
+                            <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
+                        </select>
+
+                        <div class="header" i18n:translate="">Kies je
+                            afbeelding:
+                        </div>
+                        <div class="images" tal:condition="context/images">
+                            <a class="clickable-image"
+                               href="#" tal:repeat="img context/images">
+                                <img class="image"  tal:attributes="src string:${img/to_object/absolute_url}/image_thumb"/>
+                            </a>
+                        </div>
+
+                        <div id="tweet-text-header"
+                             class="header" i18n:translate="">Dit is je Tweet!
+                        </div>
+                        <span id="tweet-counter"></span>
+
+                        <div contenteditable="plaintext-only"
+                             id="tweet-text-div"></div>
+                        <input type="hidden" id="tweet-text" name="tweet-text"/>
+
+                        <div class="header" tal:content="context/keep_posted_heading"/>
+
+                        <div>
+                            <div class="help">Please fill in your firstname
+                            </div>
+                            <div class="alert">Firstname is required</div>
+                            <label for="firstname" i18n:translate="">Firstname:</label>
+                            <input jsf:required="true" type="text"
+                                   name="firstname"
+                                   id="firstname">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your lastname</div>
+                            <div class="alert">Lastname is required</div>
+                            <label for="lastname" i18n:translate="">Lastname:</label>
+                            <input jsf:required="true" type="text"
+                                   name="lastname"
+                                   id="lastname">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your email address
+                            </div>
+                            <div class="alert">Email address is required</div>
+                            <label for="email" i18n:translate="">Email:</label>
+                            <input jsf:required="true" type="text" name="email"
+                                   id="email">
+                        </div>
+                        <div>
+                            <div class="help">Please fill in your phonenumber
+                            </div>
+                            <label for="phone" i18n:translate="">Phonenumber:</label>
+                            <input type="text" name="phone" id="phone">
+                        </div>
+
+                        <a class="tweet_noise"
+                           href="#" tal:content="python:context.twitter_submit or 'submit'"/>
+
+                    </form>
+                </section>
+            </div>
+
+            <div class="tab">
+                <section id="facebook-tab" class="tab-content">
+
+                    <h2 tal:content="context/facebook_tab_heading"/>
+
+                    <form id="facebook_noise_form" class="noise-form"
+                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+
+                        <div class="header" i18n:translate="">Kies je tekst:</div>
+
+                        <input type="hidden" id="noisetype" name="noisetype"
+                               value="facebook"/>
+                    </form>
+                </section>
+            </div>
+
+            <div class="tab">
+                <section id="email-tab" class="tab-content">
+
+                    <h2 tal:content="context/email_tab_heading"/>
+
+                    <form id="email_noise_form" class="noise-form"
+                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+
+
+                        <div class="header" i18n:translate="">Kies je tekst:</div>
+
+                        <input type="hidden" id="noisetype" name="noisetype"
+                               value="email"/>
+
+                        <label for="email-texts" i18n:translate="">
+                            <tal:rcpt tal:content="context/body_text_prefix">
+                                TIMMERFRANS, TERWIJL JE
+                            </tal:rcpt>
+                        </label>
+                        <select name="email-text" id="email-texts">
+                            <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
+                        </select>
+
+                        <div id="email-text-header"
+                             class="header" i18n:translate="">Voeg iets
+                            persoonlijks toe als je wilt:
+                        </div>
+
+                        <div contenteditable="plaintext-only"
+                             id="email-text-div"></div>
+                        <input type="hidden" id="email-text" name="email-text"/>
+
+                        <div>
+                            <div class="help">Please fill in your firstname
+                            </div>
+                            <div class="alert">Firstname is required</div>
+                            <label for="firstname" i18n:translate="">Firstname:</label>
+                            <input jsf:required="true" type="text"
+                                   name="firstname"
+                                   id="firstname">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your lastname</div>
+                            <div class="alert">Lastname is required</div>
+                            <label for="lastname" i18n:translate="">Lastname:</label>
+                            <input jsf:required="true" type="text"
+                                   name="lastname"
+                                   id="lastname">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your email address
+                            </div>
+                            <div class="alert">Email address is required</div>
+                            <label for="email" i18n:translate="">Email:</label>
+                            <input jsf:required="true" type="text" name="email"
+                                   id="email">
+                        </div>
+                        <div>
+                            <div class="help">Please fill in your phonenumber
+                            </div>
+                            <label for="phone" i18n:translate="">Phonenumber:</label>
+                            <input type="text" name="phone" id="phone">
+                        </div>
+
+                        <div class="header" tal:content="context/keep_posted_heading"/>
+
+                        <input type="checkbox" name="keepposted" id="keepposted">
+                        <label for="keepposted" i18n:translate="">Ja graag! Hou me op de hoogte.</label>
+
+                        <p>
+                            <a class="email_noise"
+                               href="#" tal:content="python:context.email_submit or 'submit'"/>
+                        </p>
+                    </form>
+                </section>
+            </div>
+
+            <div class="tab">
+                <section id="hardcopy-tab" class="tab-content">
+
+                    <h2 tal:content="context/hardcopy_tab_heading"/>
+
+                    <form id="hardcopy_noise_form" class="noise-form"
+                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+
+
+                        <div class="header" i18n:translate="">Kies je tekst:</div>
+
+                        <input type="hidden" id="noisetype" name="noisetype"
+                               value="hardcopy"/>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+    </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

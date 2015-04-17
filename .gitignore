@@ -1,0 +1,3 @@
+.gitignore
+*.egg
+*.egg-info

@@ -1,0 +1,43 @@
+/**
+ * Taken from the example at https://github.com/wyldebeast-wunderliebe/jsforms
+ */
+
+#noise-container form > div {
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#noise-container fieldset {
+    margin-bottom: 10px;
+}
+
+#noise-container .error,
+#noise-container .error input,
+#noise-container .error select {
+    border-color: #ff0000;
+}
+
+#noise-container .alert {
+    display: none;
+    color: #ff0000
+}
+
+#noise-container .error .alert {
+    display: block
+}
+
+#noise-container .help {
+    color: #a0a0a0;
+    font-size: 90%
+}
+
+#noise-container .irrelevant {
+    opacity: 0.3
+}
+
+#noise-container .required:after {
+    content: "*";
+    color: #ff0000
+}
