@@ -36,7 +36,6 @@ class Noise(Item):
     def body_texts_list(self):
         return self.body_texts.split("\n")
 
-
     @property
     def total(self):
         return len(storage.status(self, storage.TWITTER_KEY)) + len(
