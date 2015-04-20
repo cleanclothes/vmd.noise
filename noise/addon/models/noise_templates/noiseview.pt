@@ -16,44 +16,50 @@
 
         <div id="noise-container" class="noise">
 
-            <div class="noise-body" tal:condition="context/text"
-                    tal:content="structure context/text/output"/>
+            <div class="noise-body" tal:condition="context/text">
+                <tal:block tal:content="structure context/text/output">Lorem ipsum</tal:block>
+                <a class="readmore" href="#" i18n:translate="">Lees meer</a>
+            </div>
 
-            <div class="noise-counter">12345 oproepen verstuurd</div>
+            <div tal:condition="context/show_counter"
+                    class="noise-counter"
+                    i18n:translate=""
+                    tal:content="string:${context/total} Oproepen verstuurd!"/>
 
             <div class="hidden">
-                <span id="twitter_rcpt" tal:content="context/twitter_rcpt"/>
-                <span id="email_rcpt" tal:content="context/email_rcpt"/>
+
+                <tal:comment replace="nothing">
+                    Used in noise.js
+                </tal:comment>
+
                 <span id="email_heading" tal:content="context/email_heading"/>
-                <span id="email_subject" tal:content="context/email_subject"/>
-                <span id="absolute_url" tal:content="context/absolute_url"/>
+                <span id="twitter_rcpt" tal:content="context/twitter_rcpt"/>
             </div>
 
             <ul class="noise-menu">
                 <span i18n:translate="">Je kunt je oproep ook doen via </span>
-                <li class="current">
+                <li class="current" tal:condition="context/show_twitter">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                     </span>
                     <a href="#twitter-tab" i18n:translate="">Twitter</a>
                 </li>
-                <li>
+                <li tal:condition="context/show_facebook">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                     </span>
                     <a href="#facebook-tab" i18n:translate="">Facebook</a>
                 </li>
-                <li>
+                <li tal:condition="context/show_email">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-stack-1x fa-inverse">@</i>
                     </span>
                     <a href="#email-tab" i18n:translate="">Email</a>
                 </li>
-                <li>
-
+                <li tal:condition="context/show_hardcopy">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -63,12 +69,12 @@
             </ul>
 
             <div class="tab">
-                <section id="twitter-tab" class="tab-content">
+                <section id="twitter-tab" class="tab-content" tal:condition="context/show_twitter">
 
                     <h2 tal:content="context/twitter_tab_heading"/>
 
                     <form id="twitter_noise_form" class="noise-form"
-                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+                          method="POST" action="">
 
                         <div class="header" i18n:translate="">Kies je tekst:</div>
 
@@ -106,9 +112,9 @@
                         <div class="header" tal:content="context/keep_posted_heading"/>
 
                         <div>
-                            <div class="help">Please fill in your firstname
+                            <div class="help" i18n:translate="">Please fill in your firstname
                             </div>
-                            <div class="alert">Firstname is required</div>
+                            <div class="alert" i18n:translate="">Firstname is required</div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
                             <input jsf:required="true" type="text"
                                    name="firstname"
@@ -125,15 +131,15 @@
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your email address
+                            <div class="help" i18n:translate="">Please fill in your email address
                             </div>
-                            <div class="alert">Email address is required</div>
+                            <div class="alert" i18n:translate="">Email address is required</div>
                             <label for="email" i18n:translate="">Email:</label>
                             <input jsf:required="true" type="text" name="email"
                                    id="email">
                         </div>
                         <div>
-                            <div class="help">Please fill in your phonenumber
+                            <div class="help" i18n:translate="">Please fill in your phonenumber
                             </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
                             <input type="text" name="phone" id="phone">
@@ -147,12 +153,12 @@
             </div>
 
             <div class="tab">
-                <section id="facebook-tab" class="tab-content">
+                <section id="facebook-tab" class="tab-content" tal:condition="context/show_facebook">
 
                     <h2 tal:content="context/facebook_tab_heading"/>
 
                     <form id="facebook_noise_form" class="noise-form"
-                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+                          method="POST" action="">
 
                         <div class="header" i18n:translate="">Kies je tekst:</div>
 
@@ -163,13 +169,12 @@
             </div>
 
             <div class="tab">
-                <section id="email-tab" class="tab-content">
+                <section id="email-tab" class="tab-content" tal:condition="context/show_email">
 
                     <h2 tal:content="context/email_tab_heading"/>
 
                     <form id="email_noise_form" class="noise-form"
-                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
-
+                          method="POST" action="">
 
                         <div class="header" i18n:translate="">Kies je tekst:</div>
 
@@ -192,12 +197,12 @@
 
                         <div contenteditable="plaintext-only"
                              id="email-text-div"></div>
-                        <input type="hidden" id="email-text" name="email-text"/>
+                        <input type="hidden" id="email_body" name="email_body"/>
 
                         <div>
-                            <div class="help">Please fill in your firstname
+                            <div class="help" i18n:translate="">Please fill in your firstname
                             </div>
-                            <div class="alert">Firstname is required</div>
+                            <div class="alert" i18n:translate="">Firstname is required</div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
                             <input jsf:required="true" type="text"
                                    name="firstname"
@@ -214,15 +219,15 @@
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your email address
+                            <div class="help" i18n:translate="">Please fill in your email address
                             </div>
-                            <div class="alert">Email address is required</div>
+                            <div class="alert" i18n:translate="">Email address is required</div>
                             <label for="email" i18n:translate="">Email:</label>
                             <input jsf:required="true" type="text" name="email"
                                    id="email">
                         </div>
                         <div>
-                            <div class="help">Please fill in your phonenumber
+                            <div class="help" i18n:translate="">Please fill in your phonenumber
                             </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
                             <input type="text" name="phone" id="phone">
@@ -233,6 +238,9 @@
                         <input type="checkbox" name="keepposted" id="keepposted">
                         <label for="keepposted" i18n:translate="">Ja graag! Hou me op de hoogte.</label>
 
+                        <input type="hidden" name="email_rcpt" id="email_rcpt" tal:attributes="value context/email_rcpt"/>
+                        <input type="hidden" name="email_subject" id="email_subject" tal:attributes="value context/email_subject"/>
+
                         <p>
                             <a class="email_noise"
                                href="#" tal:content="python:context.email_submit or 'submit'"/>
@@ -242,12 +250,12 @@
             </div>
 
             <div class="tab">
-                <section id="hardcopy-tab" class="tab-content">
+                <section id="hardcopy-tab" class="tab-content" tal:condition="context/show_hardcopy">
 
                     <h2 tal:content="context/hardcopy_tab_heading"/>
 
                     <form id="hardcopy_noise_form" class="noise-form"
-                          method="POST" tal:attributes="action string:${context/absolute_url}/@@makesomenoise">
+                          method="POST" action="">
 
 
                         <div class="header" i18n:translate="">Kies je tekst:</div>

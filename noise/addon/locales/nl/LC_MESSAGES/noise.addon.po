@@ -1,0 +1,263 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-04-19 20:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: noise.addon\n"
+
+#: ../models/noise.xml
+msgid "Body text prefix"
+msgstr "Voorlooptekst bij hoofdtekst"
+
+#: ../models/noise.xml
+msgid "Body texts"
+msgstr "Hoofdtekst"
+
+#: ../models/noise_templates/noiseview.pt:101
+msgid "Dit is je Tweet!"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:58
+msgid "Email"
+msgstr "E-mail"
+
+#: ../models/noise_templates/noiseview.pt:134
+msgid "Email address is required"
+msgstr "E-mailadres is verplicht"
+
+#: ../models/noise.xml
+msgid "Email heading"
+msgstr "E-mail aanhef"
+
+#: ../models/noise.xml
+msgid "Email recipient"
+msgstr "E-mail ontvanger"
+
+#: ../models/noise.xml
+msgid "Email subject"
+msgstr "E-mail onderwerp"
+
+#: ../models/noise.xml
+msgid "Email tab heading"
+msgstr "E-mail tab titel"
+
+#: ../models/noise_templates/noiseview.pt:135
+msgid "Email:"
+msgstr "E-mail:"
+
+#: ../models/noise_templates/noiseview.pt:51
+msgid "Facebook"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "Facebook recipient"
+msgstr "Facebook ontvanger"
+
+#: ../models/noise.xml
+msgid "Facebook tab heading"
+msgstr "Facebook tab titel"
+
+#: ../models/noise_templates/noiseview.pt:115
+msgid "Firstname is required"
+msgstr "Voornaam is verplicht"
+
+#: ../models/noise_templates/noiseview.pt:116
+msgid "Firstname:"
+msgstr "Voornaam:"
+
+#: ../models/noise.xml
+msgid "For example: \"Dear mrs. X\""
+msgstr "Bijvoorbeeld: \"Beste mevr. X\""
+
+#: ../models/noise.xml
+msgid "For example: \"do you want to know how X responds?\""
+msgstr "Bijvoorbeeld: \"wil je weten hoe X reageert?\""
+
+#: ../models/noise.xml
+msgid "General intro"
+msgstr "Algemene intro"
+
+#: ../models/noise_templates/noiseview.pt:65
+msgid "Hardcopy"
+msgstr "Brief"
+
+#: ../models/noise.xml
+msgid "Hardcopy recipient"
+msgstr "Brief ontvanger"
+
+#: ../models/noise.xml
+msgid "Hardcopy tab heading"
+msgstr "Brief tab titel"
+
+#: ../models/noise.xml
+msgid "Heading of keep posted part"
+msgstr "Tekst van \"hou me op de hoogte\" onderdeel"
+
+#: ../models/noise.xml
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: ../models/noise_templates/noiseview.pt:238
+msgid "Ja graag! Hou me op de hoogte."
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:38
+msgid "Je kunt je oproep ook doen via"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:91
+msgid "Kies je afbeelding:"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:77
+msgid "Kies je tekst:"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:125
+msgid "Lastname:"
+msgstr "Achternaam:"
+
+#: ../models/noise_templates/noiseview.pt:21
+msgid "Lees meer"
+msgstr ""
+
+#: ../profiles/default/types/noise.addon.noise.xml
+msgid "Make some noise"
+msgstr ""
+
+#: ../profiles/default/types/noise.addon.noise.xml
+msgid "Noise"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:142
+msgid "Phonenumber:"
+msgstr "Telefoonnummer"
+
+#: ../models/noise_templates/noiseview.pt:132
+msgid "Please fill in your email address"
+msgstr "Vul a.u.b een e-mailadres in"
+
+#: ../models/noise_templates/noiseview.pt:113
+msgid "Please fill in your firstname"
+msgstr "Vul a.u.b. een voornaam in"
+
+#: ../models/noise_templates/noiseview.pt:140
+msgid "Please fill in your phonenumber"
+msgstr "Vul a.u.b. een telefoonnummer in"
+
+#: ../models/noise.xml
+msgid "Prefix to the selected body text"
+msgstr "Voorloop bij de gekozen tekst"
+
+#: ../models/noise.xml
+msgid "Send email"
+msgstr "Verstuur e-mail"
+
+#: ../models/noise.xml
+msgid "Send email button"
+msgstr "Verstuur e-mail knop"
+
+#: ../models/noise.xml
+msgid "Send hardcopy"
+msgstr "Download en print de brief"
+
+#: ../models/noise.xml
+msgid "Send hardcopy button"
+msgstr "Verstuur brief knop"
+
+#: ../models/noise.xml
+msgid "Show Email"
+msgstr "E-mail tab actief"
+
+#: ../models/noise.xml
+msgid "Show Facebook"
+msgstr "Facebook tab actief"
+
+#: ../models/noise.xml
+msgid "Show Hardcopy"
+msgstr "Brief tab actief"
+
+#: ../models/noise.xml
+msgid "Show Twitter"
+msgstr "Twitter tab actief"
+
+#: ../models/noise.xml
+msgid "Show counter"
+msgstr "Toon teller"
+
+#: ../models/noise.xml
+msgid "Submit to Facebook"
+msgstr "Verstuur je oproep"
+
+#: ../models/noise.xml
+msgid "Submit to Facebook button"
+msgstr "Verstuur naar Facebook knop"
+
+#: ../models/noise.xml
+msgid "Submit to Twitter"
+msgstr "Verstuur je oproep"
+
+#: ../models/noise.xml
+msgid "Submit to Twitter button"
+msgstr "Verstuur naar Twitter knop"
+
+#: ../models/noise.xml
+msgid "Text"
+msgstr "Hoofdtekst"
+
+#: ../models/noise_templates/noiseview.pt:44
+msgid "Twitter"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "Twitter recipient"
+msgstr "Twitter ontvanger"
+
+#: ../models/noise.xml
+msgid "Twitter tab heading"
+msgstr "Twitter tab ontvanger"
+
+#: ../models/noise.xml
+msgid "User selectable images"
+msgstr "Door de gebruiker te kiezen afbeeldingen"
+
+#: ../models/noise.xml
+msgid "User selectable predefined body texts (one per line)"
+msgstr "Door de gebruiker te kiezen teksten (een per regel)"
+
+#: ../models/noise_templates/noiseview.pt:192
+msgid "Voeg iets persoonlijks toe als je wilt:"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "Whether or not to show the Email tab"
+msgstr "Is de e-mail tab actief"
+
+#: ../models/noise.xml
+msgid "Whether or not to show the Facebook tab"
+msgstr "Is de Facebook tab actief"
+
+#: ../models/noise.xml
+msgid "Whether or not to show the Hardcopy tab"
+msgstr "Is de brief tab actief"
+
+#: ../models/noise.xml
+msgid "Whether or not to show the Twitter tab"
+msgstr "Is de Twitter tab actief"
+
+#: ../models/noise.xml
+msgid "Whether or not to show the total amount of noise items created"
+msgstr "Of het totaal aantal verstuurde items getoond wordt"
+

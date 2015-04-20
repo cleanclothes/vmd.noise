@@ -11,54 +11,58 @@
                type="plone.app.textfield.RichText"
                indexer:searchable="true"
                form:after="*">
-            <description/>
+            <description i18n:translate="">General intro</description>
             <required>False</required>
             <title i18n:translate="">Text</title>
         </field>
 
         <field name="body_text_prefix" type="zope.schema.TextLine">
-            <description>Prefix to the selected body text
-            </description>
+            <description i18n:translate="">Prefix to the selected body text</description>
             <title i18n:translate="">Body text prefix</title>
         </field>
 
+        <field name="show_counter" type="zope.schema.Bool">
+            <description i18n:translate="">Whether or not to show the total amount of noise items created</description>
+            <title i18n:translate="">Show counter</title>
+        </field>
+
         <field name="body_texts" type="zope.schema.Text">
-            <description>User selectable predefined body texts (one per
-                line)
-            </description>
+            <description i18n:translate="">User selectable predefined body texts (one per line)</description>
             <title i18n:translate="">Body texts</title>
         </field>
 
         <field name="keep_posted_heading" type="zope.schema.Text">
-            <description>
-            </description>
+            <description i18n:translate="">For example: "do you want to know how X responds?"</description>
             <title i18n:translate="">Heading of keep posted part</title>
         </field>
 
         <field name="images" type="plone.app.relationfield.RelationList">
-            <title>Images</title>
-            <description>User selectable images
-            </description>
+            <title i18n:translate="">Images</title>
+            <description i18n:translate="">User selectable images</description>
             <value_type type="plone.app.relationfield.Relation">
-                <title>User selectable images</title>
+                <title i18n:translate="">User selectable images</title>
                 <source>plone.formwidget.contenttree.obj_path_src_binder</source>
             </value_type>
         </field>
 
         <fieldset name="facebook" label="Facebook"
                   description="Make some noise on Facebook">
+            <field name="show_facebook" type="zope.schema.Bool">
+                <description i18n:translate="">Whether or not to show the Facebook tab</description>
+                <title i18n:translate="">Show Facebook</title>
+            </field>
             <field name="facebook_tab_heading" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Facebook tab heading</title>
+                <required>False</required>
             </field>
             <field name="facebook_rcpt" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Facebook recipient</title>
+                <required>False</required>
             </field>
             <field name="facebook_submit" type="zope.schema.TextLine">
-                <description>
+                <description i18n:translate="">Submit to Facebook button
                 </description>
                 <title i18n:translate="">Submit to Facebook</title>
                 <required>False</required>
@@ -66,67 +70,76 @@
         </fieldset>
         <fieldset name="twitter" label="Twitter"
                   description="Make some noise on Twitter">
+            <field name="show_twitter" type="zope.schema.Bool">
+                <description i18n:translate="">Whether or not to show the Twitter tab</description>
+                <title i18n:translate="">Show Twitter</title>
+            </field>
             <field name="twitter_tab_heading" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Twitter tab heading</title>
+                <required>False</required>
             </field>
             <field name="twitter_rcpt" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Twitter recipient</title>
+                <required>False</required>
             </field>
             <field name="twitter_submit" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate="">Submit to Twitter button</description>
                 <title i18n:translate="">Submit to Twitter</title>
                 <required>False</required>
             </field>
         </fieldset>
         <fieldset name="email" label="Email"
                   description="Make some noise by sending an email">
+            <field name="show_email" type="zope.schema.Bool">
+                <description i18n:translate="">Whether or not to show the Email tab</description>
+                <title i18n:translate="">Show Email</title>
+            </field>
             <field name="email_tab_heading" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Email tab heading</title>
+                <required>False</required>
             </field>
             <field name="email_heading" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate="">For example: "Dear mrs. X"</description>
                 <title i18n:translate="">Email heading</title>
+                <required>False</required>
             </field>
             <field name="email_rcpt" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Email recipient</title>
+                <required>False</required>
             </field>
             <field name="email_subject" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Email subject</title>
+                <required>False</required>
             </field>
             <field name="email_submit" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate="">Send email button</description>
                 <title i18n:translate="">Send email</title>
                 <required>False</required>
             </field>
         </fieldset>
-        <fieldset name="post" label="Post"
+        <fieldset name="hardcopy" label="Hardcopy"
                   description="Make some noise on paper">
+            <field name="show_hardcopy" type="zope.schema.Bool">
+                <description i18n:translate="">Whether or not to show the Hardcopy tab</description>
+                <title i18n:translate="">Show Hardcopy</title>
+            </field>
             <field name="hardcopy_tab_heading" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Hardcopy tab heading</title>
+                <required>False</required>
             </field>
             <field name="hardcopy_rcpt" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate=""></description>
                 <title i18n:translate="">Hardcopy recipient</title>
+                <required>False</required>
             </field>
             <field name="hardcopy_submit" type="zope.schema.TextLine">
-                <description>
-                </description>
+                <description i18n:translate="">Send hardcopy button</description>
                 <title i18n:translate="">Send hardcopy</title>
                 <required>False</required>
             </field>

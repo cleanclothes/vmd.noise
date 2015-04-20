@@ -66,7 +66,7 @@ a.tweet_noise {
 }
 
 #noise-container .hidden {
-    display:none;
+    display: none;
 }
 
 #noise-container #email-text-div,
@@ -81,7 +81,32 @@ a.tweet_noise {
     font-size: larger;
 }
 
-.noise-menu,
-.tab h2 {
+#noise-container .noise-menu,
+#noise-container .tab h2 {
     text-align: center;
+}
+
+#noise-container .noise-body {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(#fff, #f7f7f7);
+    margin: 10px 0;
+    padding: 0 10px;
+    border-width: 0 2px 2px 2px;
+    border-style: solid;
+    border-color: #f7f7f7;
+    border-radius: 5px;
+}
+
+#noise-container a.readmore,
+#noise-container a.readmore:hover {
+    position: absolute;
+    top: 20px;
+    background-color: #505050;
+    color: #fff !important;
+    left: 45%;
+    right: 45%;
+    text-align: center;
+    padding: 5px;
 }

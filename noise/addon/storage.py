@@ -1,65 +1,27 @@
-import zope
-from zope.interface import implements
-from zope.annotation import factory
-from zope.annotation.interfaces import IAnnotations
 from persistent.list import PersistentList
-from Products.CMFCore.utils import getToolByName
-from zope.interface import Interface
-from noise.addon.models.noise import INoise
+from zope.annotation import IAnnotations
 
-KEY = "noise.addon.stats"
-
-
-class INoiseStats(Interface):
-    """
-    """
-
-    def add_twitter_noise(self):
-        """
-        """
-
-    def add_facebook_noise(self):
-        """
-        """
-
-    def add_email_noise(self):
-        """
-        """
-
-    def add_hardcopy_noise(self):
-        """
-        """
-
-    def status(self):
-        """
-        """
+TWITTER_KEY = "noise.addon.twitter"
+FACEBOOK_KEY = "noise.addon.facebook"
+EMAIL_KEY = "noise.addon.email"
+HARDCOPY_KEY = "noise.addon.hardcopy"
 
 
-class NoiseStats(object):
-    implements(INoiseStats)
-    zope.component.adapts(INoise)
+def setupAnnotations(context, key):
+    annotations = IAnnotations(context)
 
-    def add_twitter_noise(self, record):
-        if not hasattr(self,"_twitter_noise"):
-            self._twitter_noise = set()
-        self._twitter_noise.add(record)
+    if not key in annotations:
+        annotations[key] = PersistentList()
 
-    def add_facebook_noise(self, record):
-        self._facebook_noise.add(record)
+    return annotations
 
-    def add_email_noise(self, record):
-        self._email_noise.add(record)
 
-    def add_hardcopy_noise(self, record):
-        self._hardcopy_noise.add(record)
+def add_noise(context, key, record):
+    annotations = setupAnnotations(context, key)
+    annotations[key].append(record)
 
-    def status(self):
-        return [
-            len(self._twitter_noise),
-            len(self._facebook_noise),
-            len(self._email_noise),
-            len(self._hardcopy_noise)
-        ]
 
-# Register as adapter (you may do this in ZCML too)
-zope.component.provideAdapter(factory(NoiseStats, key=KEY))
+def status(context, key):
+    annotations = IAnnotations(context)
+
+    return annotations.get(key, [])

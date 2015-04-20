@@ -27,6 +27,7 @@ setup(name='noise.addon',
       install_requires=[
           'setuptools',
           'plone.app.dexterity [grok]',
+          'plone.api',
           'plone.namedfile [blobs]',
           'plone.app.relationfield',
           'plone.formwidget.contenttree'

@@ -1,13 +1,14 @@
 from five import grok
-
 from plone.dexterity.content import Item
-
 from plone.directives import form
+from zope.annotation import IAttributeAnnotatable
 from plone.namedfile.interfaces import IImageScaleTraversable
+from plone import api
+
+from .. import storage
 
 
 # Interface class; used to define content-type schema.
-
 class INoise(form.Schema, IImageScaleTraversable):
     """
     Make some noise
@@ -27,13 +28,21 @@ class INoise(form.Schema, IImageScaleTraversable):
 # in separate view classes.
 
 class Noise(Item):
-    grok.implements(INoise)
+    grok.implements(INoise, IAttributeAnnotatable)
 
     # Add your class methods and properties here
 
     @property
     def body_texts_list(self):
         return self.body_texts.split("\n")
+
+
+    @property
+    def total(self):
+        return len(storage.status(self, storage.TWITTER_KEY)) + len(
+            storage.status(self, storage.FACEBOOK_KEY)) + len(
+            storage.status(self, storage.EMAIL_KEY)) + len(
+            storage.status(self, storage.HARDCOPY_KEY))
 
 
 # View class
@@ -55,3 +64,38 @@ class NoiseView(grok.View):
     grok.name('view')
 
     # Add view methods here
+
+    def update(self):
+        """ Store the request form in annotations
+        """
+
+        str_form = str(self.request.form)
+
+        noisetype = self.request.get("noisetype")
+
+        if noisetype == "twitter":
+            storage.add_noise(self.context, storage.TWITTER_KEY, str_form)
+        elif noisetype == "facebook":
+            storage.add_noise(self.context, storage.FACEBOOK_KEY, str_form)
+        elif noisetype == "email":
+
+            try:
+                api.portal.send_email(
+                    recipient=self.request.get("email_rcpt"),
+                    sender="%s %s<%s>" % (
+                        self.request.get("firstname"),
+                        self.request.get("lastname"),
+                        self.request.get("email")
+                    ),
+                    subject=self.request.get("email_subject"),
+                    body=self.request.get("email_rcpt"),
+                )
+
+                storage.add_noise(self.context, storage.EMAIL_KEY, str_form)
+            except:
+                pass
+
+        elif noisetype == "hardcopy":
+            storage.add_noise(self.context, storage.HARDCOPY_KEY, str_form)
+
+        # TODO thank you page
