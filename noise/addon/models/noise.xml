@@ -133,7 +133,12 @@
                 <title i18n:translate="">Hardcopy tab heading</title>
                 <required>False</required>
             </field>
-            <field name="hardcopy_rcpt" type="zope.schema.TextLine">
+            <field name="hardcopy_heading" type="zope.schema.TextLine">
+                <description i18n:translate="">For example: "Dear mrs. X"</description>
+                <title i18n:translate="">Hardcopy heading</title>
+                <required>False</required>
+            </field>
+            <field name="hardcopy_rcpt" type="zope.schema.Text">
                 <description i18n:translate=""></description>
                 <title i18n:translate="">Hardcopy recipient</title>
                 <required>False</required>

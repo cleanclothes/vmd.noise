@@ -14,10 +14,14 @@
 <metal:main fill-slot="content-core">
     <metal:content-core define-macro="content-core">
 
+        <div id="no-javascript" i18n:translate="">PLEASE ENABLE JAVASCRIPT</div>
+
         <div id="noise-container" class="noise">
 
             <div class="noise-body" tal:condition="context/text">
-                <tal:block tal:content="structure context/text/output">Lorem ipsum</tal:block>
+                <tal:block tal:content="structure context/text/output">Lorem
+                    ipsum
+                </tal:block>
                 <a class="readmore" href="#" i18n:translate="">Lees meer</a>
             </div>
 
@@ -32,34 +36,38 @@
                     Used in noise.js
                 </tal:comment>
 
+                <span id="current_tab" tal:content="view/request/lp | nothing"/>
                 <span id="email_heading" tal:content="context/email_heading"/>
+                <span id="hardcopy_heading" tal:content="context/hardcopy_heading"/>
+                <span id="hardcopy_rcpt" tal:content="context/hardcopy_rcpt"/>
                 <span id="twitter_rcpt" tal:content="context/twitter_rcpt"/>
+                <span id="absolute_url" tal:content="context/absolute_url"/>
             </div>
 
             <ul class="noise-menu">
                 <span i18n:translate="">Je kunt je oproep ook doen via </span>
-                <li class="current" tal:condition="context/show_twitter">
+                <li class="noise-menu-twitter" tal:condition="context/show_twitter">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                     </span>
                     <a href="#twitter-tab" i18n:translate="">Twitter</a>
                 </li>
-                <li tal:condition="context/show_facebook">
+                <li class="noise-menu-facebook" tal:condition="context/show_facebook">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                     </span>
                     <a href="#facebook-tab" i18n:translate="">Facebook</a>
                 </li>
-                <li tal:condition="context/show_email">
+                <li class="noise-menu-email" tal:condition="context/show_email">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-stack-1x fa-inverse">@</i>
                     </span>
                     <a href="#email-tab" i18n:translate="">Email</a>
                 </li>
-                <li tal:condition="context/show_hardcopy">
+                <li class="noise-menu-hardcopy" tal:condition="context/show_hardcopy">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -68,27 +76,34 @@
                 </li>
             </ul>
 
-            <div class="tab">
-                <section id="twitter-tab" class="tab-content" tal:condition="context/show_twitter">
+            <div id="twitter-tab"
+                 class="tab" tal:condition="context/show_twitter">
+                <section class="tab-content">
 
                     <h2 tal:content="context/twitter_tab_heading"/>
 
                     <form id="twitter_noise_form" class="noise-form"
                           method="POST" action="">
 
-                        <div class="header" i18n:translate="">Kies je tekst:</div>
+                        <div class="header" i18n:translate="">Kies je tekst:
+                        </div>
 
                         <input type="hidden" id="noisetype" name="noisetype"
                                value="twitter"/>
 
-                        <label for="twitter-texts" i18n:translate="">
-                            <tal:rcpt tal:content="context/body_text_prefix">
-                                TIMMERFRANS, TERWIJL JE
-                            </tal:rcpt>
-                        </label>
-                        <select name="twitter-text" id="twitter-texts">
-                            <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
-                        </select>
+                        <div>
+                            <label for="twitter-texts" i18n:translate="">
+                                <tal:rcpt tal:content="context/body_text_prefix">
+                                    TIMMERFRANS, TERWIJL JE
+                                </tal:rcpt>
+                            </label>
+                            <select jsf:required="true"
+                                    name="twitter-text"
+                                    id="twitter-texts">
+                                <option value="">--</option>
+                                <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
+                            </select>
+                        </div>
 
                         <div class="header" i18n:translate="">Kies je
                             afbeelding:
@@ -106,17 +121,29 @@
                         <span id="tweet-counter"></span>
 
                         <div contenteditable="plaintext-only"
-                             id="tweet-text-div"></div>
+                             id="tweet-text-div"
+                             class="ink"></div>
                         <input type="hidden" id="tweet-text" name="tweet-text"/>
 
                         <div class="header" tal:content="context/keep_posted_heading"/>
 
+                        <input type="checkbox" name="keepposted"
+                               id="keepposted">
+                        <label for="keepposted" i18n:translate="">Ja graag! Hou
+                            me op de hoogte.</label>
+
                         <div>
-                            <div class="help" i18n:translate="">Please fill in your firstname
+                            <div class="help" i18n:translate="">Please fill in
+                                your firstname
                             </div>
-                            <div class="alert" i18n:translate="">Firstname is required</div>
+                            <div class="alert" i18n:translate="">Firstname is
+                                required
+                            </div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
-                            <input jsf:required="true" type="text"
+                            <input jsf:relevant="keepposted"
+                                   jsf:required="true"
+                                   jsf:constraint="firstname.match(/\w{3}\w*/)"
+                                   type="text"
                                    name="firstname"
                                    id="firstname">
                         </div>
@@ -125,24 +152,37 @@
                             <div class="help">Please fill in your lastname</div>
                             <div class="alert">Lastname is required</div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
-                            <input jsf:required="true" type="text"
+                            <input jsf:relevant="keepposted"
+                                   jsf:required="true"
+                                   jsf:constraint="lastname.match(/\w{3}\w*/)"
+                                   type="text"
                                    name="lastname"
                                    id="lastname">
                         </div>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in your email address
+                            <div class="help" i18n:translate="">Please fill in
+                                your email address
                             </div>
-                            <div class="alert" i18n:translate="">Email address is required</div>
+                            <div class="alert" i18n:translate="">Email address
+                                is required
+                            </div>
                             <label for="email" i18n:translate="">Email:</label>
-                            <input jsf:required="true" type="text" name="email"
+                            <input jsf:relevant="keepposted"
+                                   jsf:required="true"
+                                   jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
+                                   type="text" name="email"
                                    id="email">
                         </div>
                         <div>
-                            <div class="help" i18n:translate="">Please fill in your phonenumber
+                            <div class="help" i18n:translate="">Please fill in
+                                your phonenumber
                             </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
-                            <input type="text" name="phone" id="phone">
+                            <input jsf:relevant="keepposted"
+                                   type="text"
+                                   name="phone"
+                                   id="phone">
                         </div>
 
                         <a class="tweet_noise"
@@ -152,15 +192,17 @@
                 </section>
             </div>
 
-            <div class="tab">
-                <section id="facebook-tab" class="tab-content" tal:condition="context/show_facebook">
+            <div id="facebook-tab"
+                 class="tab" tal:condition="context/show_facebook">
+                <section class="tab-content">
 
                     <h2 tal:content="context/facebook_tab_heading"/>
 
                     <form id="facebook_noise_form" class="noise-form"
                           method="POST" action="">
 
-                        <div class="header" i18n:translate="">Kies je tekst:</div>
+                        <div class="header" i18n:translate="">Kies je tekst:
+                        </div>
 
                         <input type="hidden" id="noisetype" name="noisetype"
                                value="facebook"/>
@@ -168,27 +210,31 @@
                 </section>
             </div>
 
-            <div class="tab">
-                <section id="email-tab" class="tab-content" tal:condition="context/show_email">
+            <div id="email-tab" class="tab" tal:condition="context/show_email">
+                <section class="tab-content">
 
                     <h2 tal:content="context/email_tab_heading"/>
 
                     <form id="email_noise_form" class="noise-form"
                           method="POST" action="">
 
-                        <div class="header" i18n:translate="">Kies je tekst:</div>
+                        <div class="header" i18n:translate="">Kies je tekst:
+                        </div>
 
                         <input type="hidden" id="noisetype" name="noisetype"
                                value="email"/>
 
-                        <label for="email-texts" i18n:translate="">
-                            <tal:rcpt tal:content="context/body_text_prefix">
-                                TIMMERFRANS, TERWIJL JE
-                            </tal:rcpt>
-                        </label>
-                        <select name="email-text" id="email-texts">
-                            <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
-                        </select>
+                        <div>
+                            <label for="email-texts" i18n:translate="">
+                                <tal:rcpt tal:content="context/body_text_prefix">
+                                    TIMMERFRANS, TERWIJL JE
+                                </tal:rcpt>
+                            </label>
+                            <select jsf:required="true" name="email-text" id="email-texts">
+                                <option value="">--</option>
+                                <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
+                            </select>
+                        </div>
 
                         <div id="email-text-header"
                              class="header" i18n:translate="">Voeg iets
@@ -196,15 +242,20 @@
                         </div>
 
                         <div contenteditable="plaintext-only"
-                             id="email-text-div"></div>
+                             id="email-text-div"
+                             class="ink"></div>
                         <input type="hidden" id="email_body" name="email_body"/>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in your firstname
+                            <div class="help" i18n:translate="">Please fill in
+                                your firstname
                             </div>
-                            <div class="alert" i18n:translate="">Firstname is required</div>
+                            <div class="alert" i18n:translate="">Firstname is
+                                required
+                            </div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
-                            <input jsf:required="true" type="text"
+                            <input jsf:constraint="firstname.match(/\w{3}\w*/)"
+                                   type="text"
                                    name="firstname"
                                    id="firstname">
                         </div>
@@ -213,21 +264,27 @@
                             <div class="help">Please fill in your lastname</div>
                             <div class="alert">Lastname is required</div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
-                            <input jsf:required="true" type="text"
+                            <input jsf:constraint="lastname.match(/\w{3}\w*/)"
+                                   type="text"
                                    name="lastname"
                                    id="lastname">
                         </div>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in your email address
+                            <div class="help" i18n:translate="">Please fill in
+                                your email address
                             </div>
-                            <div class="alert" i18n:translate="">Email address is required</div>
+                            <div class="alert" i18n:translate="">Email address
+                                is required
+                            </div>
                             <label for="email" i18n:translate="">Email:</label>
-                            <input jsf:required="true" type="text" name="email"
+                            <input jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
+                                   type="text" name="email"
                                    id="email">
                         </div>
                         <div>
-                            <div class="help" i18n:translate="">Please fill in your phonenumber
+                            <div class="help" i18n:translate="">Please fill in
+                                your phonenumber
                             </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
                             <input type="text" name="phone" id="phone">
@@ -235,11 +292,15 @@
 
                         <div class="header" tal:content="context/keep_posted_heading"/>
 
-                        <input type="checkbox" name="keepposted" id="keepposted">
-                        <label for="keepposted" i18n:translate="">Ja graag! Hou me op de hoogte.</label>
+                        <input type="checkbox" name="keepposted"
+                               id="keepposted">
+                        <label for="keepposted" i18n:translate="">Ja graag! Hou
+                            me op de hoogte.</label>
 
-                        <input type="hidden" name="email_rcpt" id="email_rcpt" tal:attributes="value context/email_rcpt"/>
-                        <input type="hidden" name="email_subject" id="email_subject" tal:attributes="value context/email_subject"/>
+                        <input type="hidden" name="email_rcpt"
+                               id="email_rcpt" tal:attributes="value context/email_rcpt"/>
+                        <input type="hidden" name="email_subject"
+                               id="email_subject" tal:attributes="value context/email_subject"/>
 
                         <p>
                             <a class="email_noise"
@@ -249,20 +310,152 @@
                 </section>
             </div>
 
-            <div class="tab">
-                <section id="hardcopy-tab" class="tab-content" tal:condition="context/show_hardcopy">
+            <div id="hardcopy-tab"
+                 class="tab" tal:condition="context/show_hardcopy">
+                <section class="tab-content">
 
                     <h2 tal:content="context/hardcopy_tab_heading"/>
 
                     <form id="hardcopy_noise_form" class="noise-form"
                           method="POST" action="">
 
+                        <div class="header" i18n:translate="">Kies je tekst:
+                        </div>
 
-                        <div class="header" i18n:translate="">Kies je tekst:</div>
+                        <div>
+                            <label for="hardcopy-texts" i18n:translate="">
+                                <tal:rcpt tal:content="context/body_text_prefix">
+                                    TIMMERFRANS, TERWIJL JE
+                                </tal:rcpt>
+                            </label>
+                            <select jsf:required="true" name="hardcopy-text" id="hardcopy-texts">
+                                <option value="">--</option>
+                                <option tal:repeat="txt context/body_texts_list" tal:content="string:${txt} "></option>
+                            </select>
+                        </div>
+
+                        <div id="hardcopy-text-header"
+                             class="header" i18n:translate="">Voeg iets
+                            persoonlijks toe als je wilt:
+                        </div>
+
+                        <div contenteditable="true"
+                             id="hardcopy-text-div"
+                             class="ink"></div>
+                        <input type="hidden" id="hardcopy_body"
+                               name="hardcopy_body"/>
 
                         <input type="hidden" id="noisetype" name="noisetype"
                                value="hardcopy"/>
+
+                        <div>
+                            <div class="help" i18n:translate="">Please fill in
+                                your firstname
+                            </div>
+                            <div class="alert" i18n:translate="">Firstname is
+                                required
+                            </div>
+                            <label for="firstname" i18n:translate="">Firstname:</label>
+                            <input jsf:constraint="firstname.match(/\w{3}\w*/)"
+                                   type="text"
+                                   name="firstname"
+                                   id="firstname">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your lastname</div>
+                            <div class="alert">Lastname is required</div>
+                            <label for="lastname" i18n:translate="">Lastname:</label>
+                            <input jsf:constraint="lastname.match(/\w{3}\w*/)"
+                                   type="text"
+                                   name="lastname"
+                                   id="lastname">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your street and
+                                number
+                            </div>
+                            <div class="alert">Street and number are required
+                            </div>
+                            <label for="address" i18n:translate="">Street and
+                                number:</label>
+                            <input jsf:constraint="address.match(/\w{3}\w*/)"
+                                   type="text"
+                                   name="address"
+                                   id="address">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your zipcode
+                            </div>
+                            <div class="alert">Zipcode is required
+                            </div>
+                            <label for="zipcode" i18n:translate="">Zipcode:</label>
+                            <input jsf:constraint="zipcode.match(/\d{4}\D{2}/)"
+                                   type="text"
+                                   name="zipcode"
+                                   id="zipcode"
+                                   size="6"
+                                   maxlength="6">
+                        </div>
+
+                        <div>
+                            <div class="help">Please fill in your city
+                            </div>
+                            <div class="alert">City is required
+                            </div>
+                            <label for="city" i18n:translate="">City:</label>
+                            <input jsf:constraint="city.match(/\w{3}\w*/)"
+                                   type="text"
+                                   name="city"
+                                   id="city">
+                        </div>
+
+                        <div>
+                            <div class="help" i18n:translate="">Please fill in
+                                your phonenumber
+                            </div>
+                            <label for="phone" i18n:translate="">Phonenumber:</label>
+                            <input type="text" name="phone" id="phone">
+                        </div>
+
+                        <div class="header" tal:content="context/keep_posted_heading"/>
+
+                        <input type="checkbox" name="keepposted"
+                               id="keepposted">
+                        <label for="keepposted" i18n:translate="">Ja graag! Hou
+                            me op de hoogte.</label>
+
+                        <div>
+                            <div class="help" i18n:translate="">Please fill in
+                                your email address
+                            </div>
+                            <div class="alert" i18n:translate="">Email address
+                                is required
+                            </div>
+                            <label for="email" i18n:translate="">Email:</label>
+                            <input jsf:relevant="keepposted"
+                                   jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
+                                   type="text"
+                                   name="email"
+                                   id="email">
+                        </div>
+
+                        <p>
+                            <a class="hardcopy_noise"
+                               href="#" tal:content="python:context.hardcopy_submit or 'submit'"/>
+                        </p>
                     </form>
+                </section>
+
+                <section id="printme">
+                    <div id="pr-rcpt"></div>
+                    <div id="pr-body"></div>
+                    <div><span id="pr-firstname"></span> <span id="pr-lastname"> </span></div>
+                    <div id="pr-address"></div>
+                    <div><span id="pr-zipcode"> </span> <span id="pr-city"> </span></div>
+                    <div id="pr-phonenumber"></div>
                 </section>
             </div>
         </div>

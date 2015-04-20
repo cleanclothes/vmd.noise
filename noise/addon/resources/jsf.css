@@ -10,27 +10,45 @@
 }
 
 #noise-container fieldset {
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
-#noise-container .error,
-#noise-container .error input,
-#noise-container .error select {
-    border-color: #ff0000;
+#noise-container .constraint-violation {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    font-size: 1em;
 }
 
-#noise-container .alert {
-    display: none;
-    color: #ff0000
+#noise-container .error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    font-size: 1em;
+}
+
+#noise-container .irrelevant.error,
+#noise-container .irrelevant.error input,
+#noise-container .irrelevant.error select {
+    border-color: #c0c0c0;
 }
 
 #noise-container .error .alert {
-    display: block
+    display: block;
 }
 
+#noise-container .irrelevant .alert,
+#noise-container .alert {
+    display: none;
+}
+
+#noise-container .constraint-violation .help {
+    display: block;
+}
+
+#noise-container .irrelevant .help,
 #noise-container .help {
-    color: #a0a0a0;
-    font-size: 90%
+    display: none;
 }
 
 #noise-container .irrelevant {

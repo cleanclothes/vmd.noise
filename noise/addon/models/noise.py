@@ -1,3 +1,4 @@
+from Products.CMFDefault.utils import checkEmailAddress
 from five import grok
 from plone.dexterity.content import Item
 from plone.directives import form
@@ -73,12 +74,25 @@ class NoiseView(grok.View):
         noisetype = self.request.get("noisetype")
 
         if noisetype == "twitter":
+
+            # Twitter form is only submitted after a succesful tweet. We
+            # don't need to worry about anything else here.
             storage.add_noise(self.context, storage.TWITTER_KEY, str_form)
+
         elif noisetype == "facebook":
+
             storage.add_noise(self.context, storage.FACEBOOK_KEY, str_form)
+
         elif noisetype == "email":
 
+            # E-mail sending and storage goes here
+
             try:
+
+                # double check on valid email addresses
+                checkEmailAddress(self.request.get("email"))
+                checkEmailAddress(self.request.get("email_rcpt"))
+
                 api.portal.send_email(
                     recipient=self.request.get("email_rcpt"),
                     sender="%s %s<%s>" % (
@@ -87,7 +101,7 @@ class NoiseView(grok.View):
                         self.request.get("email")
                     ),
                     subject=self.request.get("email_subject"),
-                    body=self.request.get("email_rcpt"),
+                    body=self.request.get("email_body"),
                 )
 
                 storage.add_noise(self.context, storage.EMAIL_KEY, str_form)
@@ -95,6 +109,7 @@ class NoiseView(grok.View):
                 pass
 
         elif noisetype == "hardcopy":
+
             storage.add_noise(self.context, storage.HARDCOPY_KEY, str_form)
 
-        # TODO thank you page
+            # TODO thank you page

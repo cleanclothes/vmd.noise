@@ -1,3 +1,8 @@
+#noise-container,
+#printme {
+    display: none;
+}
+
 #noise-container .header {
     background-color: #f7f7f7;
     color: #505050;
@@ -36,12 +41,8 @@
     text-decoration: none;
 }
 
-#noise-container .tab-content {
+#noise-container .tab {
     display: none;
-}
-
-#noise-container #twitter-tab {
-    display: block;
 }
 
 /* other */
@@ -69,8 +70,7 @@ a.tweet_noise {
     display: none;
 }
 
-#noise-container #email-text-div,
-#noise-container #tweet-text-div {
+#noise-container .ink {
     color: darkblue;
     min-height: 50px;
 }
@@ -109,4 +109,23 @@ a.tweet_noise {
     right: 45%;
     text-align: center;
     padding: 5px;
+}
+
+@media print {
+
+    .noise-body,
+    .noise-menu,
+    .noise-counter,
+    section.tab-content,
+    h1 {
+        display: none;
+    }
+
+    section#printme {
+        display: block;
+    }
+
+    section#printme #pr-body {
+        margin: 8em 0;
+    }
 }
