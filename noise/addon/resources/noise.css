@@ -97,11 +97,6 @@ a.tweet_noise {
     overflow: hidden;
     background: linear-gradient(to top, rgba(255,255,255,0) 0%, #fff 100%);
     margin: 10px 0;
-    padding: 0 10px;
-    border-width: 0 2px 2px 2px;
-    border-style: solid;
-    border-color: #f7f7f7;
-    border-radius: 5px;
 }
 
 #noise-container a.readmore,
