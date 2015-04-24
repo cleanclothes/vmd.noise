@@ -156,7 +156,12 @@ noise = {
             // Compose the tweet if there are no errors
             if( ($("#twitter_noise_form .error").length + $("#twitter_noise_form .constraint-violation").not(".irrelevant").length) == 0 ) {
                 $("#tweet-text").val($("#tweet-text-div").text().substring(0, 119) + " " + $("#absolute_url").text());
-                $(this).attr("href", "https://twitter.com/intent/tweet?text=" + $("#tweet-text").val());
+                $(this).attr(
+                    "href", "https://twitter.com/intent/tweet?text=" +
+                    $("#tweet-text").val() +
+                    "&related=" +
+                    $("#twitter_related").text() +
+                    "&in-reply-to=" + $("#twitter_in_reply_to").text());
             } else {
                 e.preventDefault();
             }

@@ -50,6 +50,8 @@
                 <span id="hardcopy_heading" tal:content="structure context/hardcopy_heading"/>
                 <span id="hardcopy_rcpt" tal:content="context/hardcopy_rcpt/raw | context/hardcopy"/>
                 <span id="twitter_rcpt" tal:content="context/twitter_rcpt"/>
+                <span id="twitter_related" tal:content="context/twitter_related"/>
+                <span id="twitter_in_reply_to" tal:content="context/twitter_in_reply_to"/>
                 <span id="absolute_url" tal:content="context/absolute_url"/>
                 <span id="thank_you_page" tal:content="context/thank_you_page"/>
             </div>

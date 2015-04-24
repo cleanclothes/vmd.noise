@@ -65,22 +65,22 @@
                   description="Make some noise on Facebook">
             <field name="show_facebook" type="zope.schema.Bool">
                 <description i18n:translate="">Whether or not to show the Facebook tab</description>
-                <title i18n:translate="">Show Facebook</title>
+                <title i18n:translate="">Facebook medium</title>
             </field>
             <field name="facebook_tab_heading" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Facebook tab heading</title>
+                <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
             <field name="facebook_rcpt" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Facebook recipient</title>
+                <title i18n:translate="">Recipient</title>
                 <required>False</required>
             </field>
             <field name="facebook_submit" type="zope.schema.TextLine">
                 <description i18n:translate="">Submit to Facebook button
                 </description>
-                <title i18n:translate="">Submit to Facebook</title>
+                <title i18n:translate="">Submit button</title>
                 <required>False</required>
             </field>
         </fieldset>
@@ -88,21 +88,32 @@
                   description="Make some noise on Twitter">
             <field name="show_twitter" type="zope.schema.Bool">
                 <description i18n:translate="">Whether or not to show the Twitter tab</description>
-                <title i18n:translate="">Show Twitter</title>
+                <title i18n:translate="">Twitter medium</title>
             </field>
             <field name="twitter_tab_heading" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Twitter tab heading</title>
+                <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
             <field name="twitter_rcpt" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Twitter recipient</title>
+                <title i18n:translate="">Recipient</title>
                 <required>False</required>
             </field>
+            <field name="twitter_related" type="zope.schema.TextLine">
+                <description i18n:translate="">web intent related parameter</description>
+                <title i18n:translate="">Related</title>
+                <required>False</required>
+            </field>
+            <field name="twitter_in_reply_to" type="zope.schema.TextLine">
+                <description i18n:translate="">web intent in_reply_to parameter</description>
+                <title i18n:translate="">In reply to:</title>
+                <required>False</required>
+            </field>
+
             <field name="twitter_submit" type="zope.schema.TextLine">
                 <description i18n:translate="">Submit to Twitter button</description>
-                <title i18n:translate="">Submit to Twitter</title>
+                <title i18n:translate="">Submit button</title>
                 <required>False</required>
             </field>
         </fieldset>
@@ -110,11 +121,11 @@
                   description="Make some noise by sending an email">
             <field name="show_email" type="zope.schema.Bool">
                 <description i18n:translate="">Whether or not to show the Email tab</description>
-                <title i18n:translate="">Show Email</title>
+                <title i18n:translate="">Email medium</title>
             </field>
             <field name="email_tab_heading" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Email tab heading</title>
+                <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
             <field name="email_heading" type="zope.schema.TextLine">
@@ -124,17 +135,17 @@
             </field>
             <field name="email_rcpt" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Email recipient</title>
+                <title i18n:translate="">Recipient</title>
                 <required>False</required>
             </field>
             <field name="email_subject" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Email subject</title>
+                <title i18n:translate="">Subject</title>
                 <required>False</required>
             </field>
             <field name="email_submit" type="zope.schema.TextLine">
                 <description i18n:translate="">Send email button</description>
-                <title i18n:translate="">Send email</title>
+                <title i18n:translate="">Email button</title>
                 <required>False</required>
             </field>
         </fieldset>
@@ -142,11 +153,11 @@
                   description="Make some noise on paper">
             <field name="show_hardcopy" type="zope.schema.Bool">
                 <description i18n:translate="">Whether or not to show the Hardcopy tab</description>
-                <title i18n:translate="">Show Hardcopy</title>
+                <title i18n:translate="">Hardcopy medium</title>
             </field>
             <field name="hardcopy_tab_heading" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Hardcopy tab heading</title>
+                <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
             <field name="hardcopy_heading" type="zope.schema.TextLine">
@@ -156,12 +167,12 @@
             </field>
             <field name="hardcopy_rcpt" type="plone.app.textfield.RichText">
                 <description i18n:translate=""></description>
-                <title i18n:translate="">Hardcopy recipient</title>
+                <title i18n:translate="">Recipient</title>
                 <required>False</required>
             </field>
             <field name="hardcopy_submit" type="zope.schema.TextLine">
                 <description i18n:translate="">Send hardcopy button</description>
-                <title i18n:translate="">Send hardcopy</title>
+                <title i18n:translate="">Submit button</title>
                 <required>False</required>
             </field>
         </fieldset>
