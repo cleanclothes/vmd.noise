@@ -16,7 +16,7 @@
 
         <div id="no-javascript" i18n:translate="">PLEASE ENABLE JAVASCRIPT</div>
 
-        <div id="noise-container" class="noise">
+        <div id="noise-container" class="noise need_some_room">
 
             <tal:background tal:condition="context/noise_background"
                     tal:define="img context/noise_background">
@@ -147,14 +147,17 @@
 
                             <input type="checkbox" name="keepposted"
                                    id="keepposted">
-                            <label for="keepposted" i18n:translate="">Ja graag! Hou
+                            <label for="keepposted" i18n:translate="">Ja graag!
+                                Hou
                                 me op de hoogte.</label>
 
                             <div>
-                                <div class="help" i18n:translate="">Please fill in
+                                <div class="help" i18n:translate="">Please fill
+                                    in
                                     your firstname
                                 </div>
-                                <div class="alert" i18n:translate="">Firstname is
+                                <div class="alert" i18n:translate="">Firstname
+                                    is
                                     required
                                 </div>
                                 <label for="firstname" i18n:translate="">Firstname:</label>
@@ -204,8 +207,10 @@
                                    id="phone">
                         </div>
 
-                        <a class="tweet_noise"
-                           href="#" tal:content="python:context.twitter_submit or 'submit'"/>
+                        <a class="tweet_noise btn btn-green"
+                           href="#">
+                            <span tal:content="python:context.twitter_submit or 'submit'"/>
+                        </a>
 
                     </form>
                 </section>
@@ -323,8 +328,10 @@
                                id="email_subject" tal:attributes="value context/email_subject"/>
 
                         <p>
-                            <a class="email_noise"
-                               href="#" tal:content="python:context.email_submit or 'submit'"/>
+                            <a class="email_noise btn btn-green"
+                               href="#">
+                                <span tal:content="python:context.email_submit or 'submit'"/>
+                            </a>
                         </p>
                     </form>
                 </section>
@@ -464,8 +471,10 @@
                         </div>
 
                         <p>
-                            <a class="hardcopy_noise"
-                               href="#" tal:content="python:context.hardcopy_submit or 'submit'"/>
+                            <a class="hardcopy_noise btn btn-green"
+                               href="#">
+                                <span tal:content="python:context.hardcopy_submit or 'submit'"/>
+                            </a>
                         </p>
                     </form>
                 </section>

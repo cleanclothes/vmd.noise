@@ -64,8 +64,6 @@
 #content a.tweet_noise,
 a.email_noise,
 a.tweet_noise {
-    padding: 10px;
-    background: #f7f7f7;
     display: inline-block;
     border-bottom: none;
 }
