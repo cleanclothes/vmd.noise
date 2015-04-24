@@ -43,12 +43,12 @@
         </field>
 
         <field name="opt_in_newsletter_active" type="zope.schema.Bool">
-            <description i18n:translate="">Whether or not to allow a user to subscribe to the newsletter"</description>
+            <description i18n:translate="">Whether or not to allow a user to subscribe to the newsletter</description>
             <title i18n:translate="">Opt in newsletter</title>
         </field>
 
         <field name="thank_you_page" type="zope.schema.Text">
-            <description i18n:translate="">A url to redirect to if necessary"</description>
+            <description i18n:translate="">A url to redirect to if necessary</description>
             <title i18n:translate="">Thank you page</title>
         </field>
 

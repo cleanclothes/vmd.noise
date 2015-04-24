@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-19 20:49+0000\n"
+"POT-Creation-Date: 2015-04-24 15:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,10 @@ msgstr ""
 "Domain: noise.addon\n"
 
 #: ../models/noise.xml
+msgid "A url to redirect to if necessary"
+msgstr "Een url waarnaar ge-redirect wordt, indien nodig"
+
+#: ../models/noise.xml
 msgid "Body text prefix"
 msgstr "Voorlooptekst bij hoofdtekst"
 
@@ -25,55 +29,51 @@ msgstr "Voorlooptekst bij hoofdtekst"
 msgid "Body texts"
 msgstr "Hoofdtekst"
 
-#: ../models/noise_templates/noiseview.pt:101
+#: ../models/noise_templates/noiseview.pt:438
+msgid "City:"
+msgstr "Stad:"
+
+#: ../models/noise_templates/noiseview.pt:137
 msgid "Dit is je Tweet!"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:58
+#: ../models/noise_templates/noiseview.pt:80
 msgid "Email"
 msgstr "E-mail"
 
-#: ../models/noise_templates/noiseview.pt:134
+#: ../models/noise_templates/noiseview.pt:191
 msgid "Email address is required"
 msgstr "E-mailadres is verplicht"
+
+#: ../models/noise.xml
+msgid "Email button"
+msgstr "E-mail knop"
 
 #: ../models/noise.xml
 msgid "Email heading"
 msgstr "E-mail aanhef"
 
 #: ../models/noise.xml
-msgid "Email recipient"
-msgstr "E-mail ontvanger"
+msgid "Email medium"
+msgstr "E-mail medium"
 
-#: ../models/noise.xml
-msgid "Email subject"
-msgstr "E-mail onderwerp"
-
-#: ../models/noise.xml
-msgid "Email tab heading"
-msgstr "E-mail tab titel"
-
-#: ../models/noise_templates/noiseview.pt:135
+#: ../models/noise_templates/noiseview.pt:194
 msgid "Email:"
 msgstr "E-mail:"
 
-#: ../models/noise_templates/noiseview.pt:51
+#: ../models/noise_templates/noiseview.pt:73
 msgid "Facebook"
 msgstr ""
 
 #: ../models/noise.xml
-msgid "Facebook recipient"
-msgstr "Facebook ontvanger"
+msgid "Facebook medium"
+msgstr ""
 
-#: ../models/noise.xml
-msgid "Facebook tab heading"
-msgstr "Facebook tab titel"
-
-#: ../models/noise_templates/noiseview.pt:115
+#: ../models/noise_templates/noiseview.pt:161
 msgid "Firstname is required"
 msgstr "Voornaam is verplicht"
 
-#: ../models/noise_templates/noiseview.pt:116
+#: ../models/noise_templates/noiseview.pt:165
 msgid "Firstname:"
 msgstr "Voornaam:"
 
@@ -89,17 +89,21 @@ msgstr "Bijvoorbeeld: \"wil je weten hoe X reageert?\""
 msgid "General intro"
 msgstr "Algemene intro"
 
-#: ../models/noise_templates/noiseview.pt:65
+#: ../models/noise_templates/noiseview.pt:87
 msgid "Hardcopy"
 msgstr "Brief"
 
 #: ../models/noise.xml
-msgid "Hardcopy recipient"
-msgstr "Brief ontvanger"
+msgid "Hardcopy heading"
+msgstr "Brief aanhef"
 
 #: ../models/noise.xml
-msgid "Hardcopy tab heading"
-msgstr "Brief tab titel"
+msgid "Hardcopy medium"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "Header image"
+msgstr "Achtergrond"
 
 #: ../models/noise.xml
 msgid "Heading of keep posted part"
@@ -109,27 +113,31 @@ msgstr "Tekst van \"hou me op de hoogte\" onderdeel"
 msgid "Images"
 msgstr "Afbeeldingen"
 
-#: ../models/noise_templates/noiseview.pt:238
+#: ../models/noise.xml
+msgid "In reply to:"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:152
 msgid "Ja graag! Hou me op de hoogte."
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:38
+#: ../models/noise_templates/noiseview.pt:60
 msgid "Je kunt je oproep ook doen via"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:91
+#: ../models/noise_templates/noiseview.pt:120
 msgid "Kies je afbeelding:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:77
+#: ../models/noise_templates/noiseview.pt:100
 msgid "Kies je tekst:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:125
+#: ../models/noise_templates/noiseview.pt:178
 msgid "Lastname:"
 msgstr "Achternaam:"
 
-#: ../models/noise_templates/noiseview.pt:21
+#: ../models/noise_templates/noiseview.pt:34
 msgid "Lees meer"
 msgstr ""
 
@@ -141,19 +149,27 @@ msgstr ""
 msgid "Noise"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:142
+#: ../models/noise.xml
+msgid "Opt in newsletter"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:17
+msgid "PLEASE ENABLE JAVASCRIPT"
+msgstr "ACTIVEER JAVASCRIPT"
+
+#: ../models/noise_templates/noiseview.pt:205
 msgid "Phonenumber:"
 msgstr "Telefoonnummer"
 
-#: ../models/noise_templates/noiseview.pt:132
+#: ../models/noise_templates/noiseview.pt:188
 msgid "Please fill in your email address"
 msgstr "Vul a.u.b een e-mailadres in"
 
-#: ../models/noise_templates/noiseview.pt:113
+#: ../models/noise_templates/noiseview.pt:157
 msgid "Please fill in your firstname"
 msgstr "Vul a.u.b. een voornaam in"
 
-#: ../models/noise_templates/noiseview.pt:140
+#: ../models/noise_templates/noiseview.pt:202
 msgid "Please fill in your phonenumber"
 msgstr "Vul a.u.b. een telefoonnummer in"
 
@@ -162,72 +178,64 @@ msgid "Prefix to the selected body text"
 msgstr "Voorloop bij de gekozen tekst"
 
 #: ../models/noise.xml
-msgid "Send email"
-msgstr "Verstuur e-mail"
+msgid "Recipient"
+msgstr "Ontvanger"
+
+#: ../models/noise.xml
+msgid "Related"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Send email button"
 msgstr "Verstuur e-mail knop"
 
 #: ../models/noise.xml
-msgid "Send hardcopy"
-msgstr "Download en print de brief"
-
-#: ../models/noise.xml
 msgid "Send hardcopy button"
 msgstr "Verstuur brief knop"
-
-#: ../models/noise.xml
-msgid "Show Email"
-msgstr "E-mail tab actief"
-
-#: ../models/noise.xml
-msgid "Show Facebook"
-msgstr "Facebook tab actief"
-
-#: ../models/noise.xml
-msgid "Show Hardcopy"
-msgstr "Brief tab actief"
-
-#: ../models/noise.xml
-msgid "Show Twitter"
-msgstr "Twitter tab actief"
 
 #: ../models/noise.xml
 msgid "Show counter"
 msgstr "Toon teller"
 
+#: ../models/noise_templates/noiseview.pt:411
+msgid "Street and number:"
+msgstr "Straat en huisnummer"
+
 #: ../models/noise.xml
-msgid "Submit to Facebook"
-msgstr "Verstuur je oproep"
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: ../models/noise.xml
+msgid "Submit button"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Submit to Facebook button"
 msgstr "Verstuur naar Facebook knop"
 
 #: ../models/noise.xml
-msgid "Submit to Twitter"
-msgstr "Verstuur je oproep"
-
-#: ../models/noise.xml
 msgid "Submit to Twitter button"
 msgstr "Verstuur naar Twitter knop"
+
+#: ../models/noise.xml
+msgid "Tab heading"
+msgstr "Tab tekst"
 
 #: ../models/noise.xml
 msgid "Text"
 msgstr "Hoofdtekst"
 
-#: ../models/noise_templates/noiseview.pt:44
+#: ../models/noise.xml
+msgid "Thank you page"
+msgstr "Bedanktpagina"
+
+#: ../models/noise_templates/noiseview.pt:66
 msgid "Twitter"
 msgstr ""
 
 #: ../models/noise.xml
-msgid "Twitter recipient"
-msgstr "Twitter ontvanger"
-
-#: ../models/noise.xml
-msgid "Twitter tab heading"
-msgstr "Twitter tab ontvanger"
+msgid "Twitter medium"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "User selectable images"
@@ -237,27 +245,43 @@ msgstr "Door de gebruiker te kiezen afbeeldingen"
 msgid "User selectable predefined body texts (one per line)"
 msgstr "Door de gebruiker te kiezen teksten (een per regel)"
 
-#: ../models/noise_templates/noiseview.pt:192
+#: ../models/noise_templates/noiseview.pt:266
 msgid "Voeg iets persoonlijks toe als je wilt:"
 msgstr ""
 
 #: ../models/noise.xml
+msgid "Whether or not to allow a user to subscribe to the newsletter"
+msgstr "Of een gebruiker zich kan inschrijven voor de nieuwsbrief"
+
+#: ../models/noise.xml
 msgid "Whether or not to show the Email tab"
-msgstr "Is de e-mail tab actief"
+msgstr "Is de e-mail tab actief?"
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Facebook tab"
-msgstr "Is de Facebook tab actief"
+msgstr "Is de Facebook tab actief?"
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Hardcopy tab"
-msgstr "Is de brief tab actief"
+msgstr "Is de brief tab actief?"
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Twitter tab"
-msgstr "Is de Twitter tab actief"
+msgstr "Is de Twitter tab actief?"
 
 #: ../models/noise.xml
 msgid "Whether or not to show the total amount of noise items created"
 msgstr "Of het totaal aantal verstuurde items getoond wordt"
+
+#: ../models/noise_templates/noiseview.pt:424
+msgid "Zipcode:"
+msgstr "Postcode (formaat: 1234AB)"
+
+#: ../models/noise.xml
+msgid "web intent in_reply_to parameter"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "web intent related parameter"
+msgstr ""
 
