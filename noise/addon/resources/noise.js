@@ -41,7 +41,7 @@ noise = {
 
         $(".noise .email_noise").on("click", function (e) {
             e.preventDefault();
-            $("#email_body").val($("#email-text-div").text());
+            $("#email_body").val($("#email-text-div").html());
             $("#email_noise_form").submit();
         });
     },
@@ -65,16 +65,14 @@ noise = {
             $("#printme #pr-city").text($("#hardcopy_noise_form #city").val());
             $("#printme #pr-phonenumber").text($("#hardcopy_noise_form #phonenumber").val());
 
-            //$("#hardcopy_noise_form").submit();
+            $("#hardcopy_noise_form").submit();
 
             if( $("#hardcopy_noise_form .error").length + $("#hardcopy_noise_form .constraint-violation").not(".irrelevant").length == 0 ) {
 
                 // no more errors: print the document
 
-                //var printcss = "<link rel='stylesheet' type='text/css' media='print' href='++resource++noise.addon/print.css'/>";
                 var iframe   = document.createElement('iframe');
                 document.body.appendChild(iframe);
-                //iframe.contentWindow.document.head.innerHTML = printcss;
                 iframe.contentWindow.document.body.innerHTML = $('#print-container').html();
                 var script = document.createElement("script");
 
