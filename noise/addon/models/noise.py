@@ -94,6 +94,8 @@ class NoiseView(grok.View):
                 checkEmailAddress(self.request.get("email"))
                 checkEmailAddress(self.request.get("email_rcpt"))
 
+                body = self.request.get("email_body").replace("<br/>", "\n")
+
                 api.portal.send_email(
                     recipient=self.request.get("email_rcpt"),
                     sender="%s %s<%s>" % (
@@ -102,7 +104,7 @@ class NoiseView(grok.View):
                         self.request.get("email")
                     ),
                     subject=self.request.get("email_subject"),
-                    body=self.request.get("email_body"),
+                    body=body,
                 )
 
                 storage.add_noise(self.context, storage.EMAIL_KEY, str_form)
