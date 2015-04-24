@@ -159,7 +159,7 @@ msgstr "ACTIVEER JAVASCRIPT"
 
 #: ../models/noise_templates/noiseview.pt:205
 msgid "Phonenumber:"
-msgstr "Telefoonnummer"
+msgstr "Telefoonnummer:"
 
 #: ../models/noise_templates/noiseview.pt:188
 msgid "Please fill in your email address"
