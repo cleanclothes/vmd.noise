@@ -7,6 +7,12 @@
 
     <schema>
 
+        <field name="noise_background" type="plone.namedfile.field.NamedBlobImage">
+            <description/>
+            <required>False</required>
+            <title i18n:translate="">Header image</title>
+        </field>
+
         <field name="text"
                type="plone.app.textfield.RichText"
                indexer:searchable="true"
@@ -34,6 +40,16 @@
         <field name="keep_posted_heading" type="zope.schema.Text">
             <description i18n:translate="">For example: "do you want to know how X responds?"</description>
             <title i18n:translate="">Heading of keep posted part</title>
+        </field>
+
+        <field name="opt_in_newsletter_active" type="zope.schema.Bool">
+            <description i18n:translate="">Whether or not to allow a user to subscribe to the newsletter"</description>
+            <title i18n:translate="">Opt in newsletter</title>
+        </field>
+
+        <field name="thank_you_page" type="zope.schema.Text">
+            <description i18n:translate="">A url to redirect to if necessary"</description>
+            <title i18n:translate="">Thank you page</title>
         </field>
 
         <field name="images" type="plone.app.relationfield.RelationList">

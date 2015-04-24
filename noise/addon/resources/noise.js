@@ -6,11 +6,7 @@ noise = {
         $("#noise-container").show();
 
         // Activate JSForms for client side form validation
-        $(".noise-form").jsf({
-            selectInput: function (elt) {
-                return elt.parent();
-            }
-        });
+        $(".noise-form").jsf();
 
         // Landingpages
 
@@ -27,6 +23,14 @@ noise = {
             $(".noise-menu li").first().addClass("current");
             $(".tab").first().show();
         }
+
+        $(".image.thumb").on("mouseenter", function() {
+            var image_id = $(this).attr("id");
+            var idx = image_id.substring(image_id.lastIndexOf('-')+1);
+            $("#t-popup-" + idx).show({"effect": "blind"}).on("mouseout", function() {
+                $(this).hide();
+            });
+        })
     },
 
     initialize_email_noise_form: function () {
@@ -165,7 +169,8 @@ noise = {
 
         $("#noise-container a.readmore").on("click", function (e) {
             e.preventDefault();
-            $(this).parent().animate({"height": $(this).parent()[0].scrollHeight});
+            var noise_body = $(this).parent().find(".noise-body");
+            noise_body.animate({"height": noise_body[0].scrollHeight}).css("background", "none");
             $(this).fadeOut();
         });
     }

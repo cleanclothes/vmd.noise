@@ -4,6 +4,7 @@ from plone.dexterity.content import Item
 from plone.directives import form
 from zope.annotation import IAttributeAnnotatable
 from plone.namedfile.interfaces import IImageScaleTraversable
+
 from plone import api
 
 from .. import storage
@@ -112,4 +113,8 @@ class NoiseView(grok.View):
 
             storage.add_noise(self.context, storage.HARDCOPY_KEY, str_form)
 
-            # TODO thank you page
+        if noisetype and self.context.thank_you_page:
+            self.request.response.redirect(
+                "{0}?email={1}&firstname={2}&lastname={3}".format(
+                    self.context.thank_you_page, self.request.get("email"),
+                self.request.get("firstname"), self.request.get("lastname")))

@@ -12,12 +12,16 @@
     font-size: larger;
 }
 
-#noise-container .image {
+#noise-container .image.thumb {
     max-width: 25%;
     padding: 0;
     margin: 0;
 }
 
+#noise-container .image.full {
+    display: none;
+    position: absolute;
+}
 /* noise menu tabs */
 
 #noise-container .noise-menu {
@@ -72,7 +76,8 @@ a.tweet_noise {
 
 #noise-container .ink {
     color: darkblue;
-    min-height: 50px;
+    background-color: #fff;
+    min-height: 100px;
 }
 
 #noise-container .noise-counter {
@@ -88,9 +93,9 @@ a.tweet_noise {
 
 #noise-container .noise-body {
     position: relative;
-    height: 50px;
+    height: 100px;
     overflow: hidden;
-    background: -webkit-linear-gradient(#fff, #f7f7f7);
+    background: linear-gradient(to top, rgba(255,255,255,0) 0%, #fff 100%);
     margin: 10px 0;
     padding: 0 10px;
     border-width: 0 2px 2px 2px;
@@ -101,14 +106,15 @@ a.tweet_noise {
 
 #noise-container a.readmore,
 #noise-container a.readmore:hover {
-    position: absolute;
-    top: 20px;
-    background-color: #505050;
+    display: block;
+    background-color: #cecece;
     color: #fff !important;
-    left: 45%;
-    right: 45%;
     text-align: center;
     padding: 5px;
+}
+
+#noise-container .need_some_room {
+    margin-bottom: 20px;
 }
 
 @media print {
