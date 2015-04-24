@@ -35,8 +35,8 @@ noise = {
 
     initialize_email_noise_form: function () {
         $(".noise #email-texts").on("change", function () {
-            var txt = $("#email_heading").text() + "\n" + $("option:selected", this).text();
-            $(".noise #email-text-div").text(txt);
+            var txt = $("#email_heading").text() + "<br/>" + $("option:selected", this).text();
+            $(".noise #email-text-div").html(txt);
         });
 
         $(".noise .email_noise").on("click", function (e) {
@@ -56,7 +56,7 @@ noise = {
             e.preventDefault();
             $("#hardcopy_body").val($("#hardcopy-text-div").text());
 
-            $("#printme #pr-rcpt").html($("#hardcopy_rcpt").html());
+            $("#printme #pr-rcpt").html($("#hardcopy_rcpt").text());
             $("#printme #pr-body").html($("#hardcopy-text-div").html());
             $("#printme #pr-firstname").text($("#hardcopy_noise_form #firstname").val());
             $("#printme #pr-lastname").text($("#hardcopy_noise_form #lastname").val());
@@ -65,10 +65,21 @@ noise = {
             $("#printme #pr-city").text($("#hardcopy_noise_form #city").val());
             $("#printme #pr-phonenumber").text($("#hardcopy_noise_form #phonenumber").val());
 
-            $("#hardcopy_noise_form").submit();
+            //$("#hardcopy_noise_form").submit();
 
             if( $("#hardcopy_noise_form .error").length + $("#hardcopy_noise_form .constraint-violation").not(".irrelevant").length == 0 ) {
-                window.print();
+
+                // no more errors: print the document
+
+                //var printcss = "<link rel='stylesheet' type='text/css' media='print' href='++resource++noise.addon/print.css'/>";
+                var iframe   = document.createElement('iframe');
+                document.body.appendChild(iframe);
+                //iframe.contentWindow.document.head.innerHTML = printcss;
+                iframe.contentWindow.document.body.innerHTML = $('#print-container').html();
+                var script = document.createElement("script");
+
+                script.innerHTML = "window.print()";
+                iframe.contentWindow.document.body.appendChild(script);
             }
 
         });

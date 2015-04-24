@@ -154,7 +154,7 @@
                 <title i18n:translate="">Hardcopy heading</title>
                 <required>False</required>
             </field>
-            <field name="hardcopy_rcpt" type="zope.schema.Text">
+            <field name="hardcopy_rcpt" type="plone.app.textfield.RichText">
                 <description i18n:translate=""></description>
                 <title i18n:translate="">Hardcopy recipient</title>
                 <required>False</required>

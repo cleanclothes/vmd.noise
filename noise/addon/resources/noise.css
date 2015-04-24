@@ -109,22 +109,3 @@ a.tweet_noise {
 #noise-container .need_some_room {
     margin-bottom: 20px;
 }
-
-@media print {
-
-    .noise-body,
-    .noise-menu,
-    .noise-counter,
-    section.tab-content,
-    h1 {
-        display: none;
-    }
-
-    section#printme {
-        display: block;
-    }
-
-    section#printme #pr-body {
-        margin: 8em 0;
-    }
-}
