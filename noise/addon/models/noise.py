@@ -151,7 +151,11 @@ class NoiseStatsView(grok.View):
 
     def update(self):
         if self.request.get("reset") == "1":
-            storage.setupAnnotations(self.context, storage.TWITTER_KEY, reset=True)
-            storage.setupAnnotations(self.context, storage.FACEBOOK_KEY, reset=True)
-            storage.setupAnnotations(self.context, storage.EMAIL_KEY, reset=True)
-            storage.setupAnnotations(self.context, storage.HARDCOPY_KEY, reset=True)
+            storage.setupAnnotations(self.context, storage.TWITTER_KEY,
+                                     reset=True)
+            storage.setupAnnotations(self.context, storage.FACEBOOK_KEY,
+                                     reset=True)
+            storage.setupAnnotations(self.context, storage.EMAIL_KEY,
+                                     reset=True)
+            storage.setupAnnotations(self.context, storage.HARDCOPY_KEY,
+                                     reset=True)
