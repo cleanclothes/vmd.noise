@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+        metal:use-macro="context/main_template/macros/master"
+        i18n:domain="noise.addon">
+<body>
+
+<tal:comment tal:condition="nothing">
+    The default view for a Noise CT
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+        <div id="noise-container">
+
+            <h2 i18n:translate="">Noise statistics</h2>
+
+            <ul class="noise-menu">
+                <li class="noise-menu-twitter">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#twitter-tab" i18n:translate="">Twitter</a>
+                </li>
+                <li class="noise-menu-facebook">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#facebook-tab" i18n:translate="">Facebook</a>
+                </li>
+                <li class="noise-menu-email">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-stack-1x fa-inverse">@</i>
+                    </span>
+                    <a href="#email-tab" i18n:translate="">Email</a>
+                </li>
+                <li class="noise-menu-hardcopy">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#hardcopy-tab" i18n:translate="">Hardcopy</a>
+                </li>
+            </ul>
+
+            <div id="twitter-tab" class="tab">
+                <section class="tab-content">
+                    <tal:stats tal:define="data view/twitter_noise">
+
+                        <span i18n:translate="">Total no. of records:</span>
+                        <strong tal:content="python:len(data)"/>
+                        <table>
+                            <tr tal:repeat="item data">
+                                <td tal:content="item/get_timestamp"/>
+                                <td tal:content="python:item.get_record.get('firstname')"/>
+                                <td tal:content="python:item.get_record.get('lastname')"/>
+                                <td tal:content="python:item.get_record.get('email')"/>
+                                <td tal:content="python:item.get_record.get('phone')"/>
+                                <td tal:content="python:item.get_record.get('keepposted')"/>
+                            </tr>
+                        </table>
+                    </tal:stats>
+                </section>
+            </div>
+            <div id="facebook-tab" class="tab">
+                <section class="tab-content">
+                    <tal:stats tal:define="data view/facebook_noise">
+
+                        <span i18n:translate="">Total no. of records:</span>
+                        <strong tal:content="python:len(data)"/>
+                        <table tal:condition="python:len(data)>0">
+                            <tr tal:repeat="item data">
+                                <td tal:content="item/get_timestamp"/>
+                                <td tal:content="python:item.get_record.get('firstname')"/>
+                                <td tal:content="python:item.get_record.get('lastname')"/>
+                                <td tal:content="python:item.get_record.get('email')"/>
+                                <td tal:content="python:item.get_record.get('phone')"/>
+                                <td tal:content="python:item.get_record.get('keepposted')"/>
+                            </tr>
+                        </table>
+                    </tal:stats>
+                </section>
+            </div>
+            <div id="email-tab" class="tab">
+                <section class="tab-content">
+                    <tal:stats tal:define="data view/email_noise">
+
+                        <span i18n:translate="">Total no. of records:</span>
+                        <strong tal:content="python:len(data)"/>
+                        <table tal:condition="python:len(data)>0">
+                            <tr tal:repeat="item data">
+                                <td tal:content="item/get_timestamp"/>
+                                <td tal:content="python:item.get_record.get('firstname')"/>
+                                <td tal:content="python:item.get_record.get('lastname')"/>
+                                <td tal:content="python:item.get_record.get('email')"/>
+                                <td tal:content="python:item.get_record.get('phone')"/>
+                                <td tal:content="python:item.get_record.get('keepposted')"/>
+                            </tr>
+                        </table>
+                    </tal:stats>
+                </section>
+            </div>
+            <div id="hardcopy-tab" class="tab">
+                <section class="tab-content">
+                    <tal:stats tal:define="data view/hardcopy_noise">
+
+                        <span i18n:translate="">Total no. of records:</span>
+                        <strong tal:content="python:len(data)"/>
+                        <table tal:condition="python:len(data)>0">
+                            <tr tal:repeat="item data">
+                                <td tal:content="item/get_timestamp"/>
+                                <td tal:content="python:item.get_record.get('firstname')"/>
+                                <td tal:content="python:item.get_record.get('lastname')"/>
+                                <td tal:content="python:item.get_record.get('email')"/>
+                                <td tal:content="python:item.get_record.get('address')"/>
+                                <td tal:content="python:item.get_record.get('zipcode')"/>
+                                <td tal:content="python:item.get_record.get('city')"/>
+                                <td tal:content="python:item.get_record.get('phone')"/>
+                                <td tal:content="python:item.get_record.get('keepposted')"/>
+                            </tr>
+                        </table>
+                    </tal:stats>
+                </section>
+            </div>
+        </div>
+
+    </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

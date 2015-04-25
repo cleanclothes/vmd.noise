@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-24 15:42+0000\n"
+"POT-Creation-Date: 2015-04-25 19:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,7 @@ msgstr "Stad:"
 msgid "Dit is je Tweet!"
 msgstr ""
 
+#: ../models/noise_templates/noisestatsview.pt:41
 #: ../models/noise_templates/noiseview.pt:80
 msgid "Email"
 msgstr "E-mail"
@@ -61,6 +62,7 @@ msgstr "E-mail medium"
 msgid "Email:"
 msgstr "E-mail:"
 
+#: ../models/noise_templates/noisestatsview.pt:34
 #: ../models/noise_templates/noiseview.pt:73
 msgid "Facebook"
 msgstr ""
@@ -89,6 +91,7 @@ msgstr "Bijvoorbeeld: \"wil je weten hoe X reageert?\""
 msgid "General intro"
 msgstr "Algemene intro"
 
+#: ../models/noise_templates/noisestatsview.pt:48
 #: ../models/noise_templates/noiseview.pt:87
 msgid "Hardcopy"
 msgstr "Brief"
@@ -149,6 +152,10 @@ msgstr ""
 msgid "Noise"
 msgstr ""
 
+#: ../models/noise_templates/noisestatsview.pt:19
+msgid "Noise statistics"
+msgstr "Noise statistieken"
+
 #: ../models/noise.xml
 msgid "Opt in newsletter"
 msgstr ""
@@ -207,7 +214,7 @@ msgstr "Onderwerp"
 
 #: ../models/noise.xml
 msgid "Submit button"
-msgstr ""
+msgstr "Submit knop"
 
 #: ../models/noise.xml
 msgid "Submit to Facebook button"
@@ -229,6 +236,11 @@ msgstr "Hoofdtekst"
 msgid "Thank you page"
 msgstr "Bedanktpagina"
 
+#: ../models/noise_templates/noisestatsview.pt:56
+msgid "Total no. of records:"
+msgstr "Totaal aantal: "
+
+#: ../models/noise_templates/noisestatsview.pt:27
 #: ../models/noise_templates/noiseview.pt:66
 msgid "Twitter"
 msgstr ""

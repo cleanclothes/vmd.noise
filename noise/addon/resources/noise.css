@@ -3,6 +3,10 @@
     display: none;
 }
 
+#noise-container {
+    margin-bottom: 20px;
+}
+
 #noise-container .header {
     background-color: #f7f7f7;
     color: #505050;
@@ -108,4 +112,16 @@ a.tweet_noise {
 
 #noise-container .need_some_room {
     margin-bottom: 20px;
+}
+
+#noise-container table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    border: 5px solid #d5d5d5;
+}
+
+#noise-container table td,
+#noise-container table th {
+    border: 1px solid #d5d5d5;
+    padding: 5px;
 }

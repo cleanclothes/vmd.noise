@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-24 15:42+0000\n"
+"POT-Creation-Date: 2015-04-25 19:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,7 @@ msgstr ""
 msgid "Dit is je Tweet!"
 msgstr ""
 
+#: ../models/noise_templates/noisestatsview.pt:41
 #: ../models/noise_templates/noiseview.pt:80
 msgid "Email"
 msgstr ""
@@ -61,6 +62,7 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
+#: ../models/noise_templates/noisestatsview.pt:34
 #: ../models/noise_templates/noiseview.pt:73
 msgid "Facebook"
 msgstr ""
@@ -89,6 +91,7 @@ msgstr ""
 msgid "General intro"
 msgstr ""
 
+#: ../models/noise_templates/noisestatsview.pt:48
 #: ../models/noise_templates/noiseview.pt:87
 msgid "Hardcopy"
 msgstr ""
@@ -147,6 +150,10 @@ msgstr ""
 
 #: ../profiles/default/types/noise.addon.noise.xml
 msgid "Noise"
+msgstr ""
+
+#: ../models/noise_templates/noisestatsview.pt:19
+msgid "Noise statistics"
 msgstr ""
 
 #: ../models/noise.xml
@@ -229,6 +236,11 @@ msgstr ""
 msgid "Thank you page"
 msgstr ""
 
+#: ../models/noise_templates/noisestatsview.pt:56
+msgid "Total no. of records:"
+msgstr ""
+
+#: ../models/noise_templates/noisestatsview.pt:27
 #: ../models/noise_templates/noiseview.pt:66
 msgid "Twitter"
 msgstr ""

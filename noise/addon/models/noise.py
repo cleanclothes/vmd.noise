@@ -57,7 +57,7 @@ class Noise(Item):
 # changing the view class name and template filename to View / view.pt.
 
 class NoiseView(grok.View):
-    """ sample view class """
+    """ Default Noise View """
 
     grok.context(INoise)
     grok.require('zope2.View')
@@ -70,7 +70,7 @@ class NoiseView(grok.View):
         """ Store the request form in annotations
         """
 
-        str_form = str(self.request.form)
+        form = self.request.form
 
         noisetype = self.request.get("noisetype")
 
@@ -78,11 +78,11 @@ class NoiseView(grok.View):
 
             # Twitter form is only submitted after a succesful tweet. We
             # don't need to worry about anything else here.
-            storage.add_noise(self.context, storage.TWITTER_KEY, str_form)
+            storage.add_noise(self.context, storage.TWITTER_KEY, form)
 
         elif noisetype == "facebook":
 
-            storage.add_noise(self.context, storage.FACEBOOK_KEY, str_form)
+            storage.add_noise(self.context, storage.FACEBOOK_KEY, form)
 
         elif noisetype == "email":
 
@@ -109,13 +109,13 @@ class NoiseView(grok.View):
                     body=body,
                 )
 
-                storage.add_noise(self.context, storage.EMAIL_KEY, str_form)
+                storage.add_noise(self.context, storage.EMAIL_KEY, form)
             except:
                 pass
 
         elif noisetype == "hardcopy":
 
-            storage.add_noise(self.context, storage.HARDCOPY_KEY, str_form)
+            storage.add_noise(self.context, storage.HARDCOPY_KEY, form)
 
         if noisetype and self.context.thank_you_page:
             self.request.response.redirect(
@@ -123,3 +123,35 @@ class NoiseView(grok.View):
                     self.context.thank_you_page, self.request.get("email"),
                     self.request.get("firstname"),
                     self.request.get("lastname")))
+
+
+class NoiseStatsView(grok.View):
+    """ Noise Statistics View """
+
+    grok.context(INoise)
+    grok.require('cmf.ManagePortal')
+
+    grok.name('stats')
+
+    @property
+    def twitter_noise(self):
+        return storage.get_noise(self.context, storage.TWITTER_KEY)
+
+    @property
+    def facebook_noise(self):
+        return storage.get_noise(self.context, storage.FACEBOOK_KEY)
+
+    @property
+    def email_noise(self):
+        return storage.get_noise(self.context, storage.EMAIL_KEY)
+
+    @property
+    def hardcopy_noise(self):
+        return storage.get_noise(self.context, storage.HARDCOPY_KEY)
+
+    def update(self):
+        if self.request.get("reset") == "1":
+            storage.setupAnnotations(self.context, storage.TWITTER_KEY, reset=True)
+            storage.setupAnnotations(self.context, storage.FACEBOOK_KEY, reset=True)
+            storage.setupAnnotations(self.context, storage.EMAIL_KEY, reset=True)
+            storage.setupAnnotations(self.context, storage.HARDCOPY_KEY, reset=True)
