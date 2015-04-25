@@ -55,7 +55,7 @@
 
                         <span i18n:translate="">Total no. of records:</span>
                         <strong tal:content="python:len(data)"/>
-                        <table>
+                        <table tal:condition="python:len(data)>0">
                             <tr tal:repeat="item data">
                                 <td tal:content="item/get_timestamp"/>
                                 <td tal:content="python:item.get_record.get('firstname')"/>
