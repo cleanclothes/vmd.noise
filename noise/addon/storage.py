@@ -45,6 +45,8 @@ def add_noise(context, key, record):
         NoiseRecord(datetime.now().strftime("%d-%m-%Y"), record)
     )
 
+    annotations[key]._p_changed = 1
+
     logger.info("storing: %s" % str(record))
     logger.info("last added: " % get_noise(context, key)[-1].get_record)
 
