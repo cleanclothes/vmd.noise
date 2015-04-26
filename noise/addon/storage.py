@@ -41,7 +41,15 @@ def add_noise(context, key, record):
     annotations[key].append(
         NoiseRecord(datetime.now().strftime("%d-%m-%Y"), record)
     )
-    context._p_changed = 1
+
+    # TODO check whether we need this
+
+    # context._p_changed = 1
+
+    # Commit transaction
+    # import transaction; transaction.commit()
+    # Perform ZEO client synchronization (if running in clustered mode)
+    # context._p_jar.sync()
 
 
 def get_noise(context, key):
