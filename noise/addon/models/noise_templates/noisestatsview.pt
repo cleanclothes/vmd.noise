@@ -19,6 +19,7 @@
             <h2 i18n:translate="">Noise statistics</h2>
 
             <ul class="noise-menu">
+                <span i18n:translate="">Other media's statistics: </span>
                 <li class="noise-menu-twitter">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
