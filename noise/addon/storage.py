@@ -1,11 +1,14 @@
 from datetime import datetime
 from persistent.list import PersistentList
 from zope.annotation import IAnnotations
+import logging
 
 TWITTER_KEY = "noise.addon.twitter"
 FACEBOOK_KEY = "noise.addon.facebook"
 EMAIL_KEY = "noise.addon.email"
 HARDCOPY_KEY = "noise.addon.hardcopy"
+
+logger = logging.getLogger('noise.addon')
 
 
 class NoiseRecord(object):
@@ -41,6 +44,9 @@ def add_noise(context, key, record):
     annotations[key].append(
         NoiseRecord(datetime.now().strftime("%d-%m-%Y"), record)
     )
+
+    logger.info("storing: %s" % str(record))
+    logger.info("last added: " % get_noise(context, key)[-1].get_record)
 
     # TODO check whether we need this
 
