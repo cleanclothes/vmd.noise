@@ -43,6 +43,7 @@ def add_noise(context, key, record):
     )
     context._p_changed = 1
 
+
 def get_noise(context, key):
     annotations = setupAnnotations(context, key)
 
