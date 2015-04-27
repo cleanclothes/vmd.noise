@@ -14,16 +14,14 @@ logger = logging.getLogger('noise.addon')
 class NoiseRecord(object):
     """ A Noise Record containing form data
     """
-    _timestamp = ""
-    _record = {}
 
     def __init__(self, timestamp, record):
         self._timestamp = timestamp
-        self._record = record
+        self._record = str(record)
 
     @property
     def get_record(self):
-        return self._record
+        return eval(self._record)
 
     @property
     def get_timestamp(self):
@@ -45,20 +43,6 @@ def add_noise(context, key, record):
         NoiseRecord(datetime.now().strftime("%d-%m-%Y"), record)
     )
 
-    annotations[key]._p_changed = 1
-
-    logger.info("storing: %s" % str(record))
-    logger.info("last added: " % get_noise(context, key)[-1].get_record)
-
-    # TODO check whether we need this
-
-    # context._p_changed = 1
-
-    # Commit transaction
-    # import transaction; transaction.commit()
-    # Perform ZEO client synchronization (if running in clustered mode)
-    # context._p_jar.sync()
-
 
 def get_noise(context, key):
     annotations = setupAnnotations(context, key)
@@ -68,6 +52,7 @@ def get_noise(context, key):
         data = annotations[key]
 
     data = [d for d in data if isinstance(d, NoiseRecord)]
+
     return data
 
 

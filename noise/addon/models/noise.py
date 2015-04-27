@@ -4,10 +4,14 @@ from plone.dexterity.content import Item
 from plone.directives import form
 from zope.annotation import IAttributeAnnotatable
 from plone.namedfile.interfaces import IImageScaleTraversable
+import logging
 
 from plone import api
 
 from .. import storage
+
+
+logger = logging.getLogger('noise.addon')
 
 
 # Interface class; used to define content-type schema.
