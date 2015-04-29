@@ -8,6 +8,15 @@ FACEBOOK_KEY = "noise.addon.facebook"
 EMAIL_KEY = "noise.addon.email"
 HARDCOPY_KEY = "noise.addon.hardcopy"
 
+TWITTER_CSV_HEADERS = ["timestamp", "twitter-text", "tweet-text",
+                       "firstname", "lastname", "email", "phone", "keepposted"]
+FACEBOOK_CSV_HEADERS = ["timestamp"]
+EMAIL_CSV_HEADERS = ["timestamp", "email-text", "email_body", "firstname",
+                     "lastname", "email", "phone", "keepposted"]
+HARDCOPY_CSV_HEADERS = ["timestamp", "hardcopy-text", "hardcopy_body",
+                        "firstname", "lastname", "address", "zipcode", "city",
+                        "phone", "keepposted"]
+
 logger = logging.getLogger('noise.addon')
 
 
@@ -40,7 +49,7 @@ def setupAnnotations(context, key, reset=False):
 def add_noise(context, key, record):
     annotations = setupAnnotations(context, key)
     annotations[key].append(
-        NoiseRecord(datetime.now().strftime("%d-%m-%Y"), record)
+        NoiseRecord(datetime.now().strftime("%d-%m-%Y %H:%M"), record)
     )
 
 

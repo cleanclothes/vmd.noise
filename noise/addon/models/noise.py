@@ -1,3 +1,6 @@
+from StringIO import StringIO
+from zope.interface import implementer
+from zope.publisher.interfaces import IPublishTraverse
 from Products.CMFDefault.utils import checkEmailAddress
 from five import grok
 from plone.dexterity.content import Item
@@ -5,6 +8,7 @@ from plone.directives import form
 from zope.annotation import IAttributeAnnotatable
 from plone.namedfile.interfaces import IImageScaleTraversable
 import logging
+import csv
 
 from plone import api
 
@@ -127,6 +131,61 @@ class NoiseView(grok.View):
                     self.context.thank_you_page, self.request.get("email"),
                     self.request.get("firstname"),
                     self.request.get("lastname")))
+
+
+@implementer(IPublishTraverse)
+class NoiseCSVView(grok.View):
+    """ Noise CSV View"""
+
+    grok.context(INoise)
+    grok.require('cmf.ManagePortal')
+
+    grok.name('csv')
+
+    def publishTraverse(self, request, name):
+        # we have arrived, strip the stack
+        request['TraversalRequestNameStack'] = []
+        # return self so the publisher calls this view
+        return self
+
+    def __init__(self, context, request):
+        super(NoiseCSVView, self).__init__(context, request)
+        self.action, self.medium = ["", ""]
+        if len(request.path) == 2:
+            self.action, self.medium = request.path
+
+    def render(self):
+        if self.medium and self.action == "download":
+            data = storage.get_noise(self.context,
+                                     getattr(storage, "{0}_KEY".format(
+                                         self.medium.upper()))
+                                     )
+            if data:
+
+                out = StringIO()
+
+                writer = csv.writer(
+                    out,
+                    delimiter=',',
+                    quotechar='"')
+
+                headers = getattr(storage, "{0}_CSV_HEADERS".format(
+                    self.medium.upper()))
+
+                writer.writerow(headers)
+
+                for rec in data:
+                    values = [rec.get_record.get(col) for col in headers[1:]]
+                    values.insert(0, rec.get_timestamp)
+                    writer.writerow(values)
+
+                self.request.response.setHeader('Content-Type', 'text/csv')
+                self.request.response.setHeader(
+                    'Content-Disposition',
+                    'attachment; filename="%s_data.csv"' % self.medium
+                )
+
+                return out.getvalue()
 
 
 class NoiseStatsView(grok.View):
