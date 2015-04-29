@@ -45,6 +45,7 @@
 #noise-container .constraint-violation .help {
     display: inline-block;
     color: #c0c0c0;
+    margin-left: 5px;
 }
 
 #noise-container .irrelevant .help,
