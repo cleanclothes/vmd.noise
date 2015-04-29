@@ -396,7 +396,9 @@
                             <input jsf:constraint="address.match(/\w{3}\w*/)"
                                    type="text"
                                    name="address"
-                                   id="address">
+                                   id="address"
+                                   size="30"
+                                   maxlength="50">
                             <span class="help" i18n:translate="">Required</span>
                         </div>
 
@@ -408,7 +410,7 @@
                                    id="zipcode"
                                    size="6"
                                    maxlength="6">
-                            <span class="help" i18n:translate="">Required</span>
+                            <span class="help" i18n:translate="">Required (format:1234AB)</span>
                         </div>
 
                         <div>

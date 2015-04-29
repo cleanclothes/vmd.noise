@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-29 14:50+0000\n"
+"POT-Creation-Date: 2015-04-29 14:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Voorlooptekst bij hoofdtekst"
 msgid "Body texts"
 msgstr "Hoofdtekst"
 
-#: ../models/noise_templates/noiseview.pt:415
+#: ../models/noise_templates/noiseview.pt:417
 msgid "City:"
 msgstr "Stad:"
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Make some noise"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:480
+#: ../models/noise_templates/noiseview.pt:482
 msgid "Met vriendelijke groet,"
 msgstr ""
 
@@ -179,6 +179,10 @@ msgstr ""
 #: ../models/noise_templates/noiseview.pt:169
 msgid "Required"
 msgstr "Verplicht"
+
+#: ../models/noise_templates/noiseview.pt:413
+msgid "Required (format:1234AB)"
+msgstr "Verplicht (formaat: 1234AB)"
 
 #: ../models/noise.xml
 msgid "Send email button"
@@ -273,9 +277,9 @@ msgstr "Is de Twitter tab actief?"
 msgid "Whether or not to show the total amount of noise items created"
 msgstr "Of het totaal aantal verstuurde items getoond wordt"
 
-#: ../models/noise_templates/noiseview.pt:404
+#: ../models/noise_templates/noiseview.pt:406
 msgid "Zipcode:"
-msgstr "Postcode (formaat: 1234AB)"
+msgstr "Postcode:"
 
 #: ../models/noise.xml
 msgid "web intent in_reply_to parameter"
