@@ -135,7 +135,7 @@ a.tweet_noise {
 #noise-container a.readmore,
 #noise-container a.readmore:hover {
     background-color: #cecece;
-    color: #fff !important;
+    color: #505050 !important;
     padding: 5px;
     width: 150px;
     -webkit-border-radius: 5px;
