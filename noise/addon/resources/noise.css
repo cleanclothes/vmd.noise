@@ -143,6 +143,7 @@ a.tweet_noise {
     border-radius: 5px;
     display: block;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 #noise-container .need_some_room {
