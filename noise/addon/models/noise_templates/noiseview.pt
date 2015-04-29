@@ -91,8 +91,13 @@
             <div id="twitter-tab"
                  class="tab" tal:condition="context/show_twitter">
                 <section class="tab-content">
-
-                    <h2 tal:content="context/twitter_tab_heading"/>
+                    <h2>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span tal:content="context/twitter_tab_heading"/>
+                    </h2>
 
                     <form id="twitter_noise_form" class="noise-form"
                           method="POST" action="">
@@ -207,7 +212,13 @@
                  class="tab" tal:condition="context/show_facebook">
                 <section class="tab-content">
 
-                    <h2 tal:content="context/facebook_tab_heading"/>
+                    <h2>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span tal:content="context/facebook_tab_heading"/>
+                    </h2>
 
                     <form id="facebook_noise_form" class="noise-form"
                           method="POST" action="">
@@ -224,7 +235,13 @@
             <div id="email-tab" class="tab" tal:condition="context/show_email">
                 <section class="tab-content">
 
-                    <h2 tal:content="context/email_tab_heading"/>
+                    <h2>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-stack-1x fa-inverse">@</i>
+                        </span>
+                        <span tal:content="context/twitter_tab_heading"/>
+                    </h2>
 
                     <form id="email_noise_form" class="noise-form"
                           method="POST" action="">
@@ -314,7 +331,13 @@
                  class="tab" tal:condition="context/show_hardcopy">
                 <section class="tab-content">
 
-                    <h2 tal:content="context/hardcopy_tab_heading"/>
+                    <h2>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span tal:content="context/hardcopy_tab_heading"/>
+                    </h2>
 
                     <form id="hardcopy_noise_form" class="noise-form"
                           method="POST" action="">
