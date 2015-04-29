@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-26 19:08+0000\n"
+"POT-Creation-Date: 2015-04-29 14:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,11 @@ msgstr "Voorlooptekst bij hoofdtekst"
 msgid "Body texts"
 msgstr "Hoofdtekst"
 
-#: ../models/noise_templates/noiseview.pt:438
+#: ../models/noise_templates/noiseview.pt:415
 msgid "City:"
 msgstr "Stad:"
 
-#: ../models/noise_templates/noiseview.pt:137
+#: ../models/noise_templates/noiseview.pt:142
 msgid "Dit is je Tweet!"
 msgstr ""
 
@@ -41,10 +41,6 @@ msgstr ""
 #: ../models/noise_templates/noiseview.pt:80
 msgid "Email"
 msgstr "E-mail"
-
-#: ../models/noise_templates/noiseview.pt:191
-msgid "Email address is required"
-msgstr "E-mailadres is verplicht"
 
 #: ../models/noise.xml
 msgid "Email button"
@@ -58,7 +54,7 @@ msgstr "E-mail aanhef"
 msgid "Email medium"
 msgstr "E-mail medium"
 
-#: ../models/noise_templates/noiseview.pt:194
+#: ../models/noise_templates/noiseview.pt:185
 msgid "Email:"
 msgstr "E-mail:"
 
@@ -71,11 +67,7 @@ msgstr ""
 msgid "Facebook medium"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:161
-msgid "Firstname is required"
-msgstr "Voornaam is verplicht"
-
-#: ../models/noise_templates/noiseview.pt:165
+#: ../models/noise_templates/noiseview.pt:162
 msgid "Firstname:"
 msgstr "Voornaam:"
 
@@ -102,7 +94,7 @@ msgstr "Brief aanhef"
 
 #: ../models/noise.xml
 msgid "Hardcopy medium"
-msgstr ""
+msgstr "Brief medium"
 
 #: ../models/noise.xml
 msgid "Header image"
@@ -120,7 +112,7 @@ msgstr "Afbeeldingen"
 msgid "In reply to:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:152
+#: ../models/noise_templates/noiseview.pt:157
 msgid "Ja graag! Hou me op de hoogte."
 msgstr ""
 
@@ -128,15 +120,11 @@ msgstr ""
 msgid "Je kunt je oproep ook doen via"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:120
-msgid "Kies je afbeelding:"
-msgstr ""
-
-#: ../models/noise_templates/noiseview.pt:100
+#: ../models/noise_templates/noiseview.pt:105
 msgid "Kies je tekst:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:178
+#: ../models/noise_templates/noiseview.pt:174
 msgid "Lastname:"
 msgstr "Achternaam:"
 
@@ -146,6 +134,10 @@ msgstr ""
 
 #: ../profiles/default/types/noise.addon.noise.xml
 msgid "Make some noise"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:480
+msgid "Met vriendelijke groet,"
 msgstr ""
 
 #: ../profiles/default/types/noise.addon.noise.xml
@@ -168,21 +160,9 @@ msgstr "Overige statistieken: "
 msgid "PLEASE ENABLE JAVASCRIPT"
 msgstr "ACTIVEER JAVASCRIPT"
 
-#: ../models/noise_templates/noiseview.pt:205
+#: ../models/noise_templates/noiseview.pt:194
 msgid "Phonenumber:"
 msgstr "Telefoonnummer:"
-
-#: ../models/noise_templates/noiseview.pt:188
-msgid "Please fill in your email address"
-msgstr "Vul a.u.b een e-mailadres in"
-
-#: ../models/noise_templates/noiseview.pt:157
-msgid "Please fill in your firstname"
-msgstr "Vul a.u.b. een voornaam in"
-
-#: ../models/noise_templates/noiseview.pt:202
-msgid "Please fill in your phonenumber"
-msgstr "Vul a.u.b. een telefoonnummer in"
 
 #: ../models/noise.xml
 msgid "Prefix to the selected body text"
@@ -196,6 +176,10 @@ msgstr "Ontvanger"
 msgid "Related"
 msgstr ""
 
+#: ../models/noise_templates/noiseview.pt:169
+msgid "Required"
+msgstr "Verplicht"
+
 #: ../models/noise.xml
 msgid "Send email button"
 msgstr "Verstuur e-mail knop"
@@ -208,7 +192,7 @@ msgstr "Verstuur brief knop"
 msgid "Show counter"
 msgstr "Toon teller"
 
-#: ../models/noise_templates/noiseview.pt:411
+#: ../models/noise_templates/noiseview.pt:394
 msgid "Street and number:"
 msgstr "Straat en huisnummer"
 
@@ -261,7 +245,7 @@ msgstr "Door de gebruiker te kiezen afbeeldingen"
 msgid "User selectable predefined body texts (one per line)"
 msgstr "Door de gebruiker te kiezen teksten (een per regel)"
 
-#: ../models/noise_templates/noiseview.pt:266
+#: ../models/noise_templates/noiseview.pt:268
 msgid "Voeg iets persoonlijks toe als je wilt:"
 msgstr ""
 
@@ -289,7 +273,7 @@ msgstr "Is de Twitter tab actief?"
 msgid "Whether or not to show the total amount of noise items created"
 msgstr "Of het totaal aantal verstuurde items getoond wordt"
 
-#: ../models/noise_templates/noiseview.pt:424
+#: ../models/noise_templates/noiseview.pt:404
 msgid "Zipcode:"
 msgstr "Postcode (formaat: 1234AB)"
 
