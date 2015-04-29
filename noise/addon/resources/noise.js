@@ -1,12 +1,16 @@
 noise = {
 
+    readmore_txt : $("#noise-container a.readmore").text(),
+
     initialize_noise_form: function () {
 
         $("#no-javascript").hide();
         $("#noise-container").show();
 
         // Activate JSForms for client side form validation
-        $(".noise-form").jsf();
+        $(".noise-form").jsf({
+          selectInput: function(elt) { return elt.parent() }
+         });
 
         // Landingpages
 
@@ -184,8 +188,14 @@ noise = {
         $("#noise-container a.readmore").on("click", function (e) {
             e.preventDefault();
             var noise_body = $(this).parent().find(".noise-body");
-            noise_body.animate({"height": noise_body[0].scrollHeight}).css("background", "none");
-            $(this).fadeOut();
+
+            if( !$(this).hasClass("opened") ) {
+                noise_body.animate({"height": noise_body[0].scrollHeight}); //.css("background", "none");
+                $(this).html("<i class='fa fa-chevron-circle-up'></i>").addClass("opened");
+            } else {
+                noise_body.animate({"height": "100px"}); //.css("background", "none");
+                $(this).text(noise.readmore_txt).removeClass("opened");
+            }
         });
     }
 };

@@ -43,7 +43,8 @@
 }
 
 #noise-container .constraint-violation .help {
-    display: block;
+    display: inline-block;
+    color: #c0c0c0;
 }
 
 #noise-container .irrelevant .help,
@@ -55,7 +56,7 @@
     opacity: 0.3
 }
 
-#noise-container .required:after {
-    content: "*";
-    color: #ff0000
-}
+/*#noise-container .required:after {*/
+/*content: "*";*/
+/*color: #ff0000*/
+/*}*/

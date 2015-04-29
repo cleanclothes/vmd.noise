@@ -117,22 +117,22 @@
                             </select>
                         </div>
 
-                        <div class="header" i18n:translate="">Kies je
-                            afbeelding:
-                        </div>
+                        <!--?<div class="header" i18n:translate="">Kies je-->
+                            <!--?afbeelding:-->
+                        <!--?</div>-->
 
-                        <div class="images" tal:condition="context/images">
-                            <a class="clickable-image"
-                               href="#" tal:repeat="img context/images">
+                        <!--?<div class="images" tal:condition="context/images">-->
+                            <!--?<a class="clickable-image"-->
+                               <!--?href="#" tal:repeat="img context/images">-->
 
-                                <tal:def tal:define="imgurl string:${img/to_object/absolute_url}">
-                                    <span class="image full" tal:attributes="id string:t-popup-${repeat/img/index}">
-                                        <img tal:attributes="src string:${imgurl}"/>
-                                    </span>
-                                    <img class="image thumb"  tal:attributes="id string:t-image-${repeat/img/index} ;src string:${imgurl}/image_thumb"/>
-                                </tal:def>
-                            </a>
-                        </div>
+                                <!--?<tal:def tal:define="imgurl string:${img/to_object/absolute_url}">-->
+                                    <!--?<span class="image full" tal:attributes="id string:t-popup-${repeat/img/index}">-->
+                                        <!--?<img tal:attributes="src string:${imgurl}"/>-->
+                                    <!--?</span>-->
+                                    <!--?<img class="image thumb"  tal:attributes="id string:t-image-${repeat/img/index} ;src string:${imgurl}/image_thumb"/>-->
+                                <!--?</tal:def>-->
+                            <!--?</a>-->
+                        <!--?</div>-->
 
                         <div id="tweet-text-header"
                              class="header" i18n:translate="">Dit is je Tweet!
@@ -154,14 +154,6 @@
                                 me op de hoogte.</label>
 
                             <div>
-                                <div class="help" i18n:translate="">Please fill
-                                    in
-                                    your firstname
-                                </div>
-                                <div class="alert" i18n:translate="">Firstname
-                                    is
-                                    required
-                                </div>
                                 <label for="firstname" i18n:translate="">Firstname:</label>
                                 <input jsf:relevant="keepposted"
                                        jsf:required="true"
@@ -169,12 +161,11 @@
                                        type="text"
                                        name="firstname"
                                        id="firstname">
+                                <span class="help" i18n:translate="">Required</span>
                             </div>
                         </tal:conditional>
 
                         <div>
-                            <div class="help">Please fill in your lastname</div>
-                            <div class="alert">Lastname is required</div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
                             <input jsf:relevant="keepposted"
                                    jsf:required="true"
@@ -182,31 +173,25 @@
                                    type="text"
                                    name="lastname"
                                    id="lastname">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your email address
-                            </div>
-                            <div class="alert" i18n:translate="">Email address
-                                is required
-                            </div>
                             <label for="email" i18n:translate="">Email:</label>
                             <input jsf:relevant="keepposted"
                                    jsf:required="true"
                                    jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
                                    type="text" name="email"
                                    id="email">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your phonenumber
-                            </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
                             <input jsf:relevant="keepposted"
                                    type="text"
                                    name="phone"
                                    id="phone">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <a class="tweet_noise btn btn-green"
@@ -274,45 +259,31 @@
                         <input type="hidden" id="email_body" name="email_body"/>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your firstname
-                            </div>
-                            <div class="alert" i18n:translate="">Firstname is
-                                required
-                            </div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
                             <input jsf:constraint="firstname.match(/\w{3}\w*/)"
                                    type="text"
                                    name="firstname"
                                    id="firstname">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your lastname</div>
-                            <div class="alert">Lastname is required</div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
                             <input jsf:constraint="lastname.match(/\w{3}\w*/)"
                                    type="text"
                                    name="lastname"
                                    id="lastname">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your email address
-                            </div>
-                            <div class="alert" i18n:translate="">Email address
-                                is required
-                            </div>
                             <label for="email" i18n:translate="">Email:</label>
                             <input jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
                                    type="text" name="email"
                                    id="email">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your phonenumber
-                            </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
                             <input type="text" name="phone" id="phone">
                         </div>
@@ -379,48 +350,34 @@
                                value="hardcopy"/>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your firstname
-                            </div>
-                            <div class="alert" i18n:translate="">Firstname is
-                                required
-                            </div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
                             <input jsf:constraint="firstname.match(/\w{3}\w*/)"
                                    type="text"
                                    name="firstname"
                                    id="firstname">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your lastname</div>
-                            <div class="alert">Lastname is required</div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
                             <input jsf:constraint="lastname.match(/\w{3}\w*/)"
                                    type="text"
                                    name="lastname"
                                    id="lastname">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your street and
-                                number
-                            </div>
-                            <div class="alert">Street and number are required
-                            </div>
                             <label for="address" i18n:translate="">Street and
                                 number:</label>
                             <input jsf:constraint="address.match(/\w{3}\w*/)"
                                    type="text"
                                    name="address"
                                    id="address">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your zipcode
-                            </div>
-                            <div class="alert">Zipcode is required
-                            </div>
                             <label for="zipcode" i18n:translate="">Zipcode:</label>
                             <input jsf:constraint="zipcode.match(/\d{4}\D{2}/)"
                                    type="text"
@@ -428,24 +385,19 @@
                                    id="zipcode"
                                    size="6"
                                    maxlength="6">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help">Please fill in your city
-                            </div>
-                            <div class="alert">City is required
-                            </div>
                             <label for="city" i18n:translate="">City:</label>
                             <input jsf:constraint="city.match(/\w{3}\w*/)"
                                    type="text"
                                    name="city"
                                    id="city">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your phonenumber
-                            </div>
                             <label for="phone" i18n:translate="">Phonenumber:</label>
                             <input type="text" name="phone" id="phone">
                         </div>
@@ -458,18 +410,13 @@
                             me op de hoogte.</label>
 
                         <div>
-                            <div class="help" i18n:translate="">Please fill in
-                                your email address
-                            </div>
-                            <div class="alert" i18n:translate="">Email address
-                                is required
-                            </div>
                             <label for="email" i18n:translate="">Email:</label>
                             <input jsf:relevant="keepposted"
                                    jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
                                    type="text"
                                    name="email"
                                    id="email">
+                            <span class="help" i18n:translate="">Required</span>
                         </div>
 
                         <p>
@@ -489,6 +436,8 @@
 
                     <section id="printme" style="font-size:larger">
 
+                        <img src="https://milieudefensie.nl/++theme++squircle/img/logo-milieudefensie-312x57.png"/>
+
                         <h1 tal:content="context/title"/>
 
                         <br/>
@@ -505,6 +454,7 @@
                         <br/>
                         <br/>
 
+                        <div i18n:translate="">Met vriendelijke groet,</div>
                         <div>
                             <span id="pr-firstname"></span>
                             <span id="pr-lastname"> </span>

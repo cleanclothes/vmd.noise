@@ -1,6 +1,27 @@
+/* MD THEME FIXES */
+
+body.portaltype-noise-addon-noise#ActionPage .main .make-row .content {
+    width: 100%;
+}
+
+body.portaltype-noise-addon-noise#ActionPage .main .container .sidebar,
+body.portaltype-noise-addon-noise#ActionPage .main .content>header .breadcrumb {
+    display: none;
+}
+
+body.portaltype-noise-addon-noise#ActionPage .main .content>header {
+    margin: 80px 0 100px;
+}
+
+/* NOISE CONTAINER STYLING */
+
 #noise-container,
 #printme {
     display: none;
+}
+
+#noise-container label {
+    min-width: 140px;
 }
 
 #noise-container {
@@ -8,7 +29,7 @@
 }
 
 #noise-container .header {
-    background-color: #f7f7f7;
+    background-color: #ccc;
     color: #505050;
     padding: 5px;
     margin: 5px 0;
@@ -40,9 +61,11 @@
 
 #noise-container .noise-menu li.current {
     position: relative;
-    background-color: #fff;
     z-index: 5;
-    display: none;
+    color: #cecece;
+}
+#noise-container .noise-menu li.current a {
+    color: #cecece;
 }
 
 #noise-container .noise-menu li a {
@@ -86,6 +109,13 @@ a.tweet_noise {
     text-align: center;
     font-weight: 600;
     font-size: larger;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 20px;
+    width: 400px;
 }
 
 #noise-container .noise-menu,
@@ -99,19 +129,25 @@ a.tweet_noise {
     overflow: hidden;
     background: linear-gradient(to top, rgba(255,255,255,0) 0%, #fff 100%);
     margin: 10px 0;
+    text-align: left;
 }
 
 #noise-container a.readmore,
 #noise-container a.readmore:hover {
-    display: block;
     background-color: #cecece;
     color: #fff !important;
-    text-align: center;
     padding: 5px;
+    width: 150px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 
 #noise-container .need_some_room {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #noise-container table {
