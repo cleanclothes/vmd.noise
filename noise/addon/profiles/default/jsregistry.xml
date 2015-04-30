@@ -13,7 +13,7 @@
     <javascript
             enabled="True"
             expression=""
-            id="http://platform.twitter.com/widgets.js"
+            id="//platform.twitter.com/widgets.js"
             authenticated="False"/>
     <javascript
             enabled="True"
