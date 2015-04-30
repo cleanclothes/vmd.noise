@@ -240,7 +240,7 @@
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-stack-1x fa-inverse">@</i>
                         </span>
-                        <span tal:content="context/twitter_tab_heading"/>
+                        <span tal:content="context/email_tab_heading"/>
                     </h2>
 
                     <form id="email_noise_form" class="noise-form"
