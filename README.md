@@ -22,6 +22,3 @@ Data can be downloaded as CSV files. You can do this on a per medium base. Using
 
 ### JSForms
 Noise uses jsforms for form validation. You can find the gory details over here: https://github.com/wyldebeast-wunderliebe/jsforms
- 
-
-

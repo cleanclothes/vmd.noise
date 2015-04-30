@@ -103,6 +103,7 @@ a.tweet_noise {
     color: darkblue;
     background-color: #fff;
     min-height: 100px;
+    font-size: larger;
 }
 
 #noise-container .noise-counter {
