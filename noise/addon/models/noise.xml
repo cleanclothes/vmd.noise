@@ -50,6 +50,7 @@
         <field name="thank_you_page" type="zope.schema.Text">
             <description i18n:translate="">A url to redirect to if necessary</description>
             <title i18n:translate="">Thank you page</title>
+            <required>False</required>
         </field>
 
         <field name="images" type="plone.app.relationfield.RelationList">
@@ -59,6 +60,7 @@
                 <title i18n:translate="">User selectable images</title>
                 <source>plone.formwidget.contenttree.obj_path_src_binder</source>
             </value_type>
+            <required>False</required>
         </field>
 
         <fieldset name="facebook" label="Facebook"
