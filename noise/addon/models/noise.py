@@ -42,9 +42,15 @@ class Noise(Item):
 
     # Add your class methods and properties here
 
-    @property
-    def body_texts_list(self):
-        return self.body_texts.split("\n")
+    def split_lines(self, text):
+        result = []
+        if text:
+            result = text.split("\n")
+        return result
+
+    def to_br(self, text):
+        text = text.replace("\n", "<br/>")
+        return text
 
     @property
     def total(self):
@@ -102,8 +108,10 @@ class NoiseView(grok.View):
                 checkEmailAddress(self.request.get("email"))
                 checkEmailAddress(self.request.get("email_rcpt"))
 
-                body = self.request.get("email_body").replace("<br/>", "\n")
-                body += "\n\n{0}{1}".format(self.request.get("firstname"),
+                body = self.request.get("email_body").replace("<br>", "\n")
+                body += "\n\n{0}\n{1} {2}".format(
+                    self.context.email_conclusion,
+                    self.request.get("firstname"),
                                             self.request.get("lastname"))
 
                 api.portal.send_email(

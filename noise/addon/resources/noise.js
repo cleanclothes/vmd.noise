@@ -39,7 +39,8 @@ noise = {
 
     initialize_email_noise_form: function () {
         $(".noise #email-texts").on("change", function () {
-            var txt = $("#email_heading").text() + "<br/>" + $("option:selected", this).text();
+            var txt = $("#email_heading").text() + "<br/><br/>" + $("option:selected", this).text();
+            txt += "<br/><br/>" + $("#email_body_text_additional").text().replace(/\n/g,"<br/><br/>");
             $(".noise #email-text-div").html(txt);
         });
 
@@ -52,7 +53,8 @@ noise = {
 
     initialize_hardcopy_noise_form: function () {
         $(".noise #hardcopy-texts").on("change", function () {
-            var txt = $("#hardcopy_heading").text() + "<br/>" + $("option:selected", this).text();
+            var txt = $("#hardcopy_heading").text() + "<br/><br/>" + $("option:selected", this).text();
+            txt += "<br/><br/>" + $("#hardcopy_body_text_additional").text().replace(/\n/g,"<br/><br/>");
             $(".noise #hardcopy-text-div").html(txt);
         });
 
@@ -60,7 +62,7 @@ noise = {
             e.preventDefault();
             $("#hardcopy_body").val($("#hardcopy-text-div").text());
 
-            $("#printme #pr-rcpt").html($("#hardcopy_rcpt").text());
+            //$("#printme #pr-rcpt").text().replace(/\n/g,"<br/>");
             $("#printme #pr-body").html($("#hardcopy-text-div").html());
             $("#printme #pr-firstname").text($("#hardcopy_noise_form #firstname").val());
             $("#printme #pr-lastname").text($("#hardcopy_noise_form #lastname").val());
@@ -89,16 +91,19 @@ noise = {
 
     initialize_twitter_noise_form: function () {
 
-        $(".noise #twitter-texts").on("change", function () {
+        $(".noise #twitter-texts").on("change", function (event) {
 
-            var txt = $(".noise #tweet-text-div").text();
-            var url = "";
-            if (txt.indexOf("http") != -1) {
-                url = txt.match(/http[^\s]* /) + " ";
+            // only when manually changed...
+            if( event.originalEvent !== undefined ) {
+                var txt = $(".noise #tweet-text-div").text();
+                var url = "";
+                if (txt.indexOf("http") != -1) {
+                    url = txt.match(/http[^\s]* /) + " ";
+                }
+
+                $(".noise #tweet-text-div").text("." + $("#twitter_rcpt").text() + " " + $("option:selected", this).text() + url);
+                $('#tweet-text-div').trigger("keyup");
             }
-
-            $(".noise #tweet-text-div").text("." + $("#twitter_rcpt").text() + " " + $("option:selected", this).text() + url);
-            $('#tweet-text-div').trigger("keyup");
         });
 
         $(".noise .images .clickable-image").on("click", function (e) {
@@ -162,10 +167,13 @@ noise = {
                 $("#tweet-text").val($("#tweet-text-div").text().substring(0, 119) + " " + $("#absolute_url").text());
                 $(this).attr(
                     "href", "https://twitter.com/intent/tweet?text=" +
-                    $("#tweet-text").val() +
+                    encodeURIComponent($("#tweet-text").val()) +
                     "&related=" +
-                    $("#twitter_related").text() +
-                    "&in-reply-to=" + $("#twitter_in_reply_to").text());
+                    encodeURIComponent($("#twitter_related").text()) +
+                    "&hashtags=" +
+                    encodeURIComponent($("#twitter_hashtags").text()) +
+                    "&in-reply-to=" +
+                    encodeURIComponent($("#twitter_in_reply_to").text()));
             } else {
                 e.preventDefault();
             }

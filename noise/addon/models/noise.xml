@@ -32,11 +32,6 @@
             <title i18n:translate="">Show counter</title>
         </field>
 
-        <field name="body_texts" type="zope.schema.Text">
-            <description i18n:translate="">User selectable predefined body texts (one per line)</description>
-            <title i18n:translate="">Body texts</title>
-        </field>
-
         <field name="keep_posted_heading" type="zope.schema.Text">
             <description i18n:translate="">For example: "do you want to know how X responds?"</description>
             <title i18n:translate="">Heading of keep posted part</title>
@@ -74,6 +69,10 @@
                 <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
+            <field name="facebook_body_texts" type="zope.schema.Text">
+                <description i18n:translate="">User selectable predefined body texts (one per line)</description>
+                <title i18n:translate="">Body texts</title>
+            </field>
             <field name="facebook_rcpt" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
                 <title i18n:translate="">Recipient</title>
@@ -97,14 +96,23 @@
                 <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
+            <field name="twitter_body_texts" type="zope.schema.Text">
+                <description i18n:translate="">User selectable predefined body texts (one per line)</description>
+                <title i18n:translate="">Body texts</title>
+            </field>
             <field name="twitter_rcpt" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
                 <title i18n:translate="">Recipient</title>
                 <required>False</required>
             </field>
             <field name="twitter_related" type="zope.schema.TextLine">
-                <description i18n:translate="">web intent related parameter</description>
+                <description i18n:translate="">web intent related parameter (comma separated)</description>
                 <title i18n:translate="">Related</title>
+                <required>False</required>
+            </field>
+            <field name="twitter_hashtags" type="zope.schema.TextLine">
+                <description i18n:translate="">web intent hashtags parameter (comma separated)</description>
+                <title i18n:translate="">Hashtags</title>
                 <required>False</required>
             </field>
             <field name="twitter_in_reply_to" type="zope.schema.TextLine">
@@ -130,6 +138,15 @@
                 <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
+            <field name="email_body_texts" type="zope.schema.Text">
+                <description i18n:translate="">User selectable predefined body texts (one per line)</description>
+                <title i18n:translate="">Body texts</title>
+            </field>
+            <field name="email_body_text_additional" type="zope.schema.Text">
+                <description i18n:translate="">Additional example text (each newline is considered a new paragraph)</description>
+                <title i18n:translate="">Additional body text</title>
+                <required>False</required>
+            </field>
             <field name="email_heading" type="zope.schema.TextLine">
                 <description i18n:translate="">For example: "Dear mrs. X"</description>
                 <title i18n:translate="">Email heading</title>
@@ -143,6 +160,11 @@
             <field name="email_subject" type="zope.schema.TextLine">
                 <description i18n:translate=""></description>
                 <title i18n:translate="">Subject</title>
+                <required>False</required>
+            </field>
+            <field name="email_conclusion" type="zope.schema.TextLine">
+                <description i18n:translate="">e.g. Best regards, </description>
+                <title i18n:translate="">Conclusion</title>
                 <required>False</required>
             </field>
             <field name="email_submit" type="zope.schema.TextLine">
@@ -162,14 +184,28 @@
                 <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
+            <field name="hardcopy_body_texts" type="zope.schema.Text">
+                <description i18n:translate="">User selectable predefined body texts (one per line)</description>
+                <title i18n:translate="">Body texts</title>
+            </field>
+            <field name="hardcopy_body_text_additional" type="zope.schema.Text">
+                <description i18n:translate="">Additional example text (each newline is considered a new paragraph)</description>
+                <title i18n:translate="">Additional body text</title>
+                <required>False</required>
+            </field>
             <field name="hardcopy_heading" type="zope.schema.TextLine">
                 <description i18n:translate="">For example: "Dear mrs. X"</description>
                 <title i18n:translate="">Hardcopy heading</title>
                 <required>False</required>
             </field>
-            <field name="hardcopy_rcpt" type="plone.app.textfield.RichText">
+            <field name="hardcopy_rcpt" type="zope.schema.Text">
                 <description i18n:translate=""></description>
                 <title i18n:translate="">Recipient</title>
+                <required>False</required>
+            </field>
+            <field name="hardcopy_conclusion" type="zope.schema.TextLine">
+                <description i18n:translate="">e.g. Best regards, </description>
+                <title i18n:translate="">Conclusion</title>
                 <required>False</required>
             </field>
             <field name="hardcopy_submit" type="zope.schema.TextLine">
