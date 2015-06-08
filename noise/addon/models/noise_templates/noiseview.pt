@@ -35,9 +35,10 @@
             </div>
 
             <div tal:condition="context/show_counter"
-                    class="noise-counter"
-                    i18n:translate=""
-                    tal:content="string:${context/total} Oproepen verstuurd!"/>
+                    class="noise-counter">
+                <span tal:content="string:${context/total}">TOTAL</span>
+                <span i18n:translate="">Oproepen verstuurd!</span>
+            </div>
 
             <div class="hidden">
 
@@ -45,17 +46,17 @@
                     Used in noise.js
                 </tal:comment>
 
-                <span id="current_tab" tal:content="view/request/lp | nothing"/>
-                <span id="email_heading" tal:content="context/email_heading | nothing"/>
-                <span id="email_body_text_additional" tal:content="structure context/email_body_text_additional | nothing"/>
-                <span id="hardcopy_heading" tal:content="structure context/hardcopy_heading | nothing"/>
-                <span id="hardcopy_body_text_additional" tal:content="structure context/hardcopy_body_text_additional | nothing"/>
-                <span id="twitter_rcpt" tal:content="context/twitter_rcpt | nothing"/>
-                <span id="twitter_related" tal:content="context/twitter_related | nothing"/>
-                <span id="twitter_hashtags" tal:content="context/twitter_hashtags | nothing"/>
-                <span id="twitter_in_reply_to" tal:content="context/twitter_in_reply_to | nothing"/>
-                <span id="absolute_url" tal:content="context/absolute_url | nothing"/>
-                <span id="thank_you_page" tal:content="context/thank_you_page | nothing"/>
+                <span id="current_tab" tal:content="view/request/lp | nothing">LANDINGPAGE</span>
+                <span id="email_heading" tal:content="context/email_heading | nothing">EMAIL HEADING</span>
+                <span id="email_body_text_additional" tal:content="structure context/email_body_text_additional | nothing">ADDITIONAL</span>
+                <span id="hardcopy_heading" tal:content="structure context/hardcopy_heading | nothing">HARDCOPY HEADING</span>
+                <span id="hardcopy_body_text_additional" tal:content="structure context/hardcopy_body_text_additional | nothing">ADDITIONAL</span>
+                <span id="twitter_rcpt" tal:content="context/twitter_rcpt | nothing">TWITTER RCPT</span>
+                <span id="twitter_related" tal:content="context/twitter_related | nothing">TWITTER RELATED</span>
+                <span id="twitter_hashtags" tal:content="context/twitter_hashtags | nothing">TWITTER HASHTAGS</span>
+                <span id="twitter_in_reply_to" tal:content="context/twitter_in_reply_to | nothing">TWITTER IN REPLY TO</span>
+                <span id="absolute_url" tal:content="context/absolute_url | nothing">ANSOLUTE_URL</span>
+                <span id="thank_you_page" tal:content="context/thank_you_page | nothing">THANK YOU</span>
             </div>
 
             <ul class="noise-menu">
@@ -98,7 +99,7 @@
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                         </span>
-                        <span tal:content="context/twitter_tab_heading"/>
+                        <span tal:content="context/twitter_tab_heading">TWITTER TAB HEADING</span>
                     </h2>
 
                     <form id="twitter_noise_form" class="noise-form"
@@ -152,7 +153,7 @@
                         <input type="hidden" id="tweet-text" name="tweet-text"/>
 
                         <tal:conditional tal:condition="nocall:context/opt_in_newsletter_active">
-                            <div class="header" tal:content="context/keep_posted_heading"/>
+                            <div class="header" tal:content="context/keep_posted_heading">KEEP POSTED HEADING</div>
 
                             <input type="checkbox" name="keepposted"
                                    id="keepposted">
@@ -203,7 +204,7 @@
 
                         <a class="tweet_noise btn btn-green"
                            href="#">
-                            <span tal:content="python:context.twitter_submit or 'submit'"/>
+                            <span tal:content="python:context.twitter_submit or 'submit'">SUBMIT</span>
                         </a>
 
                     </form>
@@ -242,7 +243,7 @@
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-stack-1x fa-inverse">@</i>
                         </span>
-                        <span tal:content="context/email_tab_heading"/>
+                        <span tal:content="context/email_tab_heading">EMAIL TAB HEADING</span>
                     </h2>
 
                     <form id="email_noise_form" class="noise-form"
@@ -279,7 +280,7 @@
 
                         <div>
                             <label for="email_subject" i18n:translate="">Subject:</label>
-                            <input jsf:constraint="email_subject.match(/\w{3}\w*/)"
+                            <input jsf:constraint="email_subject.match(/\w{1}\w*/)"
                                    type="text"
                                    name="email_subject"
                                    id="email_subject"
@@ -289,7 +290,7 @@
 
                         <div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
-                            <input jsf:constraint="firstname.match(/\w{3}\w*/)"
+                            <input jsf:constraint="firstname.match(/\w{1}\w*/)"
                                    type="text"
                                    name="firstname"
                                    id="firstname">
@@ -298,7 +299,7 @@
 
                         <div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
-                            <input jsf:constraint="lastname.match(/\w{3}\w*/)"
+                            <input jsf:constraint="lastname.match(/\w{2}\w*/)"
                                    type="text"
                                    name="lastname"
                                    id="lastname">
@@ -317,7 +318,7 @@
                             <input type="text" name="phone" id="phone">
                         </div>
 
-                        <div class="header" tal:content="context/keep_posted_heading"/>
+                        <div class="header" tal:content="context/keep_posted_heading">KEEP POSTED HEADING</div>
 
                         <input type="checkbox" name="keepposted"
                                id="keepposted">
@@ -330,7 +331,7 @@
                         <p>
                             <a class="email_noise btn btn-green"
                                href="#">
-                                <span tal:content="python:context.email_submit or 'submit'"/>
+                                <span tal:content="python:context.email_submit or 'submit'">SUBMIT</span>
                             </a>
                         </p>
                     </form>
@@ -346,7 +347,7 @@
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
                         </span>
-                        <span tal:content="context/hardcopy_tab_heading"/>
+                        <span tal:content="context/hardcopy_tab_heading">HARDCOPY TAB HEADING</span>
                     </h2>
 
                     <form id="hardcopy_noise_form" class="noise-form"
@@ -436,7 +437,7 @@
                             <input type="text" name="phone" id="phone">
                         </div>
 
-                        <div class="header" tal:content="context/keep_posted_heading"/>
+                        <div class="header" tal:content="context/keep_posted_heading">KEEP POSTED HEADING</div>
 
                         <input type="checkbox" name="keepposted"
                                id="keepposted">
@@ -456,7 +457,7 @@
                         <p>
                             <a class="hardcopy_noise btn btn-green"
                                href="#">
-                                <span tal:content="python:context.hardcopy_submit or 'submit'"/>
+                                <span tal:content="python:context.hardcopy_submit or 'submit'">SUBMIT</span>
                             </a>
                         </p>
                     </form>
@@ -472,7 +473,7 @@
 
                         <img src="https://milieudefensie.nl/++theme++squircle/img/logo-milieudefensie-312x57.png"/>
 
-                        <h1 tal:content="context/title"/>
+                        <h1 tal:content="context/title">TITLE</h1>
 
                         <br/>
                         <br/>

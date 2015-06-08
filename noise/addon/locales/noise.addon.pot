@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-28 18:14+0000\n"
+"POT-Creation-Date: 2015-06-08 08:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Body texts"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:426
+#: ../models/noise_templates/noiseview.pt:427
 msgid "City:"
 msgstr ""
 
@@ -45,12 +45,12 @@ msgstr ""
 msgid "Conclusion"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:144
+#: ../models/noise_templates/noiseview.pt:145
 msgid "Dit is je Tweet!"
 msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:42
-#: ../models/noise_templates/noiseview.pt:82
+#: ../models/noise_templates/noiseview.pt:83
 msgid "Email"
 msgstr ""
 
@@ -66,12 +66,12 @@ msgstr ""
 msgid "Email medium"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:187
+#: ../models/noise_templates/noiseview.pt:188
 msgid "Email:"
 msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:35
-#: ../models/noise_templates/noiseview.pt:75
+#: ../models/noise_templates/noiseview.pt:76
 msgid "Facebook"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Facebook medium"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:164
+#: ../models/noise_templates/noiseview.pt:165
 msgid "Firstname:"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgid "General intro"
 msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:49
-#: ../models/noise_templates/noiseview.pt:89
+#: ../models/noise_templates/noiseview.pt:90
 msgid "Hardcopy"
 msgstr ""
 
@@ -128,19 +128,19 @@ msgstr ""
 msgid "In reply to:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:159
+#: ../models/noise_templates/noiseview.pt:160
 msgid "Ja graag! Hou me op de hoogte."
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:62
+#: ../models/noise_templates/noiseview.pt:63
 msgid "Je kunt je oproep ook doen via"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:107
+#: ../models/noise_templates/noiseview.pt:108
 msgid "Kies je tekst:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:176
+#: ../models/noise_templates/noiseview.pt:177
 msgid "Lastname:"
 msgstr ""
 
@@ -160,6 +160,10 @@ msgstr ""
 msgid "Noise statistics"
 msgstr ""
 
+#: ../models/noise_templates/noiseview.pt:40
+msgid "Oproepen verstuurd!"
+msgstr ""
+
 #: ../models/noise.xml
 msgid "Opt in newsletter"
 msgstr ""
@@ -172,7 +176,7 @@ msgstr ""
 msgid "PLEASE ENABLE JAVASCRIPT"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:196
+#: ../models/noise_templates/noiseview.pt:197
 msgid "Phonenumber:"
 msgstr ""
 
@@ -188,11 +192,11 @@ msgstr ""
 msgid "Related"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:171
+#: ../models/noise_templates/noiseview.pt:172
 msgid "Required"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:422
+#: ../models/noise_templates/noiseview.pt:423
 msgid "Required (format:1234AB)"
 msgstr ""
 
@@ -208,7 +212,7 @@ msgstr ""
 msgid "Show counter"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:403
+#: ../models/noise_templates/noiseview.pt:404
 msgid "Street and number:"
 msgstr ""
 
@@ -216,7 +220,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:281
+#: ../models/noise_templates/noiseview.pt:282
 msgid "Subject:"
 msgstr ""
 
@@ -249,7 +253,7 @@ msgid "Total no. of records:"
 msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:28
-#: ../models/noise_templates/noiseview.pt:68
+#: ../models/noise_templates/noiseview.pt:69
 msgid "Twitter"
 msgstr ""
 
@@ -265,7 +269,7 @@ msgstr ""
 msgid "User selectable predefined body texts (one per line)"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:270
+#: ../models/noise_templates/noiseview.pt:271
 msgid "Voeg iets persoonlijks toe als je wilt:"
 msgstr ""
 
@@ -293,7 +297,7 @@ msgstr ""
 msgid "Whether or not to show the total amount of noise items created"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:415
+#: ../models/noise_templates/noiseview.pt:416
 msgid "Zipcode:"
 msgstr ""
 

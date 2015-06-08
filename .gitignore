@@ -1,5 +1,6 @@
 .gitignore
 *.pyc
 *.egg
+*.eggs
 *.egg-info
 *.mo
