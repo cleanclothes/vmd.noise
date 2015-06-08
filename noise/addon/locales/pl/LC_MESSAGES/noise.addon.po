@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -12,308 +9,308 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: pl\n"
+"Language-Name: Polish\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: noise.addon\n"
 
 #: ../models/noise.xml
 msgid "A url to redirect to if necessary"
-msgstr "Een url waarnaar ge-redirect wordt, indien nodig"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Additional body text"
-msgstr "Additionele tekst"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Additional example text (each newline is considered a new paragraph)"
-msgstr "Additionele voorbeeld tekst (elke regel is een paragraaf)"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Body text prefix"
-msgstr "Voorlooptekst bij hoofdtekst"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Body texts"
-msgstr "Hoofdtekst"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:427
 msgid "City:"
-msgstr "Stad:"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Conclusion"
-msgstr "Slotformule"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:145
 msgid "Dit is je Tweet!"
-msgstr "Dit is je Tweet!"
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:42
 #: ../models/noise_templates/noiseview.pt:83
 msgid "Email"
-msgstr "E-mail"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Email button"
-msgstr "E-mail knop"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Email heading"
-msgstr "E-mail aanhef"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Email medium"
-msgstr "E-mail medium"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:188
 msgid "Email:"
-msgstr "E-mail:"
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:35
 #: ../models/noise_templates/noiseview.pt:76
 msgid "Facebook"
-msgstr "Facebook"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Facebook medium"
-msgstr "Facebook medium"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:165
 msgid "Firstname:"
-msgstr "Voornaam:"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "For example: \"Dear mrs. X\""
-msgstr "Bijvoorbeeld: \"Beste mevr. X\""
+msgstr ""
 
 #: ../models/noise.xml
 msgid "For example: \"do you want to know how X responds?\""
-msgstr "Bijvoorbeeld: \"wil je weten hoe X reageert?\""
+msgstr ""
 
 #: ../models/noise.xml
 msgid "General intro"
-msgstr "Algemene intro"
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:49
 #: ../models/noise_templates/noiseview.pt:90
 msgid "Hardcopy"
-msgstr "Brief"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Hardcopy heading"
-msgstr "Brief aanhef"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Hardcopy medium"
-msgstr "Brief medium"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Hashtags"
-msgstr "Hashtags"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Header image"
-msgstr "Achtergrond"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Heading of keep posted part"
-msgstr "Tekst van \"hou me op de hoogte\" onderdeel"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Images"
-msgstr "Afbeeldingen"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "In reply to:"
-msgstr "In antwoord op:"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:160
 msgid "Ja graag! Hou me op de hoogte."
-msgstr "Ja graag! Hou me op de hoogte."
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:63
 msgid "Je kunt je oproep ook doen via"
-msgstr "Je kunt je oproep ook doen via"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:108
 msgid "Kies je tekst:"
-msgstr "Kies je tekst:"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:177
 msgid "Lastname:"
-msgstr "Achernaam"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:34
 msgid "Lees meer"
-msgstr "Lees meer"
+msgstr ""
 
 #: ../profiles/default/types/noise.addon.noise.xml
 msgid "Make some noise"
-msgstr "Make some noise"
+msgstr ""
 
 #: ../profiles/default/types/noise.addon.noise.xml
 msgid "Noise"
-msgstr "Noise"
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:19
 msgid "Noise statistics"
-msgstr "Noise statistieken"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:40
 msgid "Oproepen verstuurd!"
-msgstr "Oproepen verstuurd!"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Opt in newsletter"
-msgstr "Opt-in nieuwsbrief"
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:22
 msgid "Other media's statistics:"
-msgstr "Overige statistieken: "
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:17
 msgid "PLEASE ENABLE JAVASCRIPT"
-msgstr "ACTIVEER JAVASCRIPT A.U.B."
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:197
 msgid "Phonenumber:"
-msgstr "Telefoon:"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Prefix to the selected body text"
-msgstr "Voorloop bij de gekozen tekst"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Recipient"
-msgstr "Ontvanger"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Related"
-msgstr "Gerelateerde"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:172
 msgid "Required"
-msgstr "Verplicht"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:423
 msgid "Required (format:1234AB)"
-msgstr "Verplicht (formaat:1234AB)"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Send email button"
-msgstr "Verstuur e-mail knop"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Send hardcopy button"
-msgstr "Verstuur brief knop"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Show counter"
-msgstr "Toon teller"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:404
 msgid "Street and number:"
-msgstr "Adres en huisnummer"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Subject"
-msgstr "Onderwerp"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:282
 msgid "Subject:"
-msgstr "Onderwerp:"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Submit button"
-msgstr "Submit knop"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Submit to Facebook button"
-msgstr "Verstuur naar Facebook knop"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Submit to Twitter button"
-msgstr "Verstuur naar Twitter knop"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Tab heading"
-msgstr "Tab tekst"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Text"
-msgstr "Hoofdtekst"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Thank you page"
-msgstr "Bedanktpagina"
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:57
 msgid "Total no. of records:"
-msgstr "Totaal aantal: "
+msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:28
 #: ../models/noise_templates/noiseview.pt:69
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Twitter medium"
-msgstr "Twitter medium"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "User selectable images"
-msgstr "Door de gebruiker te kiezen afbeeldingen"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "User selectable predefined body texts (one per line)"
-msgstr "Door de gebruiker te kiezen teksten (een per regel)"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:271
 msgid "Voeg iets persoonlijks toe als je wilt:"
-msgstr "Voeg iets persoonlijks toe als je wilt:"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to allow a user to subscribe to the newsletter"
-msgstr "Of een gebruiker zich kan inschrijven voor de nieuwsbrief"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Email tab"
-msgstr "Is de e-mail tab actief?"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Facebook tab"
-msgstr "Is de Facebook tab actief?"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Hardcopy tab"
-msgstr "Is de brief tab actief?"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Twitter tab"
-msgstr "Is de Twitter tab actief?"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to show the total amount of noise items created"
-msgstr "Of het totaal aantal verstuurde items getoond wordt"
+msgstr ""
 
 #: ../models/noise_templates/noiseview.pt:416
 msgid "Zipcode:"
-msgstr "Postcode"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "e.g. Best regards,"
-msgstr "b.v. Met vriendelijke groet,"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "web intent hashtags parameter (comma separated)"
-msgstr "web intent hashtags parameter (komma gescheiden)"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "web intent in_reply_to parameter"
-msgstr "web intent in_reply_to parameter"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "web intent related parameter (comma separated)"
-msgstr "web intent related parameter (komma gescheiden)"
+msgstr ""
 
