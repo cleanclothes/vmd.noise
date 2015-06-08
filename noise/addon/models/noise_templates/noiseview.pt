@@ -165,7 +165,7 @@
                                 <label for="firstname" i18n:translate="">Firstname:</label>
                                 <input jsf:relevant="keepposted"
                                        jsf:required="true"
-                                       jsf:constraint="firstname.match(/\w{3}\w*/)"
+                                       jsf:constraint="firstname.match(/\w{1}\w*/)"
                                        type="text"
                                        name="firstname"
                                        id="firstname">
@@ -177,7 +177,7 @@
                             <label for="lastname" i18n:translate="">Lastname:</label>
                             <input jsf:relevant="keepposted"
                                    jsf:required="true"
-                                   jsf:constraint="lastname.match(/\w{3}\w*/)"
+                                   jsf:constraint="lastname.match(/\w{2}\w*/)"
                                    type="text"
                                    name="lastname"
                                    id="lastname">
@@ -384,7 +384,7 @@
                                value="hardcopy"/>
                         <div>
                             <label for="firstname" i18n:translate="">Firstname:</label>
-                            <input jsf:constraint="firstname.match(/\w{3}\w*/)"
+                            <input jsf:constraint="firstname.match(/\w{1}\w*/)"
                                    type="text"
                                    name="firstname"
                                    id="firstname">
@@ -393,7 +393,7 @@
 
                         <div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
-                            <input jsf:constraint="lastname.match(/\w{3}\w*/)"
+                            <input jsf:constraint="lastname.match(/\w{2}\w*/)"
                                    type="text"
                                    name="lastname"
                                    id="lastname">
@@ -425,7 +425,7 @@
 
                         <div>
                             <label for="city" i18n:translate="">City:</label>
-                            <input jsf:constraint="city.match(/\w{3}\w*/)"
+                            <input jsf:constraint="city.match(/\w{2}\w*/)"
                                    type="text"
                                    name="city"
                                    id="city">
