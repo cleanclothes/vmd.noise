@@ -42,39 +42,11 @@
             <title i18n:translate="">Opt in newsletter</title>
         </field>
 
-        <field name="thank_you_page" type="zope.schema.Text">
+        <field name="thank_you_page" type="zope.schema.TextLine">
             <description i18n:translate="">A url to redirect to if necessary</description>
             <title i18n:translate="">Thank you page</title>
             <required>False</required>
         </field>
-
-        <!--fieldset name="facebook" label="Facebook"
-                  description="Make some noise on Facebook">
-            <field name="show_facebook" type="zope.schema.Bool">
-                <description i18n:translate="">Whether or not to show the Facebook tab</description>
-                <title i18n:translate="">Facebook medium</title>
-            </field>
-            <field name="facebook_tab_heading" type="zope.schema.TextLine">
-                <description i18n:translate=""></description>
-                <title i18n:translate="">Tab heading</title>
-                <required>False</required>
-            </field>
-            <field name="facebook_body_texts" type="zope.schema.Text">
-                <description i18n:translate="">User selectable predefined body texts (one per line)</description>
-                <title i18n:translate="">Body texts</title>
-            </field>
-            <field name="facebook_rcpt" type="zope.schema.TextLine">
-                <description i18n:translate=""></description>
-                <title i18n:translate="">Recipient</title>
-                <required>False</required>
-            </field>
-            <field name="facebook_submit" type="zope.schema.TextLine">
-                <description i18n:translate="">Submit to Facebook button
-                </description>
-                <title i18n:translate="">Submit button</title>
-                <required>False</required>
-            </field>
-        </fieldset-->
 
         <fieldset name="twitter" label="Twitter"
                   description="Make some noise on Twitter">
@@ -204,6 +176,19 @@
             <field name="hardcopy_submit" type="zope.schema.TextLine">
                 <description i18n:translate="">Send hardcopy button</description>
                 <title i18n:translate="">Submit button</title>
+                <required>False</required>
+            </field>
+        </fieldset>
+
+        <fieldset name="petition" label="Petition"
+                  description="Make some noise petition">
+            <field name="show_petition" type="zope.schema.Bool">
+                <description i18n:translate="">Whether or not to show the Petition tab</description>
+                <title i18n:translate="">Petition medium</title>
+            </field>
+            <field name="petition_tab_heading" type="zope.schema.TextLine">
+                <description i18n:translate=""></description>
+                <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
         </fieldset>

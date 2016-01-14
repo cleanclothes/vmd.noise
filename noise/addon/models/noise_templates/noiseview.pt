@@ -90,6 +90,13 @@
                     </span>
                     <a href="#hardcopy-tab" i18n:translate="">Hardcopy</a>
                 </li>
+                <li class="noise-menu-petition" tal:condition="context/show_petition">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#petition-tab" i18n:translate="">Petition</a>
+                </li>
             </ul>
 
             <div id="twitter-tab"
@@ -194,30 +201,6 @@
                     </form>
                 </section>
             </div>
-
-            <!--div id="facebook-tab"
-                 class="tab" tal:condition="context/show_facebook">
-                <section class="tab-content">
-
-                    <h2>
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <span tal:content="context/facebook_tab_heading"/>
-                    </h2>
-
-                    <form id="facebook_noise_form" class="noise-form"
-                          method="POST" action="">
-
-                        <div class="header" i18n:translate="">Kies je tekst:
-                        </div>
-
-                        <input type="hidden" id="noisetype" name="noisetype"
-                               value="facebook"/>
-                    </form>
-                </section>
-            </div-->
 
             <div id="email-tab" class="tab" tal:condition="context/show_email">
                 <section class="tab-content">
@@ -486,6 +469,24 @@
                         <div id="pr-phonenumber"></div>
                     </section>
                 </div>
+            </div>
+
+            <div id="petition-tab"
+                 class="tab" tal:condition="context/show_petition">
+                <section class="tab-content">
+
+                    <h2>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span tal:content="context/petition_tab_heading">PETITION TAB HEADING</span>
+                    </h2>
+
+                    <form id="petition_noise_form" class="noise-form"
+                          method="POST" action="">
+                    </form>
+                </section>
             </div>
         </div>
     </metal:content-core>
