@@ -48,16 +48,6 @@
             <required>False</required>
         </field>
 
-        <field name="images" type="plone.app.relationfield.RelationList">
-            <title i18n:translate="">Images</title>
-            <description i18n:translate="">User selectable images</description>
-            <value_type type="plone.app.relationfield.Relation">
-                <title i18n:translate="">User selectable images</title>
-                <source>plone.formwidget.contenttree.obj_path_src_binder</source>
-            </value_type>
-            <required>False</required>
-        </field>
-
         <fieldset name="facebook" label="Facebook"
                   description="Make some noise on Facebook">
             <field name="show_facebook" type="zope.schema.Bool">

@@ -1,7 +1,10 @@
 from StringIO import StringIO
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
-from Products.CMFDefault.utils import checkEmailAddress
+try:
+    from Products.CMFDefault.utils import checkEmailAddress
+except:
+    from Products.CMFPlone.RegistrationTool import checkEmailAddress
 from five import grok
 from plone.dexterity.content import Item
 from plone.directives import form
@@ -49,7 +52,8 @@ class Noise(Item):
         return result
 
     def to_br(self, text):
-        text = text.replace("\n", "<br/>")
+        if text:
+            text = text.replace("\n", "<br/>")
         return text
 
     @property

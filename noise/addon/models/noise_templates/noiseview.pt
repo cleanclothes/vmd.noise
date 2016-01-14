@@ -2,6 +2,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:jsf="https://github.com/wyldebeast-wunderliebe/jsforms"
       lang="en"
         metal:use-macro="context/main_template/macros/master"
         i18n:domain="noise.addon">
@@ -24,8 +25,8 @@
                 </div>
             </tal:background>
 
-            <div class="need_some_room">
-                <div class="noise-body" tal:condition="context/text">
+            <div class="need_some_room" tal:condition="context/text">
+                <div class="noise-body">
                     <tal:block tal:content="structure context/text/output">Lorem
                         ipsum
                     </tal:block>

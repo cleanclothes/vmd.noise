@@ -202,7 +202,7 @@ noise = {
                 $(this).html("<i class='fa fa-chevron-circle-up'></i>").addClass("opened");
             } else {
                 noise_body.animate({"height": "100px"}); //.css("background", "none");
-                $(this).text(noise.readmore_txt).removeClass("opened");
+                $(this).html("<i class='fa fa-chevron-circle-down'></i>").removeClass("opened");
             }
         });
     }
