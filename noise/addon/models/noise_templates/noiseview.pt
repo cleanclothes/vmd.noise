@@ -126,23 +126,6 @@
                             </select>
                         </div>
 
-                        <!--?<div class="header" i18n:translate="">Kies je-->
-                            <!--?afbeelding:-->
-                        <!--?</div>-->
-
-                        <!--?<div class="images" tal:condition="context/images">-->
-                            <!--?<a class="clickable-image"-->
-                               <!--?href="#" tal:repeat="img context/images">-->
-
-                                <!--?<tal:def tal:define="imgurl string:${img/to_object/absolute_url}">-->
-                                    <!--?<span class="image full" tal:attributes="id string:t-popup-${repeat/img/index}">-->
-                                        <!--?<img tal:attributes="src string:${imgurl}"/>-->
-                                    <!--?</span>-->
-                                    <!--?<img class="image thumb"  tal:attributes="id string:t-image-${repeat/img/index} ;src string:${imgurl}/image_thumb"/>-->
-                                <!--?</tal:def>-->
-                            <!--?</a>-->
-                        <!--?</div>-->
-
                         <div id="tweet-text-header"
                              class="header" i18n:translate="">Dit is je Tweet!
                         </div>
