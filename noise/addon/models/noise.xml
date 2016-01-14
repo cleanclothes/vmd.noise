@@ -48,7 +48,7 @@
             <required>False</required>
         </field>
 
-        <fieldset name="facebook" label="Facebook"
+        <!--fieldset name="facebook" label="Facebook"
                   description="Make some noise on Facebook">
             <field name="show_facebook" type="zope.schema.Bool">
                 <description i18n:translate="">Whether or not to show the Facebook tab</description>
@@ -74,7 +74,8 @@
                 <title i18n:translate="">Submit button</title>
                 <required>False</required>
             </field>
-        </fieldset>
+        </fieldset-->
+
         <fieldset name="twitter" label="Twitter"
                   description="Make some noise on Twitter">
             <field name="show_twitter" type="zope.schema.Bool">
@@ -117,6 +118,7 @@
                 <required>False</required>
             </field>
         </fieldset>
+
         <fieldset name="email" label="Email"
                   description="Make some noise by sending an email">
             <field name="show_email" type="zope.schema.Bool">
@@ -163,6 +165,7 @@
                 <required>False</required>
             </field>
         </fieldset>
+
         <fieldset name="hardcopy" label="Hardcopy"
                   description="Make some noise on paper">
             <field name="show_hardcopy" type="zope.schema.Bool">

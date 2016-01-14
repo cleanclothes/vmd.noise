@@ -195,7 +195,7 @@
                 </section>
             </div>
 
-            <div id="facebook-tab"
+            <!--div id="facebook-tab"
                  class="tab" tal:condition="context/show_facebook">
                 <section class="tab-content">
 
@@ -217,7 +217,7 @@
                                value="facebook"/>
                     </form>
                 </section>
-            </div>
+            </div-->
 
             <div id="email-tab" class="tab" tal:condition="context/show_email">
                 <section class="tab-content">
