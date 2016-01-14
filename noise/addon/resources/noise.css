@@ -5,11 +5,11 @@ body.portaltype-noise-addon-noise#ActionPage .main .make-row .content {
 }
 
 body.portaltype-noise-addon-noise#ActionPage .main .container .sidebar,
-body.portaltype-noise-addon-noise#ActionPage .main .content>header .breadcrumb {
+body.portaltype-noise-addon-noise#ActionPage .main .content > header .breadcrumb {
     display: none;
 }
 
-body.portaltype-noise-addon-noise#ActionPage .main .content>header {
+body.portaltype-noise-addon-noise#ActionPage .main .content > header {
     margin: 80px 0 100px;
 }
 
@@ -47,6 +47,7 @@ body.portaltype-noise-addon-noise#ActionPage .main .content>header {
     display: none;
     position: absolute;
 }
+
 /* noise menu tabs */
 
 #noise-container .noise-menu {
@@ -64,6 +65,7 @@ body.portaltype-noise-addon-noise#ActionPage .main .content>header {
     z-index: 5;
     color: #cecece;
 }
+
 #noise-container .noise-menu li.current a {
     color: #cecece;
 }
@@ -74,6 +76,60 @@ body.portaltype-noise-addon-noise#ActionPage .main .content>header {
 
 #noise-container .tab {
     display: none;
+}
+
+/* BUTTONS */
+
+input[type="submit"],
+.button,
+.btn {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    border: none;
+    color: #fff !important;
+    display: inline-block;
+    letter-spacing: 1px;
+    padding: 0 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type="submit"].btn-blue,
+.button.btn-blue,
+.btn.btn-blue {
+    background: #019cb6;
+}
+
+input[type="submit"].btn-green,
+.button.btn-green,
+.btn.btn-green {
+    background: #4fb047;
+}
+
+input[type="submit"].btn-red,
+.button.btn-red,
+.btn.btn-red {
+    background: #a01850;
+}
+
+input[type="submit"].btn-orange,
+.button.btn-orange,
+.btn.btn-orange {
+    background: #f57300;
+}
+
+input[type="submit"].btn-lightgreen,
+.button.btn-lightgreen,
+.btn.btn-lightgreen {
+    background: #abc434;
+}
+
+input[type="submit"].btn-darkgreen,
+.button.btn-darkgreen,
+.btn.btn-darkgreen {
+    background: #09574d;
 }
 
 /* other */
@@ -133,7 +189,7 @@ a.tweet_noise {
     position: relative;
     height: 100px;
     overflow: hidden;
-    background: linear-gradient(to top, rgba(255,255,255,0) 0%, #fff 100%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #fff 100%);
     margin: 10px 0;
     text-align: left;
 }
