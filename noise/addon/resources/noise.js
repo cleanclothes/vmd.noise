@@ -1,6 +1,6 @@
 noise = {
 
-    readmore_txt : $("#noise-container a.readmore").text(),
+    readmore_txt: $("#noise-container a.readmore").text(),
 
     initialize_noise_form: function () {
 
@@ -9,18 +9,20 @@ noise = {
 
         // Activate JSForms for client side form validation
         $(".noise-form").jsf({
-          selectInput: function(elt) { return elt.parent() }
-         });
+            selectInput: function (elt) {
+                return elt.parent()
+            }
+        });
 
         // Landingpages
 
-        if( $(".noise-menu li").length == 1 ) {
+        if ($(".noise-menu li").length == 1) {
             $(".noise-menu").hide();
         }
 
         var lp = $("#current_tab").text();
 
-        if( $("#current_tab").text() && $(".noise-menu .noise-menu-" + lp).length > 0 ) {
+        if ($("#current_tab").text() && $(".noise-menu .noise-menu-" + lp).length > 0) {
             $(".noise-menu .noise-menu-" + lp).addClass("current");
             $("#" + lp + "-tab").show();
         } else {
@@ -28,10 +30,10 @@ noise = {
             $(".tab").first().show();
         }
 
-        $(".image.thumb").on("mouseenter", function() {
+        $(".image.thumb").on("mouseenter", function () {
             var image_id = $(this).attr("id");
-            var idx = image_id.substring(image_id.lastIndexOf('-')+1);
-            $("#t-popup-" + idx).show({"effect": "blind"}).on("mouseout", function() {
+            var idx = image_id.substring(image_id.lastIndexOf('-') + 1);
+            $("#t-popup-" + idx).show({"effect": "blind"}).on("mouseout", function () {
                 $(this).hide();
             });
         })
@@ -40,7 +42,7 @@ noise = {
     initialize_email_noise_form: function () {
         $(".noise #email-texts").on("change", function () {
             var txt = $("#email_heading").text() + "<br/><br/>" + $("option:selected", this).text();
-            txt += "<br/><br/>" + $("#email_body_text_additional").text().replace(/\n/g,"<br/><br/>");
+            txt += "<br/><br/>" + $("#email_body_text_additional").text().replace(/\n/g, "<br/><br/>");
             $(".noise #email-text-div").html(txt);
         });
 
@@ -54,7 +56,7 @@ noise = {
     initialize_hardcopy_noise_form: function () {
         $(".noise #hardcopy-texts").on("change", function () {
             var txt = $("#hardcopy_heading").text() + "<br/><br/>" + $("option:selected", this).text();
-            txt += "<br/><br/>" + $("#hardcopy_body_text_additional").text().replace(/\n/g,"<br/><br/>");
+            txt += "<br/><br/>" + $("#hardcopy_body_text_additional").text().replace(/\n/g, "<br/><br/>");
             $(".noise #hardcopy-text-div").html(txt);
         });
 
@@ -73,11 +75,11 @@ noise = {
 
             $("#hardcopy_noise_form").submit();
 
-            if( $("#hardcopy_noise_form .error").length + $("#hardcopy_noise_form .constraint-violation").not(".irrelevant").length == 0 ) {
+            if ($("#hardcopy_noise_form .error").length + $("#hardcopy_noise_form .constraint-violation").not(".irrelevant").length == 0) {
 
                 // no more errors: print the document
 
-                var iframe   = document.createElement('iframe');
+                var iframe = document.createElement('iframe');
                 document.body.appendChild(iframe);
                 iframe.contentWindow.document.body.innerHTML = $('#print-container').html();
                 var script = document.createElement("script");
@@ -102,7 +104,7 @@ noise = {
         $(".noise #twitter-texts").on("change", function (event) {
 
             // only when manually changed...
-            if( event.originalEvent !== undefined ) {
+            if (event.originalEvent !== undefined) {
                 var txt = $(".noise #tweet-text-div").text();
                 var url = "";
                 if (txt.indexOf("http") != -1) {
@@ -166,12 +168,12 @@ noise = {
         $(".tweet_noise").on("click", function (e) {
 
             // Trigger change event when trying to submit
-            $("#twitter_noise_form .required input, #twitter_noise_form .required select").each(function() {
+            $("#twitter_noise_form .required input, #twitter_noise_form .required select").each(function () {
                 $(this).trigger("change");
             });
 
             // Compose the tweet if there are no errors
-            if( ($("#twitter_noise_form .error").length + $("#twitter_noise_form .constraint-violation").not(".irrelevant").length) == 0 ) {
+            if (($("#twitter_noise_form .error").length + $("#twitter_noise_form .constraint-violation").not(".irrelevant").length) == 0) {
                 $("#tweet-text").val($("#tweet-text-div").text().substring(0, 119) + " " + $("#absolute_url").text());
                 $(this).attr(
                     "href", "https://twitter.com/intent/tweet?text=" +
@@ -205,7 +207,7 @@ noise = {
             e.preventDefault();
             var noise_body = $(this).parent().find(".noise-body");
 
-            if( !$(this).hasClass("opened") ) {
+            if (!$(this).hasClass("opened")) {
                 noise_body.animate({"height": noise_body[0].scrollHeight}); //.css("background", "none");
                 $(this).html("<i class='fa fa-chevron-circle-up'></i>").addClass("opened");
             } else {
