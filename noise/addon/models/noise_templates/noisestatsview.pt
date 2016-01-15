@@ -158,6 +158,7 @@
                                 <td tal:content="python:item.get_record.get('firstname')"/>
                                 <td tal:content="python:item.get_record.get('lastname')"/>
                                 <td tal:content="python:item.get_record.get('email')"/>
+                                <td tal:content="python:item.get_record.get('gender')"/>
                             </tr>
                         </table>
                     </tal:stats>

@@ -92,7 +92,6 @@ noise = {
     },
 
     initialize_petition_noise_form: function () {
-
         $(".noise .petition_noise").on("click", function (e) {
             // e.preventDefault();
             $("#petition_noise_form").submit();

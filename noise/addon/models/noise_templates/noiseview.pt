@@ -492,6 +492,7 @@
                                    id="firstname">
                             <span class="help" i18n:translate="">Required</span>
                         </div>
+
                         <div>
                             <label for="lastname" i18n:translate="">Lastname:</label>
                             <input jsf:relevant="keepposted"
@@ -501,6 +502,17 @@
                                    name="lastname"
                                    id="lastname">
                             <span class="help" i18n:translate="">Required</span>
+                        </div>
+
+                        <div>
+                            <label i18n:translate="">Gender:</label>
+                            <fieldset jsf:required="true" jsf:constraint="gender">
+                                <input type="radio" name="gender" id="gender-m" value="m">
+                                <label for="gender-m">Male</label>
+                                <input type="radio" name="gender" id="gender-f" value="f">
+                                <label for="gender-f">Female</label>
+                                <span class="help" i18n:translate="">Required</span>
+                            </fieldset>
                         </div>
 
                         <div>
