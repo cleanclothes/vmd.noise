@@ -191,6 +191,11 @@
                 <title i18n:translate="">Tab heading</title>
                 <required>False</required>
             </field>
+            <field name="petition_submit" type="zope.schema.TextLine">
+                <description i18n:translate="">Send petition button</description>
+                <title i18n:translate="">Submit button</title>
+                <required>False</required>
+            </field>
         </fieldset>
     </schema>
 </model>

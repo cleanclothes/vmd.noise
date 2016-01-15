@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-08 20:01+0000\n"
+"POT-Creation-Date: 2016-01-15 09:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Body text prefix"
 msgid "Body texts"
 msgstr "Body texts"
 
-#: ../models/noise_templates/noiseview.pt:427
+#: ../models/noise_templates/noiseview.pt:387
 msgid "City:"
 msgstr "City:"
 
@@ -42,12 +42,16 @@ msgstr "City:"
 msgid "Conclusion"
 msgstr "Conclusion"
 
-#: ../models/noise_templates/noiseview.pt:145
+#: ../models/noise_templates/noiseview.pt:129
 msgid "Dit is je Tweet!"
 msgstr "This is your Tweet!"
 
-#: ../models/noise_templates/noisestatsview.pt:42
-#: ../models/noise_templates/noiseview.pt:83
+#: ../models/noise_templates/noisestatsview.pt:65
+msgid "Download CSV"
+msgstr ""
+
+#: ../models/noise_templates/noisestatsview.pt:35
+#: ../models/noise_templates/noiseview.pt:77
 msgid "Email"
 msgstr "Email"
 
@@ -63,20 +67,11 @@ msgstr "Email heading"
 msgid "Email medium"
 msgstr "Email medium"
 
-#: ../models/noise_templates/noiseview.pt:188
+#: ../models/noise_templates/noiseview.pt:172
 msgid "Email:"
 msgstr "Email"
 
-#: ../models/noise_templates/noisestatsview.pt:35
-#: ../models/noise_templates/noiseview.pt:76
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../models/noise.xml
-msgid "Facebook medium"
-msgstr "Facebook medium"
-
-#: ../models/noise_templates/noiseview.pt:165
+#: ../models/noise_templates/noiseview.pt:149
 msgid "Firstname:"
 msgstr "Firstname:"
 
@@ -92,8 +87,8 @@ msgstr "For example: \"do you want to know how X responds?\""
 msgid "General intro"
 msgstr "General intro"
 
-#: ../models/noise_templates/noisestatsview.pt:49
-#: ../models/noise_templates/noiseview.pt:90
+#: ../models/noise_templates/noisestatsview.pt:42
+#: ../models/noise_templates/noiseview.pt:84
 msgid "Hardcopy"
 msgstr "Hardcopy"
 
@@ -118,30 +113,26 @@ msgid "Heading of keep posted part"
 msgstr "Heading of keep posted part"
 
 #: ../models/noise.xml
-msgid "Images"
-msgstr "Images"
-
-#: ../models/noise.xml
 msgid "In reply to:"
 msgstr "In reply to:"
 
-#: ../models/noise_templates/noiseview.pt:160
+#: ../models/noise_templates/noiseview.pt:144
 msgid "Ja graag! Hou me op de hoogte."
 msgstr "Yes please! Keep me posted."
 
-#: ../models/noise_templates/noiseview.pt:63
+#: ../models/noise_templates/noiseview.pt:64
 msgid "Je kunt je oproep ook doen via"
 msgstr "You can also send your request through"
 
-#: ../models/noise_templates/noiseview.pt:108
+#: ../models/noise_templates/noiseview.pt:109
 msgid "Kies je tekst:"
 msgstr "Choose your text:"
 
-#: ../models/noise_templates/noiseview.pt:177
+#: ../models/noise_templates/noiseview.pt:161
 msgid "Lastname:"
 msgstr "Lastname:"
 
-#: ../models/noise_templates/noiseview.pt:34
+#: ../models/noise_templates/noiseview.pt:35
 msgid "Lees meer"
 msgstr "Read more"
 
@@ -157,7 +148,7 @@ msgstr "Noise"
 msgid "Noise statistics"
 msgstr "Noise statistics"
 
-#: ../models/noise_templates/noiseview.pt:40
+#: ../models/noise_templates/noiseview.pt:41
 msgid "Oproepen verstuurd!"
 msgstr "Requests sent"
 
@@ -169,11 +160,20 @@ msgstr "Opt in newslettter"
 msgid "Other media's statistics:"
 msgstr "Other media's statistics:"
 
-#: ../models/noise_templates/noiseview.pt:17
+#: ../models/noise_templates/noiseview.pt:18
 msgid "PLEASE ENABLE JAVASCRIPT"
 msgstr "PLEASE ENABLE JAVASCRIPT"
 
-#: ../models/noise_templates/noiseview.pt:197
+#: ../models/noise_templates/noisestatsview.pt:49
+#: ../models/noise_templates/noiseview.pt:91
+msgid "Petition"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "Petition medium"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:181
 msgid "Phonenumber:"
 msgstr "Phonenumber:"
 
@@ -189,11 +189,11 @@ msgstr "Recipient"
 msgid "Related"
 msgstr "Related"
 
-#: ../models/noise_templates/noiseview.pt:172
+#: ../models/noise_templates/noiseview.pt:156
 msgid "Required"
 msgstr "Required"
 
-#: ../models/noise_templates/noiseview.pt:423
+#: ../models/noise_templates/noiseview.pt:383
 msgid "Required (format:1234AB)"
 msgstr "Required (format:1234AB)"
 
@@ -206,10 +206,14 @@ msgid "Send hardcopy button"
 msgstr "Send hardcopy button"
 
 #: ../models/noise.xml
+msgid "Send petition button"
+msgstr ""
+
+#: ../models/noise.xml
 msgid "Show counter"
 msgstr "Show counter"
 
-#: ../models/noise_templates/noiseview.pt:404
+#: ../models/noise_templates/noiseview.pt:364
 msgid "Street and number:"
 msgstr "Street and number:"
 
@@ -217,17 +221,13 @@ msgstr "Street and number:"
 msgid "Subject"
 msgstr "Subject"
 
-#: ../models/noise_templates/noiseview.pt:282
+#: ../models/noise_templates/noiseview.pt:242
 msgid "Subject:"
 msgstr "Subject:"
 
 #: ../models/noise.xml
 msgid "Submit button"
 msgstr "Submit button"
-
-#: ../models/noise.xml
-msgid "Submit to Facebook button"
-msgstr "Submit to Facebook button"
 
 #: ../models/noise.xml
 msgid "Submit to Twitter button"
@@ -250,7 +250,7 @@ msgid "Total no. of records:"
 msgstr "Total no. of records:"
 
 #: ../models/noise_templates/noisestatsview.pt:28
-#: ../models/noise_templates/noiseview.pt:69
+#: ../models/noise_templates/noiseview.pt:70
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -259,14 +259,10 @@ msgid "Twitter medium"
 msgstr "Twitter medium"
 
 #: ../models/noise.xml
-msgid "User selectable images"
-msgstr "User selectable images"
-
-#: ../models/noise.xml
 msgid "User selectable predefined body texts (one per line)"
 msgstr "User selectable predefined body texts (one per line)"
 
-#: ../models/noise_templates/noiseview.pt:271
+#: ../models/noise_templates/noiseview.pt:231
 msgid "Voeg iets persoonlijks toe als je wilt:"
 msgstr "Add something personal if you wish:"
 
@@ -279,12 +275,12 @@ msgid "Whether or not to show the Email tab"
 msgstr "Whether or not to show the Email tab"
 
 #: ../models/noise.xml
-msgid "Whether or not to show the Facebook tab"
-msgstr "Whether or not to show the Facebook tab"
-
-#: ../models/noise.xml
 msgid "Whether or not to show the Hardcopy tab"
 msgstr "Whether or not to show the Hardcopy tab"
+
+#: ../models/noise.xml
+msgid "Whether or not to show the Petition tab"
+msgstr ""
 
 #: ../models/noise.xml
 msgid "Whether or not to show the Twitter tab"
@@ -294,7 +290,7 @@ msgstr "Whether or not to show the Twitter tab"
 msgid "Whether or not to show the total amount of noise items created"
 msgstr "Whether or not to show the total amount of noise items created"
 
-#: ../models/noise_templates/noiseview.pt:416
+#: ../models/noise_templates/noiseview.pt:376
 msgid "Zipcode:"
 msgstr "Zipcode:"
 

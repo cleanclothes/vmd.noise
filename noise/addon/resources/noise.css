@@ -61,9 +61,10 @@ body.portaltype-noise-addon-noise#ActionPage .main .content > header {
 }
 
 #noise-container .noise-menu li.current {
-    position: relative;
-    z-index: 5;
-    color: #cecece;
+    display: none;
+    /*position: relative;*/
+    /*z-index: 5;*/
+    /*color: #cecece;*/
 }
 
 #noise-container .noise-menu li.current a {
@@ -223,4 +224,8 @@ a.tweet_noise {
 #noise-container table th {
     border: 1px solid #d5d5d5;
     padding: 5px;
+}
+
+#noise-container .download_link {
+    float: right;
 }

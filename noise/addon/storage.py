@@ -4,18 +4,18 @@ from zope.annotation import IAnnotations
 import logging
 
 TWITTER_KEY = "noise.addon.twitter"
-FACEBOOK_KEY = "noise.addon.facebook"
 EMAIL_KEY = "noise.addon.email"
 HARDCOPY_KEY = "noise.addon.hardcopy"
+PETITION_KEY = "noise.addon.petition"
 
 TWITTER_CSV_HEADERS = ["timestamp", "twitter-text", "tweet-text",
                        "firstname", "lastname", "email", "phone", "keepposted"]
-FACEBOOK_CSV_HEADERS = ["timestamp"]
 EMAIL_CSV_HEADERS = ["timestamp", "email-text", "email_body", "firstname",
                      "lastname", "email", "phone", "keepposted"]
 HARDCOPY_CSV_HEADERS = ["timestamp", "hardcopy-text", "hardcopy_body",
                         "firstname", "lastname", "address", "zipcode", "city",
                         "phone", "keepposted"]
+PETITION_CSV_HEADERS = ["timestamp", "firstname", "lastname", "gender"]
 
 logger = logging.getLogger('noise.addon')
 

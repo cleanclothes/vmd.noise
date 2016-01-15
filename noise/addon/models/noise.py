@@ -59,9 +59,9 @@ class Noise(Item):
     @property
     def total(self):
         return len(storage.status(self, storage.TWITTER_KEY)) + len(
-            storage.status(self, storage.FACEBOOK_KEY)) + len(
             storage.status(self, storage.EMAIL_KEY)) + len(
-            storage.status(self, storage.HARDCOPY_KEY))
+            storage.status(self, storage.HARDCOPY_KEY)) + len(
+            storage.status(self, storage.PETITION_KEY))
 
 
 # View class
@@ -98,10 +98,6 @@ class NoiseView(grok.View):
             # don't need to worry about anything else here.
             storage.add_noise(self.context, storage.TWITTER_KEY, form)
 
-        elif noisetype == "facebook":
-
-            storage.add_noise(self.context, storage.FACEBOOK_KEY, form)
-
         elif noisetype == "email":
 
             # E-mail sending and storage goes here
@@ -136,6 +132,10 @@ class NoiseView(grok.View):
         elif noisetype == "hardcopy":
 
             storage.add_noise(self.context, storage.HARDCOPY_KEY, form)
+
+        elif noisetype == "petition":
+
+            storage.add_noise(self.context, storage.PETITION_KEY, form)
 
         if noisetype and self.context.thank_you_page:
             self.request.response.redirect(
@@ -213,10 +213,6 @@ class NoiseStatsView(grok.View):
         return storage.get_noise(self.context, storage.TWITTER_KEY)
 
     @property
-    def facebook_noise(self):
-        return storage.get_noise(self.context, storage.FACEBOOK_KEY)
-
-    @property
     def email_noise(self):
         return storage.get_noise(self.context, storage.EMAIL_KEY)
 
@@ -224,13 +220,17 @@ class NoiseStatsView(grok.View):
     def hardcopy_noise(self):
         return storage.get_noise(self.context, storage.HARDCOPY_KEY)
 
+    @property
+    def petition_noise(self):
+        return storage.get_noise(self.context, storage.PETITION_KEY)
+
     def update(self):
         if self.request.get("reset") == "1":
             storage.setupAnnotations(self.context, storage.TWITTER_KEY,
                                      reset=True)
-            storage.setupAnnotations(self.context, storage.FACEBOOK_KEY,
-                                     reset=True)
             storage.setupAnnotations(self.context, storage.EMAIL_KEY,
                                      reset=True)
             storage.setupAnnotations(self.context, storage.HARDCOPY_KEY,
+                                     reset=True)
+            storage.setupAnnotations(self.context, storage.PETITION_KEY,
                                      reset=True)

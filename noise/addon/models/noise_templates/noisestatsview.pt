@@ -27,13 +27,6 @@
                     </span>
                     <a href="#twitter-tab" i18n:translate="">Twitter</a>
                 </li>
-                <li class="noise-menu-facebook">
-                    <span class="fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <a href="#facebook-tab" i18n:translate="">Facebook</a>
-                </li>
                 <li class="noise-menu-email">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
@@ -48,6 +41,13 @@
                     </span>
                     <a href="#hardcopy-tab" i18n:translate="">Hardcopy</a>
                 </li>
+                <li class="noise-menu-petition">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href="#petition-tab" i18n:translate="">Petition</a>
+                </li>
             </ul>
 
             <div id="twitter-tab" class="tab">
@@ -56,25 +56,15 @@
 
                         <span i18n:translate="">Total no. of records:</span>
                         <strong tal:content="python:len(data)"/>
-                        <table tal:condition="python:len(data)>0">
-                            <tr tal:repeat="item data">
-                                <td tal:content="item/get_timestamp"/>
-                                <td tal:content="python:item.get_record.get('firstname')"/>
-                                <td tal:content="python:item.get_record.get('lastname')"/>
-                                <td tal:content="python:item.get_record.get('email')"/>
-                                <td tal:content="python:item.get_record.get('phone')"/>
-                                <td tal:content="python:item.get_record.get('keepposted')"/>
-                            </tr>
-                        </table>
-                    </tal:stats>
-                </section>
-            </div>
-            <div id="facebook-tab" class="tab">
-                <section class="tab-content">
-                    <tal:stats tal:define="data view/facebook_noise">
 
-                        <span i18n:translate="">Total no. of records:</span>
-                        <strong tal:content="python:len(data)"/>
+                        <a class="download_link"
+                           href="#"
+                           tal:condition="python:len(data)>0"
+                           tal:attributes="href string:csv/twitter/download">
+                           <i class="fa fa-download"></i>
+                           <span i18n:translate="">Download CSV</span>
+                        </a>
+
                         <table tal:condition="python:len(data)>0">
                             <tr tal:repeat="item data">
                                 <td tal:content="item/get_timestamp"/>
@@ -94,6 +84,15 @@
 
                         <span i18n:translate="">Total no. of records:</span>
                         <strong tal:content="python:len(data)"/>
+
+                        <a class="download_link"
+                           href="#"
+                           tal:condition="python:len(data)>0"
+                           tal:attributes="href string:csv/email/download">
+                           <i class="fa fa-download"></i>
+                           <span i18n:translate="">Download CSV</span>
+                        </a>
+
                         <table tal:condition="python:len(data)>0">
                             <tr tal:repeat="item data">
                                 <td tal:content="item/get_timestamp"/>
@@ -113,6 +112,15 @@
 
                         <span i18n:translate="">Total no. of records:</span>
                         <strong tal:content="python:len(data)"/>
+
+                        <a class="download_link"
+                           href="#"
+                           tal:condition="python:len(data)>0"
+                           tal:attributes="href string:csv/hardcopy/download">
+                           <i class="fa fa-download"></i>
+                           <span i18n:translate="">Download CSV</span>
+                        </a>
+
                         <table tal:condition="python:len(data)>0">
                             <tr tal:repeat="item data">
                                 <td tal:content="item/get_timestamp"/>
@@ -124,6 +132,32 @@
                                 <td tal:content="python:item.get_record.get('city')"/>
                                 <td tal:content="python:item.get_record.get('phone')"/>
                                 <td tal:content="python:item.get_record.get('keepposted')"/>
+                            </tr>
+                        </table>
+                    </tal:stats>
+                </section>
+            </div>
+            <div id="petition-tab" class="tab">
+                <section class="tab-content">
+                    <tal:stats tal:define="data view/petition_noise">
+
+                        <span i18n:translate="">Total no. of records:</span>
+                        <strong tal:content="python:len(data)"/>
+
+                        <a class="download_link"
+                           href="#"
+                           tal:condition="python:len(data)>0"
+                           tal:attributes="href string:csv/petition/download">
+                           <i class="fa fa-download"></i>
+                           <span i18n:translate="">Download CSV</span>
+                        </a>
+
+                        <table tal:condition="python:len(data)>0">
+                            <tr tal:repeat="item data">
+                                <td tal:content="item/get_timestamp"/>
+                                <td tal:content="python:item.get_record.get('firstname')"/>
+                                <td tal:content="python:item.get_record.get('lastname')"/>
+                                <td tal:content="python:item.get_record.get('email')"/>
                             </tr>
                         </table>
                     </tal:stats>

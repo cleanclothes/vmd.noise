@@ -89,6 +89,14 @@ noise = {
         });
     },
 
+    initialize_petition_noise_form: function () {
+
+        $(".noise .petition_noise").on("click", function (e) {
+            // e.preventDefault();
+            $("#petition_noise_form").submit();
+        })
+    },
+
     initialize_twitter_noise_form: function () {
 
         $(".noise #twitter-texts").on("change", function (event) {
@@ -215,6 +223,7 @@ $(document).ready(function () {
     noise.initialize_twitter_web_intent();
     noise.initialize_email_noise_form();
     noise.initialize_hardcopy_noise_form();
+    noise.initialize_petition_noise_form();
     noise.initialize_tabs();
     noise.initialize_readmore();
 });

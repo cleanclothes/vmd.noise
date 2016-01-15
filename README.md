@@ -6,8 +6,8 @@ This product is designed to make some noise. Selectable media include *Twitter*,
 ## Buildout
 The noise.addon module has not yet been released on PyPI or wherever, but can be 
 found on git@github.com:milieudefensie/vmd.noise.git should you have the proper 
-authorization. Add this source to your buildout, build it and quickinstall the 
-**Noise** module.
+authorization. Add this source to your buildout, add **noise.addon** to your list
+of eggs, build it and quickinstall the **Noise** module.
 
 ## Manual
 Add a Noise content item in Plone and add relevant data. Once that item has been 

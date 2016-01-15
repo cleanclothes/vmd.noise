@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-08 20:01+0000\n"
+"POT-Creation-Date: 2016-01-15 09:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Body texts"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:427
+#: ../models/noise_templates/noiseview.pt:387
 msgid "City:"
 msgstr ""
 
@@ -42,12 +42,16 @@ msgstr ""
 msgid "Conclusion"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:145
+#: ../models/noise_templates/noiseview.pt:129
 msgid "Dit is je Tweet!"
 msgstr ""
 
-#: ../models/noise_templates/noisestatsview.pt:42
-#: ../models/noise_templates/noiseview.pt:83
+#: ../models/noise_templates/noisestatsview.pt:65
+msgid "Download CSV"
+msgstr ""
+
+#: ../models/noise_templates/noisestatsview.pt:35
+#: ../models/noise_templates/noiseview.pt:77
 msgid "Email"
 msgstr ""
 
@@ -63,20 +67,11 @@ msgstr ""
 msgid "Email medium"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:188
+#: ../models/noise_templates/noiseview.pt:172
 msgid "Email:"
 msgstr ""
 
-#: ../models/noise_templates/noisestatsview.pt:35
-#: ../models/noise_templates/noiseview.pt:76
-msgid "Facebook"
-msgstr ""
-
-#: ../models/noise.xml
-msgid "Facebook medium"
-msgstr ""
-
-#: ../models/noise_templates/noiseview.pt:165
+#: ../models/noise_templates/noiseview.pt:149
 msgid "Firstname:"
 msgstr ""
 
@@ -92,8 +87,8 @@ msgstr ""
 msgid "General intro"
 msgstr ""
 
-#: ../models/noise_templates/noisestatsview.pt:49
-#: ../models/noise_templates/noiseview.pt:90
+#: ../models/noise_templates/noisestatsview.pt:42
+#: ../models/noise_templates/noiseview.pt:84
 msgid "Hardcopy"
 msgstr ""
 
@@ -118,30 +113,26 @@ msgid "Heading of keep posted part"
 msgstr ""
 
 #: ../models/noise.xml
-msgid "Images"
-msgstr ""
-
-#: ../models/noise.xml
 msgid "In reply to:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:160
+#: ../models/noise_templates/noiseview.pt:144
 msgid "Ja graag! Hou me op de hoogte."
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:63
+#: ../models/noise_templates/noiseview.pt:64
 msgid "Je kunt je oproep ook doen via"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:108
+#: ../models/noise_templates/noiseview.pt:109
 msgid "Kies je tekst:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:177
+#: ../models/noise_templates/noiseview.pt:161
 msgid "Lastname:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:34
+#: ../models/noise_templates/noiseview.pt:35
 msgid "Lees meer"
 msgstr ""
 
@@ -157,7 +148,7 @@ msgstr ""
 msgid "Noise statistics"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:40
+#: ../models/noise_templates/noiseview.pt:41
 msgid "Oproepen verstuurd!"
 msgstr ""
 
@@ -169,11 +160,20 @@ msgstr ""
 msgid "Other media's statistics:"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:17
+#: ../models/noise_templates/noiseview.pt:18
 msgid "PLEASE ENABLE JAVASCRIPT"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:197
+#: ../models/noise_templates/noisestatsview.pt:49
+#: ../models/noise_templates/noiseview.pt:91
+msgid "Petition"
+msgstr ""
+
+#: ../models/noise.xml
+msgid "Petition medium"
+msgstr ""
+
+#: ../models/noise_templates/noiseview.pt:181
 msgid "Phonenumber:"
 msgstr ""
 
@@ -189,11 +189,11 @@ msgstr ""
 msgid "Related"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:172
+#: ../models/noise_templates/noiseview.pt:156
 msgid "Required"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:423
+#: ../models/noise_templates/noiseview.pt:383
 msgid "Required (format:1234AB)"
 msgstr ""
 
@@ -206,10 +206,14 @@ msgid "Send hardcopy button"
 msgstr ""
 
 #: ../models/noise.xml
+msgid "Send petition button"
+msgstr ""
+
+#: ../models/noise.xml
 msgid "Show counter"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:404
+#: ../models/noise_templates/noiseview.pt:364
 msgid "Street and number:"
 msgstr ""
 
@@ -217,16 +221,12 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:282
+#: ../models/noise_templates/noiseview.pt:242
 msgid "Subject:"
 msgstr ""
 
 #: ../models/noise.xml
 msgid "Submit button"
-msgstr ""
-
-#: ../models/noise.xml
-msgid "Submit to Facebook button"
 msgstr ""
 
 #: ../models/noise.xml
@@ -250,7 +250,7 @@ msgid "Total no. of records:"
 msgstr ""
 
 #: ../models/noise_templates/noisestatsview.pt:28
-#: ../models/noise_templates/noiseview.pt:69
+#: ../models/noise_templates/noiseview.pt:70
 msgid "Twitter"
 msgstr ""
 
@@ -259,14 +259,10 @@ msgid "Twitter medium"
 msgstr ""
 
 #: ../models/noise.xml
-msgid "User selectable images"
-msgstr ""
-
-#: ../models/noise.xml
 msgid "User selectable predefined body texts (one per line)"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:271
+#: ../models/noise_templates/noiseview.pt:231
 msgid "Voeg iets persoonlijks toe als je wilt:"
 msgstr ""
 
@@ -279,11 +275,11 @@ msgid "Whether or not to show the Email tab"
 msgstr ""
 
 #: ../models/noise.xml
-msgid "Whether or not to show the Facebook tab"
+msgid "Whether or not to show the Hardcopy tab"
 msgstr ""
 
 #: ../models/noise.xml
-msgid "Whether or not to show the Hardcopy tab"
+msgid "Whether or not to show the Petition tab"
 msgstr ""
 
 #: ../models/noise.xml
@@ -294,7 +290,7 @@ msgstr ""
 msgid "Whether or not to show the total amount of noise items created"
 msgstr ""
 
-#: ../models/noise_templates/noiseview.pt:416
+#: ../models/noise_templates/noiseview.pt:376
 msgid "Zipcode:"
 msgstr ""
 

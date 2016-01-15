@@ -69,13 +69,6 @@
                     </span>
                     <a href="#twitter-tab" i18n:translate="">Twitter</a>
                 </li>
-                <li class="noise-menu-facebook" tal:condition="context/show_facebook">
-                    <span class="fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <a href="#facebook-tab" i18n:translate="">Facebook</a>
-                </li>
                 <li class="noise-menu-email" tal:condition="context/show_email">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
@@ -485,6 +478,48 @@
 
                     <form id="petition_noise_form" class="noise-form"
                           method="POST" action="">
+
+                        <input type="hidden" id="noisetype" name="noisetype"
+                               value="petition"/>
+
+                        <div>
+                            <label for="firstname" i18n:translate="">Firstname:</label>
+                            <input jsf:relevant="keepposted"
+                                   jsf:required="true"
+                                   jsf:constraint="firstname.match(/\w{1}\w*/)"
+                                   type="text"
+                                   name="firstname"
+                                   id="firstname">
+                            <span class="help" i18n:translate="">Required</span>
+                        </div>
+                        <div>
+                            <label for="lastname" i18n:translate="">Lastname:</label>
+                            <input jsf:relevant="keepposted"
+                                   jsf:required="true"
+                                   jsf:constraint="lastname.match(/\w{2}\w*/)"
+                                   type="text"
+                                   name="lastname"
+                                   id="lastname">
+                            <span class="help" i18n:translate="">Required</span>
+                        </div>
+
+                        <div>
+                            <label for="email" i18n:translate="">Email:</label>
+                            <input jsf:relevant="keepposted"
+                                   jsf:required="true"
+                                   jsf:constraint="email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)"
+                                   type="text" name="email"
+                                   id="email">
+                            <span class="help" i18n:translate="">Required</span>
+                        </div>
+
+                        <p>
+                            <a class="petition_noise btn btn-green"
+                               href="#">
+                                <span tal:content="python:context.petition_submit or 'submit'">SUBMIT</span>
+                            </a>
+                        </p>
+
                     </form>
                 </section>
             </div>
